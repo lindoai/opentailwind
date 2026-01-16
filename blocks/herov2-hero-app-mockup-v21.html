@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero App Mockup 1</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  <main class="min-h-screen">
+<section id="_hero_app_mockup_v21_001" class="py-20 sm:py-24 bg-linear-to-b from-blue-50 via-white to-white dark:from-blue-950/30 dark:via-neutral-950 dark:to-neutral-950 min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header Content -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div data-motion="badge" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-8">
+        <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+        </svg>
+        <span data-motion="badge" class="text-sm font-semibold text-blue-600 dark:text-blue-400">Mobile App</span>
+      </div>
+      
+      <h1>
+        <span data-animate="heading" class="block text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight">Your Life,</span>
+        <span data-animate="heading" class="block text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-600 dark:text-blue-400 mt-2">Organized</span>
+      </h1>
+      
+      <p data-animate="text" class="mt-6 text-lg text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto">
+        The all-in-one app that helps you manage tasks, track habits, and achieve your goals. Available on iOS and Android.
+      </p>
+      
+      <div data-motion="buttons" class="flex flex-wrap gap-4 justify-center mt-10">
+        <a data-motion="button" href="#" class="flex items-center gap-3 px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <div class="text-left">
+            <span class="block text-xs opacity-80">Download on the</span>
+            <span data-motion="badge" class="block text-sm font-semibold">App Store</span>
+          </div>
+        </a>
+        <a data-motion="button" href="#" class="flex items-center gap-3 px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+          </svg>
+          <div class="text-left">
+            <span class="block text-xs opacity-80">Get it on</span>
+            <span data-motion="badge" class="block text-sm font-semibold">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Phone Mockups -->
+    <div class="relative flex justify-center items-end gap-4 lg:gap-8">
+      
+      <!-- Left Phone -->
+      <div data-motion="phone-left" class="hidden sm:block relative -mb-20 transform -rotate-6">
+        <div class="w-48 lg:w-64 bg-neutral-900 rounded-[2.5rem] p-2 shadow-2xl">
+          <div class="bg-neutral-800 rounded-4xl overflow-hidden">
+            <div class="h-6 bg-neutral-900 flex items-center justify-center">
+              <div class="w-20 h-4 bg-neutral-800 rounded-full"></div>
+            </div>
+            <img data-motion="image" src="https://images.pexels.com/photos/6804604/pexels-photo-6804604.jpeg?auto=compress&cs=tinysrgb&w=400" alt="App screen" class="w-full h-80 lg:h-96 object-cover">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Center Phone (Main) -->
+      <div data-motion="phone-center" class="relative z-10">
+        <div class="w-64 lg:w-80 bg-neutral-900 rounded-[3rem] p-3 shadow-2xl">
+          <div class="bg-neutral-800 rounded-[2.5rem] overflow-hidden">
+            <div class="h-8 bg-neutral-900 flex items-center justify-center">
+              <div class="w-24 h-5 bg-neutral-800 rounded-full"></div>
+            </div>
+            <img data-motion="image" src="https://images.pexels.com/photos/6804581/pexels-photo-6804581.jpeg?auto=compress&cs=tinysrgb&w=400" alt="App screen" class="w-full h-96 lg:h-112 object-cover">
+          </div>
+        </div>
+        
+        <!-- Floating Notification -->
+        <div data-motion="notification" class="absolute -right-4 lg:-right-16 top-20 p-3 bg-white dark:bg-neutral-800 rounded-xl shadow-xl border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center gap-3">
+            <div data-motion="icon" class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <span data-motion="badge" class="block text-sm font-semibold text-neutral-900 dark:text-white">Task Complete!</span>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400">Morning routine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Phone -->
+      <div data-motion="phone-right" class="hidden sm:block relative -mb-20 transform rotate-6">
+        <div class="w-48 lg:w-64 bg-neutral-900 rounded-[2.5rem] p-2 shadow-2xl">
+          <div class="bg-neutral-800 rounded-4xl overflow-hidden">
+            <div class="h-6 bg-neutral-900 flex items-center justify-center">
+              <div class="w-20 h-4 bg-neutral-800 rounded-full"></div>
+            </div>
+            <img data-motion="image" src="https://images.pexels.com/photos/6804609/pexels-photo-6804609.jpeg?auto=compress&cs=tinysrgb&w=400" alt="App screen" class="w-full h-80 lg:h-96 object-cover">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Stats -->
+    <div data-motion="stats" class="flex flex-wrap justify-center gap-8 lg:gap-16 mt-32 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+      <div class="text-center">
+        <span class="block text-3xl font-bold text-neutral-900 dark:text-white">2M+</span>
+        <span class="text-sm text-neutral-500 dark:text-neutral-400">Downloads</span>
+      </div>
+      <div class="text-center">
+        <span class="block text-3xl font-bold text-neutral-900 dark:text-white">4.8★</span>
+        <span class="text-sm text-neutral-500 dark:text-neutral-400">App Rating</span>
+      </div>
+      <div class="text-center">
+        <span class="block text-3xl font-bold text-neutral-900 dark:text-white">150+</span>
+        <span class="text-sm text-neutral-500 dark:text-neutral-400">Countries</span>
+      </div>
+    </div>
+    
+  </div>
+</section>
+  </main>
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

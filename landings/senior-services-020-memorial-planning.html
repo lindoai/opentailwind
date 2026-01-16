@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>020 Memorial Planning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<header id="_header_multi_level_dropdown_h18_001" class="relative bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-900">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <!-- Logo -->
+ <a data-motion="logo" href="#" class="flex items-center gap-2.5">
+ <div data-motion="icon" class="w-10 h-10 bg-linear-to-br from-slate-700 to-slate-900 dark:from-slate-200 dark:to-slate-400 rounded-xl flex items-center justify-center">
+ <svg class="w-5 h-5 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+ </svg>
+ </div>
+ <span class="text-xl font-bold text-neutral-900 dark:text-white">Layers</span>
+ </a>
+
+ <!-- Navigation with Multi-Level Dropdowns -->
+ <nav data-motion="nav" class="hidden lg:flex items-center gap-1">
+ <!-- Products Dropdown -->
+ <div class="nav-item relative">
+ <button class="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+ Products
+ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+ </svg>
+ </button>
+ 
+ <div class="dropdown absolute top-full left-0 pt-2">
+ <div class="w-56 bg-white dark:bg-neutral-900 rounded-xl shadow-xl border border-neutral-100 dark:border-neutral-800 py-2">
+ <!-- Item with Submenu -->
+ <div class="dropdown-item relative">
+ <a href="#" class="flex items-center justify-between px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+ Software
+ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ </a>
+ 
+ <!-- Submenu -->
+ <div class="submenu absolute top-0 left-full pl-2">
+ <div class="w-48 bg-white dark:bg-neutral-900 rounded-xl shadow-xl border border-neutral-100 dark:border-neutral-800 py-2">
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Web Apps</a>
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Mobile Apps</a>
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Desktop Apps</a>
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">APIs</a>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Item with Submenu -->
+ <div class="dropdown-item relative">
+ <a href="#" class="flex items-center justify-between px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+ Hardware
+ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ </a>
+ 
+ <div class="submenu absolute top-0 left-full pl-2">
+ <div class="w-48 bg-white dark:bg-neutral-900 rounded-xl shadow-xl border border-neutral-100 dark:border-neutral-800 py-2">
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Servers</a>
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Networking</a>
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Storage</a>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="h-px bg-neutral-100 dark:bg-neutral-800 my-2"></div>
+ 
+ <a href="#" class="block px-4 py-2.5 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">All Products</a>
+ </div>
+ </div>
+ </div>
+ 
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Solutions</a>
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</a>
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Resources</a>
+ </nav>
+
+ <!-- Right Actions -->
+ <div data-motion="actions" class="flex items-center gap-2">
+ <button data-motion="button" 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ 
+ <a href="#" class="h-10 px-4 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors hidden sm:flex items-center">
+ Sign In
+ </a>
+ 
+ <a data-motion="button" href="#" class="h-10 px-5 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm font-semibold rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center">
+ Get Started
+ </a>
+ </div>
+ </div>
+ </div>
+</header>
+<section id="_hero_cloud_storage_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Centered Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-motion="hero">
+      <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 dark:bg-orange-900/40 rounded-full text-orange-600 dark:text-orange-400 text-sm font-medium mb-6">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/>
+        </svg>
+        Enterprise-Grade Security
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight mb-6">
+        <span data-animate="heading">Store, Sync & Share Seamlessly</span>
+      </h1>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8" data-animate="text">
+        Keep your files safe and accessible from anywhere. Collaborate in real-time with your team and never worry about losing important data.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" data-motion="button" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 transition-colors rounded-full text-white font-semibold">
+          Start Free Trial
+        </a>
+        <a href="#" data-motion="button" class="px-6 py-3 border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors rounded-full text-neutral-900 dark:text-white font-semibold">
+          View Pricing
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="grid lg:grid-cols-3 gap-5">
+      <!-- Storage Card - Large -->
+      <div class="lg:col-span-2" data-motion="card">
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-3xl p-8 h-full">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Storage Overview</h3>
+              <p class="text-neutral-500 dark:text-neutral-400 text-sm">245 GB of 500 GB used</p>
+            </div>
+            <div data-motion="icon" class="w-14 h-14 bg-orange-100 dark:bg-orange-900/40 rounded-2xl flex items-center justify-center">
+              <svg class="w-7 h-7 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Progress bar -->
+          <div class="h-3 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden mb-8">
+            <div class="h-full w-[49%] bg-orange-600 dark:bg-orange-500 rounded-full"></div>
+          </div>
+          
+          <!-- File types grid -->
+          <div class="grid grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-neutral-800 rounded-2xl p-4 text-center">
+              <div data-motion="icon" class="w-10 h-10 mx-auto bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center mb-2">
+                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Documents</p>
+              <p class="text-sm font-semibold text-neutral-900 dark:text-white">45 GB</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 rounded-2xl p-4 text-center">
+              <div data-motion="icon" class="w-10 h-10 mx-auto bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center mb-2">
+                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Images</p>
+              <p class="text-sm font-semibold text-neutral-900 dark:text-white">120 GB</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 rounded-2xl p-4 text-center">
+              <div data-motion="icon" class="w-10 h-10 mx-auto bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center mb-2">
+                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                </svg>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Videos</p>
+              <p class="text-sm font-semibold text-neutral-900 dark:text-white">65 GB</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 rounded-2xl p-4 text-center">
+              <div data-motion="icon" class="w-10 h-10 mx-auto bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center mb-2">
+                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
+                </svg>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Other</p>
+              <p class="text-sm font-semibold text-neutral-900 dark:text-white">15 GB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="flex flex-col gap-5">
+        <!-- Sync Status Card -->
+        <div data-motion="card" class="bg-orange-600 rounded-3xl p-6 flex-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div data-motion="icon" class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-white font-semibold block">All Synced</span>
+              <span class="text-orange-100 text-sm">Files up to date</span>
+            </div>
+          </div>
+          <p class="text-orange-100 text-sm">Last sync: 2 minutes ago</p>
+        </div>
+
+        <!-- Features Card -->
+        <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-3xl p-6 flex-1">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-4">Key Features</h4>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-neutral-600 dark:text-neutral-400 text-sm">End-to-end encryption</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-neutral-600 dark:text-neutral-400 text-sm">Real-time collaboration</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-neutral-600 dark:text-neutral-400 text-sm">Automatic backups</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-neutral-600 dark:text-neutral-400 text-sm">Cross-platform sync</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_split_panel_v6_001" class="py-20 sm:py-24 bg-neutral-50 dark:bg-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8">
+      <!-- Left Panel with Image -->
+      <div class="lg:col-span-5" data-motion="panel">
+        <div class="bg-white dark:bg-neutral-800 rounded-3xl p-8 h-full flex flex-col">
+          <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 dark:bg-orange-900/40 rounded-full text-orange-600 dark:text-orange-400 text-sm font-medium mb-6 w-fit">
+            <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+            Why Choose Us
+          </span>
+          <h2 class="text-neutral-900 dark:text-white text-3xl sm:text-4xl font-bold mb-4">
+            <span data-animate="heading">What Makes Us Different</span>
+          </h2>
+          <p data-animate="text" class="text-neutral-600 dark:text-neutral-400 text-lg mb-8">
+            Purpose-built tools that adapt to your workflow, not the other way around.
+          </p>
+          <div class="rounded-2xl overflow-hidden mt-auto">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80" alt="Team collaboration" class="w-full h-48 object-cover">
+          </div>
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 font-semibold hover:gap-3 transition-all duration-300 w-fit mt-6">
+            Get in Touch
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Right Grid -->
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+        <div data-motion="card" class="p-6 bg-orange-50 dark:bg-orange-900/20 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-800/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Modular Components</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+            Build with reusable blocks that snap together like building blocks for rapid development.
+          </p>
+        </div>
+        
+        <div data-motion="card" class="p-6 bg-white dark:bg-neutral-800 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Smart Search</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+            Find anything instantly with AI-powered search that understands context and intent.
+          </p>
+        </div>
+        
+        <div data-motion="card" class="p-6 bg-white dark:bg-neutral-800 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Time Tracking</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+            Automatic time logging with detailed reports to optimize your productivity.
+          </p>
+        </div>
+        
+        <div data-motion="card" class="p-6 bg-orange-600 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-white text-lg font-semibold mb-2">Team Collaboration</h3>
+          <p class="text-orange-100 text-sm">
+            Work together seamlessly with real-time editing, comments, and shared workspaces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_saas_cards_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Split Header with Image -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <div data-motion="header">
+        <span data-motion="badge" class="text-orange-600 dark:text-orange-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Design Platform</span>
+        <h2 class="text-neutral-900 dark:text-white text-4xl sm:text-5xl font-bold mb-6">
+          <span data-animate="heading">Supercharge Your Creative Workflow</span>
+        </h2>
+        <p data-animate="text" class="text-neutral-600 dark:text-neutral-400 text-lg mb-8">
+          Design, prototype, and collaborate in one unified platform built for modern creative teams.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a data-motion="button" href="#" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 transition-colors rounded-full text-white font-semibold">
+            Start Free Trial
+          </a>
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 font-semibold hover:gap-3 transition-all duration-300">
+            Watch Demo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div data-motion="image" class="relative">
+        <div class="rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&auto=format&fit=crop&q=80" alt="Designer working on creative project" class="w-full h-80 object-cover">
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Cards Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div data-motion="card" class="p-6 bg-orange-50 dark:bg-orange-900/20 rounded-3xl group hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-500 cursor-pointer">
+        <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-800/40 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-5 transition-all duration-500">
+          <svg class="w-6 h-6 text-orange-600 dark:text-orange-400 group-hover:text-white transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white group-hover:text-white text-lg font-semibold mb-2 transition-all duration-500">Vector Design</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 group-hover:text-orange-100 text-sm transition-all duration-500">
+          Create scalable graphics with precision tools and smart guides.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl group hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-500 cursor-pointer">
+        <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-5 transition-all duration-500">
+          <svg class="w-6 h-6 text-orange-600 dark:text-orange-400 group-hover:text-white transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white group-hover:text-white text-lg font-semibold mb-2 transition-all duration-500">Real-Time Sync</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 group-hover:text-orange-100 text-sm transition-all duration-500">
+          Collaborate with your team with instant updates and version control.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl group hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-500 cursor-pointer">
+        <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-5 transition-all duration-500">
+          <svg class="w-6 h-6 text-orange-600 dark:text-orange-400 group-hover:text-white transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white group-hover:text-white text-lg font-semibold mb-2 transition-all duration-500">Quick Export</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 group-hover:text-orange-100 text-sm transition-all duration-500">
+          Export assets in multiple formats optimized for web and mobile.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl group hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-500 cursor-pointer">
+        <div data-motion="icon" class="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-5 transition-all duration-500">
+          <svg class="w-6 h-6 text-orange-600 dark:text-orange-400 group-hover:text-white transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white group-hover:text-white text-lg font-semibold mb-2 transition-all duration-500">Design System</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 group-hover:text-orange-100 text-sm transition-all duration-500">
+          Build consistent interfaces with reusable components.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_about_dark_image_split_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Centered Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span data-motion="badge" class="text-stone-600 dark:text-stone-400 text-sm font-semibold tracking-wide uppercase block mb-4">About Our Studio</span>
+      <h2 class="text-neutral-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+        <span data-animate="heading">Where Bold Ideas Come to Life</span>
+      </h2>
+      <p class="text-neutral-600 dark:text-neutral-400 text-lg" data-animate="text">
+        We're a collective of designers, developers, and storytellers who believe in the power of creative expression.
+      </p>
+    </div>
+    
+    <!-- Full Width Image -->
+    <div data-motion="image" class="w-full h-72 sm:h-96 lg:h-[450px] rounded-3xl overflow-hidden mb-12">
+      <img data-motion="image" 
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop&q=80" 
+        alt="Creative studio workspace"
+        class="w-full h-full object-cover"
+      >
+    </div>
+    
+    <!-- Split Content -->
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
+      <h3 class="text-neutral-900 dark:text-white text-2xl sm:text-3xl font-bold">
+        <span data-animate="heading">Crafting Digital Experiences That Inspire and Engage</span>
+      </h3>
+      <div class="flex flex-col gap-6">
+        <p class="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed" data-animate="text">
+          Every project we take on is an opportunity to push boundaries and create something meaningful. We combine strategic thinking with artistic vision to deliver work that resonates.
+        </p>
+        <a data-motion="button" href="#" class="px-6 py-3 bg-stone-900 dark:bg-white hover:bg-stone-800 dark:hover:bg-neutral-100 transition-colors rounded-full text-white dark:text-neutral-900 font-semibold w-fit">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_testimonial_fullwidth_video_v6_t32_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Bento Layout -->
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- Video Card -->
+      <div data-motion="video" class="relative rounded-3xl overflow-hidden h-80 lg:h-auto group">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&auto=format&fit=crop&q=80" alt="Team collaboration" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <button data-motion="button" type="button" aria-label="Play video" class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-all group-hover:scale-110">
+            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <span data-motion="badge" class="inline-block px-3 py-1 bg-white/90 dark:bg-neutral-900/90 rounded-full text-sm font-medium text-neutral-900 dark:text-white">Watch Video Story</span>
+        </div>
+      </div>
+
+      <!-- Quote Card -->
+      <div data-motion="quote" class="flex flex-col justify-between p-8 lg:p-10 bg-orange-50 dark:bg-orange-900/20 rounded-3xl">
+        <div>
+          <svg class="w-10 h-10 text-orange-500 mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+          <p class="text-xl lg:text-2xl text-neutral-700 dark:text-neutral-200 leading-relaxed mb-8">"The platform has completely revolutionized how we approach project management. Our team's productivity has increased by 40%, and the collaboration features have made remote work seamless."</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Alexandra Chen" class="w-14 h-14 rounded-full object-cover">
+            <div>
+              <h6 class="font-semibold text-neutral-900 dark:text-white">Alexandra Chen</h6>
+              <span class="text-orange-600 dark:text-orange-400 text-sm">VP of Operations, TechFlow</span>
+            </div>
+          </div>
+          <div class="hidden sm:flex gap-0.5">
+            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_faq_icon_cards_two_column_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Asymmetric Header Layout -->
+    <div class="grid lg:grid-cols-12 gap-8 mb-16">
+      <div data-motion="header" class="lg:col-span-7">
+        <span data-motion="badge" class="text-orange-600 dark:text-orange-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Property Guidance</span>
+        <h2 class="text-neutral-900 dark:text-white text-4xl sm:text-5xl font-bold">
+          <span data-animate="heading">Questions About Buying & Selling</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 flex items-end">
+        <p data-animate="text" class="text-neutral-600 dark:text-neutral-400 text-lg">
+          Expert answers to help you navigate the real estate market with confidence.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Bento Grid Cards -->
+    <div class="grid lg:grid-cols-3 gap-5">
+      <!-- Large Featured Card -->
+      <div data-motion="card" class="lg:col-span-2 lg:row-span-2 relative rounded-3xl overflow-hidden group">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=80" alt="Modern home" class="w-full h-full object-cover absolute inset-0">
+        <div class="absolute inset-0 bg-linear-to-t from-neutral-900/90 via-neutral-900/40 to-transparent"></div>
+        <div class="relative z-10 p-8 lg:p-10 h-full flex flex-col justify-end min-h-[400px]">
+          <div data-motion="icon" class="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <h3 class="text-white text-2xl font-bold mb-3">How do I start the home buying process?</h3>
+          <p class="text-white/80 text-base">
+            Begin by getting pre-approved for a mortgage to understand your budget. Then, work with one of our agents to identify properties that match your criteria and schedule viewings.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div data-motion="card" class="p-6 bg-orange-50 dark:bg-orange-900/20 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">What costs should I expect?</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Budget for closing costs (2-5% of loan), inspection fees, appraisal costs, and moving expenses.
+        </p>
+      </div>
+      
+      <!-- Card 3 -->
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-neutral-900 dark:bg-white rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white dark:text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">How long does selling take?</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          On average, homes sell within 30-60 days. From listing to closing typically takes 60-90 days.
+        </p>
+      </div>
+      
+      <!-- Card 4 -->
+      <div data-motion="card" class="lg:col-span-2 p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl flex flex-col sm:flex-row gap-6">
+        <div data-motion="icon" class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">What should I do to prepare my home for sale?</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+            Focus on decluttering, deep cleaning, and minor repairs. Consider fresh paint in neutral colors and enhancing curb appeal. Our staging consultation service can help maximize your home's appeal.
+          </p>
+        </div>
+      </div>
+      
+      <!-- CTA Card -->
+      <div data-motion="card" class="p-6 bg-orange-600 rounded-3xl flex flex-col justify-center">
+        <h3 class="text-white text-lg font-semibold mb-2">Ready to Get Started?</h3>
+        <p class="text-white/80 text-sm mb-4">Schedule a free consultation with our experts.</p>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all duration-300 w-fit">
+          Book Consultation
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_cta_gradient_app_mockup_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Split Layout with Phone -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Content Side -->
+      <div data-motion="hero">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 dark:bg-orange-900/40 rounded-full text-orange-600 dark:text-orange-400 text-sm font-medium mb-6" data-motion="badge">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+          Mobile App
+        </span>
+        
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">
+          <span data-animate="heading">Smart money management in your pocket</span>
+        </h2>
+        
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg mt-6" data-animate="text">
+          Take control of your finances with our intuitive app. Track expenses, set budgets, and reach your savings goals faster.
+        </p>
+        
+        <!-- Features -->
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="flex items-center gap-3" data-motion="card">
+            <div data-motion="icon" class="w-10 h-10 bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm font-medium">Expense tracking</span>
+          </div>
+          <div class="flex items-center gap-3" data-motion="card">
+            <div data-motion="icon" class="w-10 h-10 bg-orange-100 dark:bg-orange-900/40 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm font-medium">Budget goals</span>
+          </div>
+          <div class="flex items-center gap-3" data-motion="card">
+            <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm font-medium">Smart alerts</span>
+          </div>
+          <div class="flex items-center gap-3" data-motion="card">
+            <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm font-medium">Bank-level security</span>
+          </div>
+        </div>
+        
+        <!-- Download Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-10">
+          <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-neutral-900 dark:bg-white rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
+            <svg class="w-7 h-7 text-white dark:text-neutral-900" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="text-left">
+              <p class="text-xs text-neutral-400 dark:text-neutral-500">Download on the</p>
+              <p class="text-sm font-semibold text-white dark:text-neutral-900">App Store</p>
+            </div>
+          </a>
+          
+          <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-neutral-900 dark:bg-white rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
+            <svg class="w-7 h-7 text-white dark:text-neutral-900" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/>
+            </svg>
+            <div class="text-left">
+              <p class="text-xs text-neutral-400 dark:text-neutral-500">Get it on</p>
+              <p class="text-sm font-semibold text-white dark:text-neutral-900">Google Play</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Phone Mockup Side -->
+      <div class="flex justify-center lg:justify-end" data-motion="image">
+        <div class="relative">
+          <!-- Phone Frame -->
+          <div class="w-72 sm:w-80 bg-neutral-900 rounded-[3rem] p-3">
+            <div class="bg-orange-600 rounded-[2.5rem] overflow-hidden">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&auto=format&fit=crop&q=80" alt="Finance app interface" class="w-full aspect-9/19 object-cover">
+            </div>
+          </div>
+          
+          <!-- Floating Stats -->
+          <div class="absolute -left-8 top-1/4 bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow-xl" data-motion="card">
+            <div class="flex items-center gap-3">
+              <div data-motion="icon" class="w-10 h-10 bg-orange-100 dark:bg-orange-900/40 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-neutral-900 dark:text-white font-bold">+$2,450</p>
+                <p class="text-neutral-500 text-xs">This month</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Rating Badge -->
+          <div class="absolute -right-4 bottom-1/4 bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow-xl" data-motion="card">
+            <div class="flex items-center gap-1 text-orange-400 mb-1">
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-neutral-900 dark:text-white font-semibold text-sm">4.9 Rating</p>
+            <p class="text-neutral-500 text-xs">50K+ reviews</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_simple_horizontal_nav_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Top Section with Logo and Newsletter -->
+    <div class="grid lg:grid-cols-2 gap-12 pb-16 border-b border-neutral-200 dark:border-neutral-800">
+      <!-- Logo & Description -->
+      <div data-motion="logo" class="flex flex-col gap-6">
+        <a href="#" class="flex items-center gap-3 w-fit">
+          <div class="w-11 h-11 bg-orange-600 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-bold text-neutral-900 dark:text-white">Lumina</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 max-w-md text-lg leading-relaxed">
+          Illuminating ideas into reality. We craft digital experiences that inspire and transform businesses.
+        </p>
+      </div>
+      
+      <!-- Newsletter -->
+      <div data-motion="newsletter" class="flex flex-col gap-4 lg:items-end">
+        <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Stay in the loop</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 lg:text-right">Get the latest updates and insights delivered to your inbox.</p>
+        <form class="flex gap-3 w-full max-w-md">
+          <input data-motion="input" 
+            type="email" 
+            placeholder="Enter your email" 
+            class="flex-1 px-5 py-3 bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl text-neutral-900 dark:text-white placeholder-neutral-500 focus:outline-hidden focus:ring-2 focus:ring-orange-500"
+          >
+          <button data-motion="button" type="submit" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-xl transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Navigation Row -->
+    <div class="py-10 border-b border-neutral-200 dark:border-neutral-800">
+      <nav data-motion="nav" class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Home</a>
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">About</a>
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Services</a>
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Portfolio</a>
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Blog</a>
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Careers</a>
+        <a href="#" class="text-base font-medium text-neutral-700 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Contact</a>
+      </nav>
+    </div>
+    
+    <!-- Bottom Section -->
+    <div class="pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <!-- Copyright & Legal -->
+      <div data-motion="legal" class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+        <span class="text-sm text-neutral-500 dark:text-neutral-400">© 2025 Lumina Creative Studio</span>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Privacy</a>
+          <a href="#" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Terms</a>
+          <a href="#" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Sitemap</a>
+        </div>
+      </div>
+      
+      <!-- Social Icons -->
+      <div data-motion="social" class="flex items-center gap-4">
+        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Dribbble" class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-6.953.666-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

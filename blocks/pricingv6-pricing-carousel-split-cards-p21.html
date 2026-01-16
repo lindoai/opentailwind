@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Carousel Split Cards P21</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  <main class="min-h-screen">
+<section id="_pricing_carousel_split_cards_v6_021" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
+      <div class="lg:max-w-xl">
+        <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-rose-100 dark:bg-rose-900/40 rounded-full text-rose-600 dark:text-rose-400 text-sm font-medium mb-4">
+          <span class="w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
+          Learning Platform
+        </span>
+        <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white">
+          <span data-animate="heading">Unlock your learning potential</span>
+        </h2>
+      </div>
+      
+      <!-- Toggle -->
+      <div data-motion="toggle" class="flex items-center gap-3 p-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full">
+        <button data-motion="button" type="button" data-pricing="btn-monthly" class="px-5 py-2 rounded-full text-sm font-medium bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white transition-all">Monthly</button>
+        <button type="button" data-pricing="btn-yearly" class="px-5 py-2 rounded-full text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-all">Yearly <span class="text-rose-500 text-xs">-20%</span></button>
+      </div>
+    </div>
+    
+    <!-- Carousel -->
+    <div class="relative">
+      <div data-carousel="container" class="overflow-hidden">
+        <div data-carousel="track" class="flex transition-transform duration-500 ease-out">
+          <!-- Slide 1 - Starter -->
+          <div data-carousel="slide" class="w-full shrink-0">
+            <div data-motion="card" class="grid lg:grid-cols-2 gap-8 bg-rose-50 dark:bg-rose-900/20 rounded-3xl p-8 lg:p-12">
+              <div class="flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-2">Starter</h3>
+                  <p class="text-neutral-600 dark:text-neutral-400 mb-6" data-animate="text">Perfect for beginners starting their learning journey</p>
+                  <div class="flex items-baseline gap-2 mb-8">
+                    <span class="text-neutral-400 line-through text-lg" data-pricing="monthly">$79</span>
+                    <span class="text-neutral-400 line-through text-lg hidden" data-pricing="yearly">$790</span>
+                    <span class="text-5xl font-bold text-neutral-900 dark:text-white" data-pricing="monthly">$49</span>
+                    <span class="text-5xl font-bold text-neutral-900 dark:text-white hidden" data-pricing="yearly">$470</span>
+                    <span class="text-neutral-500 dark:text-neutral-400">/<span data-pricing="period">mo</span></span>
+                  </div>
+                </div>
+                <a href="#" data-motion="button" class="inline-flex items-center justify-center px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full transition-colors w-fit">
+                  Start Learning
+                </a>
+              </div>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3 p-4 bg-white dark:bg-neutral-900 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <span class="text-neutral-700 dark:text-neutral-300">50+ Video Courses</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-white dark:bg-neutral-900 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                  </div>
+                  <span class="text-neutral-700 dark:text-neutral-300">Downloadable Resources</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-white dark:bg-neutral-900 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                  </div>
+                  <span class="text-neutral-700 dark:text-neutral-300">Community Access</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-white dark:bg-neutral-900 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                  </div>
+                  <span class="text-neutral-700 dark:text-neutral-300">Course Certificates</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 2 - Professional -->
+          <div data-carousel="slide" class="w-full shrink-0">
+            <div data-motion="card" class="grid lg:grid-cols-2 gap-8 bg-rose-600 dark:bg-rose-700 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+              <div data-motion="badge" class="absolute top-6 right-6 px-3 py-1 bg-white/20 backdrop-blur-xs rounded-full text-white text-xs font-semibold">Most Popular</div>
+              <div class="flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+                  <p class="text-rose-100 mb-6">For professionals seeking advanced skills and mentorship</p>
+                  <div class="flex items-baseline gap-2 mb-8">
+                    <span class="text-rose-200 line-through text-lg" data-pricing="monthly">$149</span>
+                    <span class="text-rose-200 line-through text-lg hidden" data-pricing="yearly">$1,490</span>
+                    <span class="text-5xl font-bold text-white" data-pricing="monthly">$99</span>
+                    <span class="text-5xl font-bold text-white hidden" data-pricing="yearly">$950</span>
+                    <span class="text-rose-100">/<span data-pricing="period">mo</span></span>
+                  </div>
+                </div>
+                <a href="#" data-motion="button" class="inline-flex items-center justify-center px-6 py-3 bg-white text-rose-700 font-semibold rounded-full hover:bg-rose-50 transition-colors w-fit">
+                  Go Professional
+                </a>
+              </div>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xs rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">200+ Video Courses</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xs rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">1-on-1 Mentorship</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xs rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">Live Workshops</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xs rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">Career Guidance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 3 - Enterprise -->
+          <div data-carousel="slide" class="w-full shrink-0">
+            <div data-motion="card" class="grid lg:grid-cols-2 gap-8 bg-neutral-900 dark:bg-neutral-800 rounded-3xl p-8 lg:p-12">
+              <div class="flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                  <p class="text-neutral-400 mb-6">Complete solution for teams and organizations</p>
+                  <div class="flex items-baseline gap-2 mb-8">
+                    <span class="text-neutral-500 line-through text-lg" data-pricing="monthly">$299</span>
+                    <span class="text-neutral-500 line-through text-lg hidden" data-pricing="yearly">$2,990</span>
+                    <span class="text-5xl font-bold text-white" data-pricing="monthly">$199</span>
+                    <span class="text-5xl font-bold text-white hidden" data-pricing="yearly">$1,910</span>
+                    <span class="text-neutral-400">/<span data-pricing="period">mo</span></span>
+                  </div>
+                </div>
+                <a href="#" data-motion="button" class="inline-flex items-center justify-center px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full transition-colors w-fit">
+                  Contact Sales
+                </a>
+              </div>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3 p-4 bg-neutral-800 dark:bg-neutral-700 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-500/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">Unlimited Access</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-neutral-800 dark:bg-neutral-700 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-500/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">Team Analytics</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-neutral-800 dark:bg-neutral-700 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-500/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">Dedicated Manager</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-neutral-800 dark:bg-neutral-700 rounded-xl">
+                  <div data-motion="icon" class="w-8 h-8 rounded-lg bg-rose-500/20 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">SSO & API</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <button data-motion="button" type="button" data-carousel="prev" aria-label="Previous slide" class="w-12 h-12 flex items-center justify-center border border-neutral-300 dark:border-neutral-700 hover:bg-rose-500 hover:border-rose-500 rounded-full transition-all group">
+          <svg class="w-5 h-5 text-neutral-700 dark:text-neutral-300 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <div class="flex gap-2">
+          <button data-motion="button" type="button" data-carousel="dot" data-index="0" aria-label="Go to slide 1" class="w-2.5 h-2.5 rounded-full bg-rose-500 transition-all"></button>
+          <button data-motion="button" type="button" data-carousel="dot" data-index="1" aria-label="Go to slide 2" class="w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600 hover:bg-rose-400 transition-all"></button>
+          <button data-motion="button" type="button" data-carousel="dot" data-index="2" aria-label="Go to slide 3" class="w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600 hover:bg-rose-400 transition-all"></button>
+        </div>
+        <button data-motion="button" type="button" data-carousel="next" aria-label="Next slide" class="w-12 h-12 flex items-center justify-center border border-neutral-300 dark:border-neutral-700 hover:bg-rose-500 hover:border-rose-500 rounded-full transition-all group">
+          <svg class="w-5 h-5 text-neutral-700 dark:text-neutral-300 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Interactive Scripts -->
+  <script>
+  (function() {
+    const sectionId = '#_pricing_carousel_split_cards_v6_021';
+    
+    // Pricing Toggle
+    const btnMonthly = document.querySelector(sectionId + ' [data-pricing="btn-monthly"]');
+    const btnYearly = document.querySelector(sectionId + ' [data-pricing="btn-yearly"]');
+    const monthlyPrices = document.querySelectorAll(sectionId + ' [data-pricing="monthly"]');
+    const yearlyPrices = document.querySelectorAll(sectionId + ' [data-pricing="yearly"]');
+    const periodLabels = document.querySelectorAll(sectionId + ' [data-pricing="period"]');
+    
+    function setMonthly() {
+      btnMonthly.classList.add('bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-white');
+      btnMonthly.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+      btnYearly.classList.remove('bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-white');
+      btnYearly.classList.add('text-neutral-600', 'dark:text-neutral-400');
+      monthlyPrices.forEach(el => el.classList.remove('hidden'));
+      yearlyPrices.forEach(el => el.classList.add('hidden'));
+      periodLabels.forEach(el => el.textContent = 'mo');
+    }
+    
+    function setYearly() {
+      btnYearly.classList.add('bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-white');
+      btnYearly.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+      btnMonthly.classList.remove('bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-white');
+      btnMonthly.classList.add('text-neutral-600', 'dark:text-neutral-400');
+      monthlyPrices.forEach(el => el.classList.add('hidden'));
+      yearlyPrices.forEach(el => el.classList.remove('hidden'));
+      periodLabels.forEach(el => el.textContent = 'yr');
+    }
+    
+    if (btnMonthly && btnYearly) {
+      btnMonthly.addEventListener('click', setMonthly);
+      btnYearly.addEventListener('click', setYearly);
+    }
+    
+    // Carousel
+    const track = document.querySelector(sectionId + ' [data-carousel="track"]');
+    const slides = document.querySelectorAll(sectionId + ' [data-carousel="slide"]');
+    const prevBtn = document.querySelector(sectionId + ' [data-carousel="prev"]');
+    const nextBtn = document.querySelector(sectionId + ' [data-carousel="next"]');
+    const dots = document.querySelectorAll(sectionId + ' [data-carousel="dot"]');
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    function updateCarousel() {
+      track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-rose-500', i === currentIndex);
+        dot.classList.toggle('bg-neutral-300', i !== currentIndex);
+        dot.classList.toggle('dark:bg-neutral-600', i !== currentIndex);
+      });
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+    }
+    
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+    });
+  })();
+  </script>
+</section>
+  </main>
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

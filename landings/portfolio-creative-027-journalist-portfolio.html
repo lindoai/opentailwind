@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>027 Journalist Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<header id="_header_scroll_progress_h15_001" class="relative bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-900">
+ <!-- Progress Bar -->
+ <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-neutral-100 dark:bg-neutral-800">
+ <div id="progressBar" class="h-full bg-linear-to-r from-fuchsia-500 to-fuchsia-500 transition-all duration-150" style="width: 0%"></div>
+ </div>
+ 
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <!-- Logo -->
+ <a data-motion="logo" href="#" class="flex items-center gap-2.5">
+ <div data-motion="icon" class="w-10 h-10 bg-linear-to-br from-fuchsia-500 to-fuchsia-600 rounded-xl flex items-center justify-center">
+ <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+ </svg>
+ </div>
+ <span class="text-xl font-bold text-neutral-900 dark:text-white">Reader</span>
+ </a>
+
+ <!-- Article Info -->
+ <div data-motion="info" class="hidden lg:flex items-center gap-4">
+ <div class="text-center">
+ <span class="block text-sm font-medium text-neutral-900 dark:text-white">The Future of Web Development</span>
+ <span class="block text-xs text-neutral-500">8 min read • Jan 9, 2026</span>
+ </div>
+ </div>
+
+ <!-- Right Actions -->
+ <div data-motion="actions" class="flex items-center gap-2">
+ <!-- Reading Progress -->
+ <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+ <span id="progressText" class="text-xs font-medium text-neutral-600 dark:text-neutral-400">0%</span>
+ <span class="text-xs text-neutral-400">read</span>
+ </div>
+ 
+ <!-- Bookmark -->
+ <button data-motion="button" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+ </svg>
+ </button>
+ 
+ <!-- Share -->
+ <button data-motion="button" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+ </svg>
+ </button>
+ 
+ <!-- Theme Toggle -->
+ <button data-motion="button" 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+</header>
+<section id="_hero_digital_wallet_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Asymmetric 8/4 Split -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+      <!-- Left - Large Content Area - 8 columns -->
+      <div class="lg:col-span-8">
+        <div class="bg-fuchsia-50 dark:bg-fuchsia-950/20 rounded-3xl p-8 lg:p-12 h-full" data-motion="hero">
+          <span data-motion="badge" class="text-fuchsia-600 dark:text-fuchsia-400 text-sm font-semibold tracking-wide uppercase mb-6 block">Digital Wallet</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight mb-6">
+            <span data-animate="heading">Money Without</span><br>
+            <span data-animate="heading" class="text-fuchsia-600 dark:text-fuchsia-400">Boundaries</span>
+          </h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-xl" data-animate="text">
+            Send, receive, and manage your finances with military-grade security. Instant transfers to anyone, anywhere in the world.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="#" data-motion="button" class="px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 transition-colors rounded-full text-white font-semibold">
+              Download App
+            </a>
+            <a href="#" data-motion="button" class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-neutral-900 rounded-full text-neutral-900 dark:text-white font-semibold border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Watch Demo
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="grid grid-cols-3 gap-6" data-motion="stats">
+            <div>
+              <span class="text-3xl font-bold text-fuchsia-600 dark:text-fuchsia-400 block">2M+</span>
+              <span class="text-neutral-500 dark:text-neutral-400 text-sm">Active Users</span>
+            </div>
+            <div>
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white block">$5B+</span>
+              <span class="text-neutral-500 dark:text-neutral-400 text-sm">Transferred</span>
+            </div>
+            <div>
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white block">180+</span>
+              <span class="text-neutral-500 dark:text-neutral-400 text-sm">Countries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right - Image + Cards - 4 columns -->
+      <div class="lg:col-span-4 flex flex-col gap-5">
+        <!-- App Preview Image -->
+        <div class="rounded-3xl overflow-hidden flex-1" data-motion="image">
+          <img data-motion="image" 
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&auto=format&fit=crop&q=80" 
+            alt="Mobile payment app" 
+            class="w-full h-full min-h-[250px] object-cover"
+          >
+        </div>
+
+        <!-- Transaction Card -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-5" data-motion="card">
+          <div class="flex items-center gap-3">
+            <div data-motion="icon" class="w-10 h-10 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-neutral-900 dark:text-white font-semibold text-sm">Payment Sent</p>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs">Just now</p>
+            </div>
+            <span class="text-fuchsia-600 dark:text-fuchsia-400 font-semibold">+$2,450</span>
+          </div>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-5" data-motion="card">
+          <div class="flex items-center gap-3">
+            <div data-motion="icon" class="w-10 h-10 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-neutral-900 dark:text-white font-semibold text-sm">Bank-Level Security</p>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs">256-bit encryption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_gallery_masonry_columns_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+      <div data-motion="header">
+        <span data-motion="badge" class="text-fuchsia-600 dark:text-fuchsia-400 text-sm font-semibold tracking-wide uppercase">Photography</span>
+        <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white mt-3">
+          <span data-animate="heading">Nature's Wonders</span>
+        </h2>
+        <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 mt-4 max-w-xl">Capturing the raw beauty and majesty of wildlife in their natural habitats.</p>
+      </div>
+      
+      <!-- Filter Tabs -->
+      <div data-motion="tabs" class="flex flex-wrap gap-2">
+        <button data-motion="button" type="button" class="px-5 py-2 bg-fuchsia-500 text-white rounded-full text-sm font-medium">All</button>
+        <button data-motion="button" type="button" class="px-5 py-2 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-fuchsia-500 hover:text-white rounded-full text-sm font-medium transition-colors">Wildlife</button>
+        <button data-motion="button" type="button" class="px-5 py-2 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-fuchsia-500 hover:text-white rounded-full text-sm font-medium transition-colors">Landscape</button>
+        <button data-motion="button" type="button" class="px-5 py-2 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-fuchsia-500 hover:text-white rounded-full text-sm font-medium transition-colors">Macro</button>
+      </div>
+    </div>
+    
+    <!-- Masonry Grid -->
+    <div class="grid lg:grid-cols-3 gap-5">
+      <!-- Column 1 -->
+      <div class="flex flex-col gap-5">
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=600&auto=format&fit=crop&q=80" alt="Lion" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">King of the Savanna</h3>
+              <p class="text-neutral-300 text-sm">Serengeti, Tanzania</p>
+            </div>
+          </div>
+        </div>
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=600&auto=format&fit=crop&q=80" alt="Elephant" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Gentle Giant</h3>
+              <p class="text-neutral-300 text-sm">Amboseli, Kenya</p>
+            </div>
+          </div>
+        </div>
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=600&auto=format&fit=crop&q=80" alt="Hummingbird" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Jewel in Flight</h3>
+              <p class="text-neutral-300 text-sm">Costa Rica</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Column 2 -->
+      <div class="flex flex-col gap-5">
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=600&auto=format&fit=crop&q=80" alt="Tiger" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Striped Majesty</h3>
+              <p class="text-neutral-300 text-sm">Ranthambore, India</p>
+            </div>
+          </div>
+        </div>
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=600&auto=format&fit=crop&q=80" alt="Parrot" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Tropical Colors</h3>
+              <p class="text-neutral-300 text-sm">Amazon Rainforest</p>
+            </div>
+          </div>
+        </div>
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=600&auto=format&fit=crop&q=80" alt="Sea turtle" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Ocean Voyager</h3>
+              <p class="text-neutral-300 text-sm">Great Barrier Reef</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Column 3 -->
+      <div class="flex flex-col gap-5">
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1474314170901-f351b68f544f?w=600&auto=format&fit=crop&q=80" alt="Giraffe" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Tall Tales</h3>
+              <p class="text-neutral-300 text-sm">Masai Mara, Kenya</p>
+            </div>
+          </div>
+        </div>
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=600&auto=format&fit=crop&q=80" alt="Polar bear" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Arctic Guardian</h3>
+              <p class="text-neutral-300 text-sm">Svalbard, Norway</p>
+            </div>
+          </div>
+        </div>
+        <div data-motion="image" class="group relative rounded-2xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80" alt="Owl" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-semibold">Night Watcher</h3>
+              <p class="text-neutral-300 text-sm">Canadian Rockies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Load More -->
+    <div data-motion="button" class="flex justify-center mt-12">
+      <button data-motion="button" type="button" class="inline-flex items-center gap-2 px-8 py-4 bg-fuchsia-50 dark:bg-fuchsia-900/20 hover:bg-fuchsia-500 text-fuchsia-600 dark:text-fuchsia-400 hover:text-white font-semibold rounded-full transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+        </svg>
+        Load More Photos
+      </button>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const section = document.getElementById('_gallery_masonry_columns_v6_001');
+    if (!section) return;
+    
+    const filterBtns = section.querySelectorAll('[data-motion="tabs"] button');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update button styles
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-fuchsia-500', 'text-white');
+          b.classList.add('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+        });
+        
+        btn.classList.add('bg-fuchsia-500', 'text-white');
+        btn.classList.remove('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+      });
+    });
+  })();
+  </script>
+</section>
+<section id="_about_image_stats_bar_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Full-width Image -->
+    <div data-motion="image" class="relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden mb-12">
+      <img data-motion="image" 
+        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80" 
+        alt="Team strategy session"
+        class="w-full h-full object-cover"
+      >
+      <div class="absolute inset-0 bg-linear-to-r from-fuchsia-900/40 to-transparent"></div>
+    </div>
+    
+    <!-- Content Grid -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      
+      <!-- Left: Title + Description -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        <span data-motion="badge" class="text-fuchsia-600 dark:text-fuchsia-400 text-sm font-semibold tracking-wide uppercase">About Us</span>
+        <h2 class="text-neutral-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+          <span data-animate="heading">Forward-thinking design for the digital age</span>
+        </h2>
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed" data-animate="text">
+          We blend creativity with cutting-edge technology to deliver distinctive digital experiences. Our team crafts solutions that resonate with audiences and drive meaningful results.
+        </p>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-fuchsia-600 dark:text-fuchsia-400 font-semibold hover:gap-3 transition-all duration-300 w-fit">
+          Discover More
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Right: Stats -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        <div data-motion="card" class="p-6 border-fuchsia-500">
+          <span class="text-fuchsia-600 dark:text-fuchsia-400 text-4xl font-bold block">4.8k+</span>
+          <span class="text-neutral-600 dark:text-neutral-400 text-base">Projects Completed</span>
+        </div>
+        <div data-motion="card" class="p-6 border-fuchsia-500">
+          <span class="text-fuchsia-600 dark:text-fuchsia-400 text-4xl font-bold block">280+</span>
+          <span class="text-neutral-600 dark:text-neutral-400 text-base">Happy Clients</span>
+        </div>
+        <div data-motion="card" class="p-6 border-fuchsia-500">
+          <span class="text-fuchsia-600 dark:text-fuchsia-400 text-4xl font-bold block">45</span>
+          <span class="text-neutral-600 dark:text-neutral-400 text-base">Team Members</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Divider -->
+    <div class="w-full h-px bg-neutral-200 dark:bg-neutral-800 mt-16"></div>
+  </div>
+</section>
+<section id="_features_compact_grid_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Magazine Header -->
+    <div class="grid lg:grid-cols-2 gap-8 items-end mb-16">
+      <div data-motion="header">
+        <span data-motion="badge" class="text-fuchsia-600 dark:text-fuchsia-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Platform Features</span>
+        <h2 class="text-neutral-900 dark:text-white text-4xl sm:text-5xl font-bold">
+          <span data-animate="heading">Deploy Code in Seconds, Not Hours</span>
+        </h2>
+      </div>
+      <div>
+        <p data-animate="text" class="text-neutral-600 dark:text-neutral-400 text-lg mb-6">
+          Start building today with our free tier. No credit card required.
+        </p>
+        <a data-motion="button" href="#" class="px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 transition-colors rounded-full text-white font-semibold inline-block">
+          Get Started Free
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Large Feature Card -->
+      <div data-motion="card" class="sm:col-span-2 p-8 bg-fuchsia-50 dark:bg-fuchsia-900/20 rounded-3xl">
+        <div class="grid sm:grid-cols-2 gap-6 items-center">
+          <div>
+            <div data-motion="icon" class="w-14 h-14 bg-fuchsia-100 dark:bg-fuchsia-800/40 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-neutral-900 dark:text-white text-xl font-semibold mb-3">One-Click Deploy</h3>
+            <p class="text-neutral-600 dark:text-neutral-400 text-base">
+              Push to production with a single click and automatic rollbacks for peace of mind.
+            </p>
+          </div>
+          <div class="rounded-2xl overflow-hidden">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&auto=format&fit=crop&q=80" alt="Server infrastructure" class="w-full h-48 object-cover">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Feature Cards -->
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Auto Scaling</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Handle traffic spikes automatically without manual intervention.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">99.99% Uptime</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Enterprise-grade reliability with SLA-backed guarantees.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Edge Network</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Global CDN with 300+ points of presence for low latency.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Pay As You Go</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Only pay for what you use with transparent pricing.
+        </p>
+      </div>
+      
+      <!-- CTA Card -->
+      <div data-motion="card" class="p-6 bg-fuchsia-600 rounded-3xl flex flex-col justify-center">
+        <h3 class="text-white text-lg font-semibold mb-2">Multi-Region Deploy</h3>
+        <p class="text-fuchsia-100 text-sm mb-4">Deploy across multiple regions for redundancy and compliance.</p>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all duration-300 w-fit">
+          Learn More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+    .carousel-container { overflow: hidden; }
+  .carousel-track { display: flex; transition: transform 0.5s ease-out; }
+  </style>
+<section id="_testimonial_pill_cards_logo_carousel_t23_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <style>
+    .carousel-container { overflow: hidden; }
+  .carousel-track { display: flex; transition: transform 0.5s ease-out; }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div data-motion="header" class="text-center mb-14">
+      <span data-motion="badge" class="text-fuchsia-600 dark:text-fuchsia-400 text-sm font-semibold tracking-wide uppercase mb-3 block">Customer Stories</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">
+        <span data-animate="heading">Why Teams Choose Us</span>
+      </h2>
+    </div>
+
+    <!-- Carousel -->
+    <div class="relative">
+      <div class="carousel-container">
+        <div data-carousel="track" class="carousel-track">
+          <!-- Card 1 -->
+          <div data-motion="card" class="shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3">
+            <div class="rounded-3xl py-10 px-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-center">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80" alt="Alex Turner" class="w-16 h-16 mx-auto rounded-full object-cover mb-4">
+              <h5 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Alex Turner</h5>
+              <p class="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400 mb-5">Engineering Lead</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                The platform has transformed how our engineering team collaborates. Documentation is now centralized and everyone stays aligned.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div data-motion="card" class="shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3">
+            <div class="rounded-3xl py-10 px-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-center">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Sarah Chen" class="w-16 h-16 mx-auto rounded-full object-cover mb-4">
+              <h5 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Sarah Chen</h5>
+              <p class="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400 mb-5">Product Manager</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Our team scaled from 20 to 200 people and this tool kept us organized throughout. The intuitive interface made onboarding effortless.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div data-motion="card" class="shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3">
+            <div class="rounded-3xl py-10 px-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-center">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Marcus Williams" class="w-16 h-16 mx-auto rounded-full object-cover mb-4">
+              <h5 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Marcus Williams</h5>
+              <p class="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400 mb-5">CTO</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                As we expanded across multiple offices, this became our single source of truth. The structured approach is exactly what we needed.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div data-motion="card" class="shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3">
+            <div class="rounded-3xl py-10 px-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-center">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80" alt="Emily Rodriguez" class="w-16 h-16 mx-auto rounded-full object-cover mb-4">
+              <h5 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Emily Rodriguez</h5>
+              <p class="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400 mb-5">Design Director</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                The ease of adoption was remarkable. Within a week, our entire design team was using it daily. It's become essential to our workflow.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div data-motion="card" class="shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3">
+            <div class="rounded-3xl py-10 px-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-center">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="David Park" class="w-16 h-16 mx-auto rounded-full object-cover mb-4">
+              <h5 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">David Park</h5>
+              <p class="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400 mb-5">Operations Lead</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Finally, a tool that our entire organization actually uses. The search functionality alone has saved us countless hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex justify-center gap-3 mt-10">
+        <button data-carousel="prev" type="button" aria-label="Previous testimonial" class="w-11 h-11 rounded-full border border-neutral-300 dark:border-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:border-fuchsia-500 hover:text-fuchsia-600 dark:hover:border-fuchsia-400 dark:hover:text-fuchsia-400 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button data-carousel="next" type="button" aria-label="Next testimonial" class="w-11 h-11 rounded-full border border-neutral-300 dark:border-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:border-fuchsia-500 hover:text-fuchsia-600 dark:hover:border-fuchsia-400 dark:hover:text-fuchsia-400 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Script -->
+  <script>
+  (function() {
+    const section = document.getElementById('_testimonial_pill_cards_logo_carousel_t23_001');
+    if (!section) return;
+    
+    const track = section.querySelector('[data-carousel="track"]');
+    const prevBtn = section.querySelector('[data-carousel="prev"]');
+    const nextBtn = section.querySelector('[data-carousel="next"]');
+    const cards = track.children;
+    
+    let currentIndex = 0;
+    let cardsPerView = 3;
+    
+    function updateCardsPerView() {
+      if (window.innerWidth < 640) cardsPerView = 1;
+      else if (window.innerWidth < 1024) cardsPerView = 2;
+      else cardsPerView = 3;
+    }
+    
+    function updateCarousel() {
+      const cardWidth = cards[0].offsetWidth;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+    
+    function goToSlide(index) {
+      const maxIndex = Math.max(0, cards.length - cardsPerView);
+      currentIndex = Math.max(0, Math.min(index, maxIndex));
+      updateCarousel();
+    }
+    
+    prevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
+    
+    window.addEventListener('resize', () => {
+      updateCardsPerView();
+      goToSlide(currentIndex);
+    });
+    
+    updateCardsPerView();
+    updateCarousel();
+  })();
+  </script>
+</section>
+<section id="_cta_newsletter_card_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Centered Card -->
+    <div data-motion="container" class="max-w-2xl mx-auto text-center">
+      
+      <!-- Icon -->
+      <div data-motion="icon" class="w-16 h-16 bg-fuchsia-100 dark:bg-fuchsia-900/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-fuchsia-600 dark:text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      
+      <!-- Heading -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white" data-motion="hero">
+        <span data-animate="heading">Stay inspired</span>
+      </h2>
+      
+      <!-- Description -->
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-md mx-auto">
+        <span data-animate="text">Join our community and receive weekly wellness tips and exclusive content.</span>
+      </p>
+      
+      <!-- Form -->
+      <div class="mt-10 p-8 bg-fuchsia-50 dark:bg-fuchsia-900/20 rounded-3xl">
+        <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input data-motion="input" type="email" placeholder="Your email address" class="flex-1 px-5 py-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent">
+          <button data-motion="button" type="button" class="px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold rounded-xl transition-colors whitespace-nowrap">
+            Subscribe
+          </button>
+        </div>
+        
+        <!-- Features -->
+        <div class="mt-6 flex flex-wrap justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-fuchsia-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Weekly tips
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-fuchsia-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Exclusive content
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-fuchsia-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            No spam
+          </span>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_logo_members_v6_001" class="bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="py-16 grid lg:grid-cols-12 gap-12 border-b border-neutral-200 dark:border-neutral-800">
+      
+      <!-- Brand + Social Proof -->
+      <div data-motion="brand" class="lg:col-span-4">
+        <a href="#" class="flex items-center gap-3 mb-6">
+          <div class="w-11 h-11 bg-fuchsia-500 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-neutral-900 dark:text-white">ShopFlow</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-8">Trusted by over 50,000 sellers worldwide. Join our growing community of successful entrepreneurs.</p>
+        
+        <!-- Social Proof -->
+        <div data-motion="avatars" class="flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <div class="w-10 h-10 rounded-full bg-fuchsia-100 dark:bg-fuchsia-900/30 border-2 border-white dark:border-neutral-900 flex items-center justify-center">
+              <span data-motion="badge" class="text-xs font-semibold text-fuchsia-600 dark:text-fuchsia-400">+5K</span>
+            </div>
+          </div>
+          <div>
+            <span class="text-neutral-900 dark:text-white font-semibold">50K+</span>
+            <span class="text-neutral-500 dark:text-neutral-400 text-sm ml-1">Active Sellers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Columns -->
+      <div class="lg:col-span-8 grid sm:grid-cols-3 gap-8">
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Marketplace</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Browse Products</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Categories</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Deals & Offers</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Sellers</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Start Selling</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Dashboard</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Analytics</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Academy</a></li>
+          </ul>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Help Center</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Returns</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-fuchsia-500 transition-colors">Shipping</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div data-motion="bottom" class="py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-500 text-sm">© 2026 ShopFlow. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-neutral-500 hover:text-fuchsia-500 text-sm transition-colors">Terms</a>
+        <a href="#" class="text-neutral-500 hover:text-fuchsia-500 text-sm transition-colors">Privacy</a>
+        <a href="#" class="text-neutral-500 hover:text-fuchsia-500 text-sm transition-colors">Cookies</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-fuchsia-500 hover:border-fuchsia-500 hover:text-white text-neutral-500 transition-all" aria-label="Twitter">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-fuchsia-500 hover:border-fuchsia-500 hover:text-white text-neutral-500 transition-all" aria-label="Instagram">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-fuchsia-500 hover:border-fuchsia-500 hover:text-white text-neutral-500 transition-all" aria-label="Facebook">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

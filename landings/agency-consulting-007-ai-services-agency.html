@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>007 Ai Services Agency</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<header id="_header_split_nav_h3_001" class="relative">
+ <!-- Glassmorphism Background -->
+ <div class="absolute inset-0 bg-white/70 dark:bg-neutral-950/70 backdrop-blur-2xl border-b border-neutral-200/50 dark:border-neutral-800/50"></div>
+ 
+ <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <!-- Logo -->
+ <a data-motion="logo" href="#" class="flex items-center gap-2.5 group">
+ <div data-motion="icon" class="w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+ <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+ </svg>
+ </div>
+ <span class="text-lg font-bold text-neutral-900 dark:text-white">Vertex</span>
+ </a>
+
+ <!-- Center Navigation -->
+ <nav data-motion="nav" class="hidden lg:flex items-center">
+ <div class="flex items-center bg-neutral-100/80 dark:bg-neutral-800/80 rounded-full p-1">
+ <a data-motion="button" href="#" class="px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-full">Home</a>
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Features</a>
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</a>
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">About</a>
+ <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Contact</a>
+ </div>
+ </nav>
+
+ <!-- Right Actions -->
+ <div data-motion="actions" class="flex items-center gap-2">
+ <button data-motion="button" 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="w-9 h-9 flex items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+ >
+ <svg class="w-4 h-4 text-neutral-600 dark:text-neutral-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-4 h-4 text-neutral-600 dark:text-neutral-400 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ 
+ <a href="#" class="h-9 px-4 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors hidden sm:flex items-center">
+ Sign In
+ </a>
+ 
+ <a data-motion="button" href="#" class="h-9 px-5 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold rounded-full transition-colors flex items-center">
+ Start Free
+ </a>
+ </div>
+ </div>
+ </div>
+</header>
+<section id="_hero_design_studio_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Asymmetric 7/5 Split -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left Content - 7 columns -->
+      <div class="lg:col-span-7" data-motion="hero">
+        <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-100 dark:bg-sky-900/40 rounded-full text-sky-600 dark:text-sky-400 text-sm font-medium mb-6">
+          <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+          Design Studio
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight mb-6">
+          <span data-animate="heading">Where Ideas</span><br>
+          <span data-animate="heading" class="text-sky-600 dark:text-sky-400">Become Reality</span>
+        </h1>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-xl" data-animate="text">
+          We transform bold visions into stunning digital experiences. Our studio combines creative excellence with strategic thinking to deliver work that captivates and converts.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#" data-motion="button" class="px-6 py-3 bg-sky-600 hover:bg-sky-700 transition-colors rounded-full text-white font-semibold">
+            Start a Project
+          </a>
+          <a href="#" data-motion="button" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-semibold hover:gap-3 transition-all duration-300">
+            View Portfolio
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Services -->
+        <div class="grid grid-cols-2 gap-4">
+          <div data-motion="card" class="flex items-center gap-3 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <div data-motion="icon" class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center">
+              <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+              </svg>
+            </div>
+            <span class="text-neutral-900 dark:text-white font-medium text-sm">Brand Design</span>
+          </div>
+          <div data-motion="card" class="flex items-center gap-3 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <div data-motion="icon" class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center">
+              <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-neutral-900 dark:text-white font-medium text-sm">Web Design</span>
+          </div>
+          <div data-motion="card" class="flex items-center gap-3 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <div data-motion="icon" class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center">
+              <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-neutral-900 dark:text-white font-medium text-sm">Mobile Apps</span>
+          </div>
+          <div data-motion="card" class="flex items-center gap-3 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <div data-motion="icon" class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center">
+              <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-neutral-900 dark:text-white font-medium text-sm">Motion Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right - Image with Floating Card - 5 columns -->
+      <div class="lg:col-span-5" data-motion="image">
+        <div class="relative">
+          <div class="rounded-3xl overflow-hidden">
+            <img data-motion="image" 
+              src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&auto=format&fit=crop&q=80" 
+              alt="Creative design workspace" 
+              class="w-full h-[450px] lg:h-[550px] object-cover"
+            >
+          </div>
+          <!-- Floating Stats Card -->
+          <div data-motion="card" class="absolute -bottom-6 -left-6 p-5 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800">
+            <div class="flex items-center gap-4">
+              <div class="text-center">
+                <span class="text-2xl font-bold text-sky-600 dark:text-sky-400 block">200+</span>
+                <span class="text-neutral-500 dark:text-neutral-400 text-xs">Projects</span>
+              </div>
+              
+              <div class="text-center">
+                <span class="text-2xl font-bold text-neutral-900 dark:text-white block">15</span>
+                <span class="text-neutral-500 dark:text-neutral-400 text-xs">Awards</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_clients_column_grid_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Centered Header -->
+    <div class="text-center mb-16">
+      <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-100 dark:bg-sky-900/40 rounded-full text-sky-600 dark:text-sky-400 text-sm font-medium">
+        <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+        Trusted Partners
+      </span>
+      <h2 class="mt-6 text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
+        <span data-animate="heading">Powering teams at leading companies</span>
+      </h2>
+    </div>
+    
+    <!-- Horizontal Logo Strip with Dividers -->
+    <div class="flex flex-wrap justify-center items-center gap-y-8">
+      <a data-motion="logo" href="#" aria-label="TechFlow" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/twitch.svg" alt="Twitch" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="CloudSync" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/discord-icon.svg" alt="Discord" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="DataPulse" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/figma.svg" alt="Figma" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="SecureNet" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/notion-icon.svg" alt="Notion" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="Nexus" class="px-8 py-4 group flex items-center justify-center">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/dropbox.svg" alt="Dropbox" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+    </div>
+    
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200 dark:bg-neutral-800 my-10"></div>
+    
+    <!-- Second Row -->
+    <div class="flex flex-wrap justify-center items-center gap-y-8">
+      <a data-motion="logo" href="#" aria-label="Quantum" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/adobe.svg" alt="Adobe" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="Vertex" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/salesforce.svg" alt="Salesforce" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="Orbit" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/oracle.svg" alt="Oracle" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="Spark" class="px-8 py-4 group flex items-center justify-center border-neutral-200 dark:border-neutral-800 last:">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/sap.svg" alt="SAP" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+      <a data-motion="logo" href="#" aria-label="Wave" class="px-8 py-4 group flex items-center justify-center">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/ibm.svg" alt="IBM" class="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </a>
+    </div>
+    
+  </div>
+</section>
+<section id="_features_analytics_dashboard_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Asymmetric Magazine Layout -->
+    <div class="grid lg:grid-cols-12 gap-12 items-start mb-16">
+      <!-- Left: Large Image with Floating Card -->
+      <div data-motion="image" class="lg:col-span-7 relative">
+        <div class="rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Analytics dashboard on screen" class="w-full h-80 sm:h-96 object-cover">
+        </div>
+        <div data-motion="card" class="absolute -bottom-6 -right-4 sm:right-8 p-5 bg-white dark:bg-neutral-900 rounded-2xl shadow-lg max-w-xs">
+          <div class="flex items-center gap-3 mb-2">
+            <div data-motion="icon" class="w-10 h-10 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <span class="text-sky-600 dark:text-sky-400 text-2xl font-bold">+47%</span>
+          </div>
+          <span class="text-neutral-600 dark:text-neutral-400 text-sm">Growth this quarter</span>
+        </div>
+      </div>
+      
+      <!-- Right: Header Content -->
+      <div class="lg:col-span-5 flex flex-col justify-center" data-motion="header">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase mb-4">Analytics Platform</span>
+        <h2 class="text-neutral-900 dark:text-white text-4xl sm:text-5xl font-bold mb-6">
+          <span data-animate="heading">Data-Driven Insights for Modern Teams</span>
+        </h2>
+        <p data-animate="text" class="text-neutral-600 dark:text-neutral-400 text-lg mb-8">
+          Transform raw data into actionable intelligence with real-time dashboards and predictive analytics.
+        </p>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-semibold hover:gap-3 transition-all duration-300 w-fit">
+          Explore Features
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid Features -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Feature 1 - Large -->
+      <div data-motion="card" class="sm:col-span-2 p-8 bg-sky-50 dark:bg-sky-900/20 rounded-3xl">
+        <div data-motion="icon" class="w-14 h-14 bg-sky-100 dark:bg-sky-800/40 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-semibold mb-3">Real-Time Metrics</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-base">
+          Monitor key performance indicators with live updates and instant notifications. Track every metric that matters to your business.
+        </p>
+      </div>
+      
+      <!-- Feature 2 -->
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Global Coverage</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Track data across multiple regions with geo-distributed infrastructure.
+        </p>
+      </div>
+      
+      <!-- Feature 3 -->
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Trend Analysis</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Identify patterns and forecast outcomes with ML models.
+        </p>
+      </div>
+      
+      <!-- Feature 4 -->
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Team Workflows</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Automate reporting and share insights across your organization.
+        </p>
+      </div>
+      
+      <!-- CTA Card -->
+      <div data-motion="card" class="p-6 bg-sky-600 rounded-3xl flex flex-col justify-center">
+        <h3 class="text-white text-lg font-semibold mb-2">Ready to Start?</h3>
+        <p class="text-sky-100 text-sm mb-4">Get your free analytics dashboard today.</p>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all duration-300 w-fit">
+          Get Started
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_colorful_cards_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Magazine Layout -->
+    <div class="flex flex-col gap-16">
+      <!-- Header Row -->
+      <div class="grid lg:grid-cols-2 gap-12 items-end">
+        <div data-motion="hero">
+          <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Workspace Tools</span>
+          <h2>
+            <span data-animate="heading" class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight">Built for Modern Teams</span>
+          </h2>
+        </div>
+        <div data-motion="card" class="lg:text-right">
+          <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+            Streamline your daily workflow with intelligent tools designed to boost productivity and keep your team aligned.
+          </p>
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-full transition-colors">
+            Get Started Free
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature Cards - Asymmetric Grid -->
+      <div class="grid lg:grid-cols-12 gap-6">
+        <!-- Large Card -->
+        <div data-motion="card" class="lg:col-span-5 p-8 bg-sky-50 dark:bg-sky-900/20 rounded-3xl flex flex-col gap-6">
+          <div data-motion="icon" class="w-14 h-14 bg-white dark:bg-neutral-800 rounded-2xl flex items-center justify-center">
+            <svg class="w-7 h-7 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-3">Task Management</h3>
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Organize projects with intuitive boards, smart prioritization, and automated workflows that adapt to your team's needs.</p>
+          </div>
+          <div class="flex items-center gap-4 mt-auto pt-4">
+            <span class="text-3xl font-bold text-sky-600 dark:text-sky-400">2.5x</span>
+            <span class="text-sm text-neutral-600 dark:text-neutral-400">faster project delivery</span>
+          </div>
+        </div>
+
+        <!-- Right Column - Stacked Cards -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <!-- Top Row -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl flex flex-col gap-4">
+              <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Time Tracking</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Automatic time logs with detailed reports and insights.</p>
+            </div>
+
+            <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl flex flex-col gap-4">
+              <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Team Sync</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Real-time collaboration with instant updates.</p>
+            </div>
+          </div>
+
+          <!-- Bottom Wide Card -->
+          <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl flex flex-col sm:flex-row gap-6 items-start">
+            <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Analytics Dashboard</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Visual dashboards to track progress, measure outcomes, and make data-driven decisions for your team.</p>
+            </div>
+            <a href="#" class="text-sky-600 dark:text-sky-400 font-medium text-sm hover:underline whitespace-nowrap">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_colorful_list_cards_v6_001" class="py-20 sm:py-24 bg-neutral-50 dark:bg-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-100 dark:bg-sky-900/40 rounded-full text-sky-700 dark:text-sky-400 text-sm font-medium mb-6">
+        <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+        Complete Platform
+      </span>
+      <h2 data-motion="header" class="text-neutral-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+        <span data-animate="heading">Everything you need to scale your SaaS</span>
+      </h2>
+      <p data-motion="text" class="text-neutral-600 dark:text-neutral-400 text-lg">
+        <span data-animate="text">A complete toolkit to build, launch, and grow your software business with confidence.</span>
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
+      
+      <!-- Card 1 -->
+      <div data-motion="card" class="bg-white dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-bold mb-3">User Authentication</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">Secure login with SSO, OAuth, and multi-factor authentication built right in.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Social login providers
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Passwordless options
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Role-based access
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div data-motion="card" class="bg-white dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-bold mb-3">Billing & Subscriptions</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">Handle recurring payments, trials, and upgrades with Stripe integration.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Multiple pricing tiers
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Usage-based billing
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Invoice generation
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-motion="card" class="bg-white dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-bold mb-3">Team Management</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">Invite members, assign roles, and manage permissions across workspaces.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Unlimited team seats
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Custom permissions
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Activity audit logs
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div data-motion="card" class="bg-white dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-bold mb-3">API & Webhooks</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">RESTful APIs and real-time webhooks to integrate with any system.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Full API documentation
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Rate limiting controls
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            SDK libraries
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 5 -->
+      <div data-motion="card" class="bg-white dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-bold mb-3">Analytics Dashboard</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">Track MRR, churn, and user engagement with real-time metrics.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Revenue tracking
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Cohort analysis
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Custom reports
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 6 -->
+      <div data-motion="card" class="bg-white dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+        <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-xl font-bold mb-3">Email Notifications</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">Transactional emails and marketing campaigns with templates.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Email templates
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Delivery tracking
+          </li>
+          <li class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+            Bounce handling
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div data-motion="cta" class="mt-16 text-center">
+      <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-sky-600 hover:bg-sky-700 transition-colors rounded-full text-white font-semibold">
+        Start Building Today
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<section id="_stats_bordered_description_icon_cards_v6_s47" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Split Header -->
+    <div class="grid lg:grid-cols-2 gap-8 items-end mb-14">
+      <div data-motion="hero">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase">Growth Metrics</span>
+        <h2 class="mt-4 text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">
+          <span data-animate="heading">Driving Results That Matter</span>
+        </h2>
+      </div>
+      <div data-motion="hero">
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg lg:text-right">
+          <span data-animate="text">Our platform powers growth for thousands of businesses worldwide with enterprise-grade tools.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Asymmetric Grid -->
+    <div class="grid lg:grid-cols-12 gap-6">
+      <!-- Large Featured Stat -->
+      <div data-motion="card" class="lg:col-span-5 rounded-3xl bg-sky-600 dark:bg-sky-700 p-10 flex flex-col justify-between min-h-[320px]">
+        <span data-motion="badge" class="text-sky-200 text-sm font-medium uppercase tracking-wide">Year-over-Year</span>
+        <div>
+          <span class="text-7xl font-bold text-white">185%</span>
+          <h3 class="mt-4 text-2xl font-semibold text-white">Revenue Growth</h3>
+          <p class="mt-3 text-sky-100">Driven by platform adoption and enterprise expansion across global markets.</p>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="lg:col-span-7 grid gap-6">
+        <!-- Top Card -->
+        <div data-motion="card" class="rounded-3xl bg-neutral-50 dark:bg-neutral-900 p-8 flex flex-col sm:flex-row gap-6 items-start">
+          <div data-motion="icon" class="w-14 h-14 rounded-2xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center shrink-0">
+            <svg class="w-7 h-7 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-4xl font-bold text-neutral-900 dark:text-white">50K+</span>
+            <h3 class="mt-2 text-xl font-semibold text-neutral-800 dark:text-neutral-200">Active Developers</h3>
+            <p class="mt-2 text-neutral-600 dark:text-neutral-400">Building innovative applications and integrations on our platform every day.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div data-motion="stat" class="rounded-3xl bg-sky-50 dark:bg-sky-950/30 p-8">
+            <div data-motion="icon" class="w-12 h-12 rounded-2xl bg-sky-500 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Full API Access</h3>
+            <p class="mt-2 text-neutral-600 dark:text-neutral-400 text-sm">Complete REST and GraphQL APIs with comprehensive documentation.</p>
+          </div>
+
+          <div data-motion="stat" class="rounded-3xl bg-neutral-50 dark:bg-neutral-900 p-8">
+            <div data-motion="icon" class="w-12 h-12 rounded-2xl bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Enterprise Security</h3>
+            <p class="mt-2 text-neutral-600 dark:text-neutral-400 text-sm">SOC 2 compliant with advanced encryption and access controls.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_testimonial_chat_bubbles_v6_t37_001" class="py-20 sm:py-24 bg-sky-50 dark:bg-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div data-motion="header" class="text-center mb-16">
+      <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase mb-3 block">Community Voices</span>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white">
+        <span data-animate="heading">Real conversations, real results</span>
+      </h2>
+    </div>
+
+    <!-- Chat Bubbles -->
+    <div class="space-y-8 max-w-4xl mx-auto">
+      <!-- Message 1 - Left aligned -->
+      <div data-motion="card" class="xl:pr-48 lg:pr-32 sm:pr-16 pr-4">
+        <div class="relative">
+          <div class="p-6 rounded-3xl rounded-bl-none bg-white dark:bg-neutral-800">
+            <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">"The automation features have completely transformed how our team handles deployments. What used to take hours now happens in minutes. The real-time monitoring gives us confidence that everything is running smoothly."</p>
+          </div>
+          <div class="flex items-center gap-4 mt-4">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Rachel Kim" class="w-12 h-12 rounded-2xl object-cover">
+            <div>
+              <h6 class="text-neutral-900 dark:text-white font-semibold">Rachel Kim</h6>
+              <span class="text-sky-600 dark:text-sky-400 text-sm">DevOps Lead at Stripe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message 2 - Right aligned -->
+      <div data-motion="card" class="xl:pl-48 lg:pl-32 sm:pl-16 pl-4">
+        <div class="relative">
+          <div class="p-6 rounded-3xl rounded-br-none bg-sky-600 text-white">
+            <p class="leading-relaxed">"I was skeptical at first, but after the first week I was completely sold. The learning curve is minimal and the documentation is excellent. Our onboarding time for new developers dropped from two weeks to just three days."</p>
+          </div>
+          <div class="flex items-center justify-end gap-4 mt-4">
+            <div class="text-right">
+              <h6 class="text-neutral-900 dark:text-white font-semibold">David Park</h6>
+              <span class="text-sky-600 dark:text-sky-400 text-sm">Engineering Manager</span>
+            </div>
+            <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="David Park" class="w-12 h-12 rounded-2xl object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Message 3 - Left aligned -->
+      <div data-motion="card" class="xl:pr-48 lg:pr-32 sm:pr-16 pr-4">
+        <div class="relative">
+          <div class="p-6 rounded-3xl rounded-bl-none bg-white dark:bg-neutral-800">
+            <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">"The integration capabilities are outstanding. We connected our existing tools in under an hour and everything just worked. The API is well-designed and the webhooks are reliable."</p>
+          </div>
+          <div class="flex items-center gap-4 mt-4">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Sofia Martinez" class="w-12 h-12 rounded-2xl object-cover">
+            <div>
+              <h6 class="text-neutral-900 dark:text-white font-semibold">Sofia Martinez</h6>
+              <span class="text-sky-600 dark:text-sky-400 text-sm">Tech Lead at Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message 4 - Right aligned -->
+      <div data-motion="card" class="xl:pl-48 lg:pl-32 sm:pl-16 pl-4">
+        <div class="relative">
+          <div class="p-6 rounded-3xl rounded-br-none bg-neutral-900 dark:bg-neutral-950 text-white">
+            <p class="leading-relaxed">"Customer support is phenomenal. Had a complex migration question at 2 AM and got a detailed response within 30 minutes. The team clearly cares about their users' success."</p>
+          </div>
+          <div class="flex items-center justify-end gap-4 mt-4">
+            <div class="text-right">
+              <h6 class="text-neutral-900 dark:text-white font-semibold">Alex Thompson</h6>
+              <span class="text-sky-600 dark:text-sky-400 text-sm">CTO at Linear</span>
+            </div>
+            <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Alex Thompson" class="w-12 h-12 rounded-2xl object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_pricing_dark_gradient_hover_v6_025" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+      <div class="lg:max-w-xl">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase">Security Plans</span>
+        <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white mt-4 mb-4">
+          <span data-animate="heading">Secure your digital life today</span>
+        </h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400" data-animate="text">
+          Choose the protection level that fits your needs. All plans include 30-day money-back guarantee.
+        </p>
+      </div>
+      
+      <!-- Toggle -->
+      <div data-motion="toggle" class="flex items-center gap-3 p-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full">
+        <button data-motion="button" type="button" data-tab="yearly" class="px-5 py-2 rounded-full text-sm font-medium bg-sky-500 text-neutral-900 transition-all">Yearly <span class="text-sky-700 text-xs">-33%</span></button>
+        <button type="button" data-tab="monthly" class="px-5 py-2 rounded-full text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-all">Monthly</button>
+      </div>
+    </div>
+    
+    <!-- Pricing Cards -->
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Basic Plan -->
+      <div data-motion="card" class="group bg-neutral-50 dark:bg-neutral-900 rounded-3xl p-8 hover:bg-linear-to-br hover:from-sky-100 dark:hover:from-sky-500/10 hover:to-transparent transition-all duration-500">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-white">Basic</h3>
+            <p class="text-neutral-500 text-sm">Personal protection</p>
+          </div>
+          <div data-motion="icon" class="w-12 h-12 rounded-xl bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center group-hover:bg-sky-200 dark:group-hover:bg-sky-500/20 transition-colors">
+            <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="mb-8">
+          <div class="flex items-baseline gap-1">
+            <span data-pricing="yearly" class="text-4xl font-bold text-neutral-900 dark:text-white">$0</span>
+            <span data-pricing="monthly" class="text-4xl font-bold text-neutral-900 dark:text-white hidden">$0</span>
+            <span class="text-neutral-500">/mo</span>
+          </div>
+        </div>
+        
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm">1 Device Protection</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm">Basic Encryption</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-neutral-300 dark:bg-neutral-600 rounded-full"></div>
+            <span class="text-neutral-500 text-sm">Password Manager</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-neutral-300 dark:bg-neutral-600 rounded-full"></div>
+            <span class="text-neutral-500 text-sm">Priority Support</span>
+          </div>
+        </div>
+        
+        <a href="#" data-motion="button" class="block w-full py-3 px-6 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white font-semibold rounded-xl text-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+          Get Started Free
+        </a>
+      </div>
+      
+      <!-- Pro Plan - Featured -->
+      <div data-motion="card" class="group bg-sky-500 rounded-3xl p-8 relative">
+        <div data-motion="badge" class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-neutral-900 text-sky-400 text-xs font-semibold rounded-full">
+          Most Popular
+        </div>
+        
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900">Pro</h3>
+            <p class="text-sky-700 text-sm">Advanced security</p>
+          </div>
+          <div data-motion="icon" class="w-12 h-12 rounded-xl bg-sky-400 flex items-center justify-center">
+            <svg class="w-6 h-6 text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="mb-8">
+          <div class="flex items-baseline gap-1">
+            <span data-pricing="yearly" class="text-4xl font-bold text-neutral-900">$8</span>
+            <span data-pricing="monthly" class="text-4xl font-bold text-neutral-900 hidden">$12</span>
+            <span class="text-sky-700">/mo</span>
+          </div>
+        </div>
+        
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-neutral-900 rounded-full"></div>
+            <span class="text-neutral-900 text-sm">5 Devices Protection</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-neutral-900 rounded-full"></div>
+            <span class="text-neutral-900 text-sm">Military-grade Encryption</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-neutral-900 rounded-full"></div>
+            <span class="text-neutral-900 text-sm">Password Manager</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-700 rounded-full"></div>
+            <span class="text-sky-800 text-sm">Priority Support</span>
+          </div>
+        </div>
+        
+        <a href="#" data-motion="button" class="block w-full py-3 px-6 bg-neutral-900 text-white font-semibold rounded-xl text-center hover:bg-neutral-800 transition-colors">
+          Upgrade to Pro
+        </a>
+      </div>
+      
+      <!-- Enterprise Plan -->
+      <div data-motion="card" class="group bg-neutral-50 dark:bg-neutral-900 rounded-3xl p-8 hover:bg-linear-to-br hover:from-sky-100 dark:hover:from-sky-500/10 hover:to-transparent transition-all duration-500">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-white">Enterprise</h3>
+            <p class="text-neutral-500 text-sm">Team security</p>
+          </div>
+          <div data-motion="icon" class="w-12 h-12 rounded-xl bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center group-hover:bg-sky-200 dark:group-hover:bg-sky-500/20 transition-colors">
+            <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="mb-8">
+          <div class="flex items-baseline gap-1">
+            <span data-pricing="yearly" class="text-4xl font-bold text-neutral-900 dark:text-white">$15</span>
+            <span data-pricing="monthly" class="text-4xl font-bold text-neutral-900 dark:text-white hidden">$20</span>
+            <span class="text-neutral-500">/mo</span>
+          </div>
+        </div>
+        
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm">Unlimited Devices</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm">Military-grade Encryption</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm">Password Manager</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+            <span class="text-neutral-700 dark:text-neutral-300 text-sm">Dedicated Support</span>
+          </div>
+        </div>
+        
+        <a href="#" data-motion="button" class="block w-full py-3 px-6 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white font-semibold rounded-xl text-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+          Contact Sales
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Interactive Script -->
+  <script>
+  (function() {
+    const sectionId = '#_pricing_dark_gradient_hover_v6_025';
+    const tabYearly = document.querySelector(sectionId + ' [data-tab="yearly"]');
+    const tabMonthly = document.querySelector(sectionId + ' [data-tab="monthly"]');
+    const yearlyPrices = document.querySelectorAll(sectionId + ' [data-pricing="yearly"]');
+    const monthlyPrices = document.querySelectorAll(sectionId + ' [data-pricing="monthly"]');
+    
+    function setYearly() {
+      tabYearly.classList.add('bg-sky-500', 'text-neutral-900');
+      tabYearly.classList.remove('text-neutral-400');
+      tabMonthly.classList.remove('bg-sky-500', 'text-neutral-900');
+      tabMonthly.classList.add('text-neutral-400');
+      yearlyPrices.forEach(el => el.classList.remove('hidden'));
+      monthlyPrices.forEach(el => el.classList.add('hidden'));
+    }
+    
+    function setMonthly() {
+      tabMonthly.classList.add('bg-sky-500', 'text-neutral-900');
+      tabMonthly.classList.remove('text-neutral-400');
+      tabYearly.classList.remove('bg-sky-500', 'text-neutral-900');
+      tabYearly.classList.add('text-neutral-400');
+      yearlyPrices.forEach(el => el.classList.add('hidden'));
+      monthlyPrices.forEach(el => el.classList.remove('hidden'));
+    }
+    
+    if (tabYearly && tabMonthly) {
+      tabYearly.addEventListener('click', setYearly);
+      tabMonthly.addEventListener('click', setMonthly);
+    }
+  })();
+  </script>
+</section>
+<section id="_faq_categorized_sections_v6_020" class="py-20 sm:py-24 bg-neutral-50 dark:bg-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div data-motion="header" class="text-center mb-16">
+      <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-100 dark:bg-sky-900/40 rounded-full text-sky-600 dark:text-sky-400 text-sm font-medium mb-6">
+        <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+        Help Center
+      </span>
+      <h2>
+        <span data-animate="heading" class="block text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white mb-6">Frequently asked questions</span>
+      </h2>
+      <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">Browse by category to find the answers you need.</p>
+    </div>
+
+    <!-- Category Sections -->
+    <div class="space-y-8">
+      <!-- Category 1: Getting Started -->
+      <div data-motion="category" class="bg-white dark:bg-neutral-800 rounded-3xl overflow-hidden">
+        <div class="grid lg:grid-cols-12">
+          <!-- Category Header -->
+          <div class="lg:col-span-4 p-8 bg-sky-50 dark:bg-sky-900/20">
+            <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">Getting Started</h3>
+            <p class="text-neutral-600 dark:text-neutral-400 text-sm">Everything you need to begin using our platform.</p>
+          </div>
+          
+          <!-- FAQ Items -->
+          <div class="lg:col-span-8 p-8 space-y-4">
+            <div data-accordion-item class="bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-hidden">
+              <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left p-5 group" aria-expanded="false">
+                <span class="text-base font-semibold text-neutral-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors pr-4">How do I create an account?</span>
+                <svg class="w-5 h-5 text-sky-600 dark:text-sky-400 transform transition-transform duration-300 -rotate-90 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div data-accordion-content class="hidden px-5 pb-5">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">Click the sign-up button, enter your email and create a password. You'll receive a verification email to activate your account within minutes.</p>
+              </div>
+            </div>
+            
+            <div data-accordion-item class="bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-hidden">
+              <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left p-5 group" aria-expanded="false">
+                <span class="text-base font-semibold text-neutral-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors pr-4">What's included in the free plan?</span>
+                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500 group-hover:text-sky-600 dark:group-hover:text-sky-400 transform transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div data-accordion-content class="hidden px-5 pb-5">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">The free plan includes 3 projects, 1GB storage, basic analytics, and email support. Perfect for individuals getting started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Billing -->
+      <div data-motion="category" class="bg-white dark:bg-neutral-800 rounded-3xl overflow-hidden">
+        <div class="grid lg:grid-cols-12">
+          <!-- Category Header -->
+          <div class="lg:col-span-4 p-8 bg-sky-50 dark:bg-sky-900/20">
+            <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">Billing & Plans</h3>
+            <p class="text-neutral-600 dark:text-neutral-400 text-sm">Payment methods, subscriptions, and pricing.</p>
+          </div>
+          
+          <!-- FAQ Items -->
+          <div class="lg:col-span-8 p-8 space-y-4">
+            <div data-accordion-item class="bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-hidden">
+              <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left p-5 group" aria-expanded="false">
+                <span class="text-base font-semibold text-neutral-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors pr-4">What payment methods do you accept?</span>
+                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500 group-hover:text-sky-600 dark:group-hover:text-sky-400 transform transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div data-accordion-content class="hidden px-5 pb-5">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">We accept all major credit cards, PayPal, Apple Pay, and Google Pay. Enterprise customers can also pay via invoice.</p>
+              </div>
+            </div>
+            
+            <div data-accordion-item class="bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-hidden">
+              <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left p-5 group" aria-expanded="false">
+                <span class="text-base font-semibold text-neutral-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors pr-4">Can I cancel my subscription anytime?</span>
+                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500 group-hover:text-sky-600 dark:group-hover:text-sky-400 transform transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div data-accordion-content class="hidden px-5 pb-5">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">Yes, you can cancel anytime from your account settings. Your access continues until the end of your billing period.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Support -->
+      <div data-motion="category" class="bg-white dark:bg-neutral-800 rounded-3xl overflow-hidden">
+        <div class="grid lg:grid-cols-12">
+          <!-- Category Header -->
+          <div class="lg:col-span-4 p-8 bg-sky-50 dark:bg-sky-900/20">
+            <div data-motion="icon" class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">Support</h3>
+            <p class="text-neutral-600 dark:text-neutral-400 text-sm">Get help from our team and community.</p>
+          </div>
+          
+          <!-- FAQ Items -->
+          <div class="lg:col-span-8 p-8 space-y-4">
+            <div data-accordion-item class="bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-hidden">
+              <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left p-5 group" aria-expanded="false">
+                <span class="text-base font-semibold text-neutral-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors pr-4">How do I contact support?</span>
+                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500 group-hover:text-sky-600 dark:group-hover:text-sky-400 transform transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div data-accordion-content class="hidden px-5 pb-5">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">Reach our team via live chat, email, or schedule a call. Premium users get priority support with response times under 2 hours.</p>
+              </div>
+            </div>
+            
+            <div data-accordion-item class="bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-hidden">
+              <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left p-5 group" aria-expanded="false">
+                <span class="text-base font-semibold text-neutral-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors pr-4">Is there a community forum?</span>
+                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500 group-hover:text-sky-600 dark:group-hover:text-sky-400 transform transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div data-accordion-content class="hidden px-5 pb-5">
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">Yes! Join our community of 50,000+ users to share tips, ask questions, and connect with other professionals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script>
+  (function() {
+    const section = document.getElementById('_faq_categorized_sections_v6_020');
+    if (!section) return;
+    
+    const triggers = section.querySelectorAll('[data-accordion="trigger"], [data-accordion-trigger], .accordion-trigger');
+    
+    triggers.forEach(trigger => {
+      if (trigger.dataset.accordionInit) return;
+      trigger.dataset.accordionInit = 'true';
+      
+      const item = trigger.closest('[data-accordion="item"], [data-accordion-item], .accordion-item') || trigger.parentElement;
+      if (!item) return;
+      
+      const content = item.querySelector('[data-accordion="content"], [data-accordion-content], .accordion-content');
+      if (!content) return;
+      
+      const icon = item.querySelector('.accordion-icon, [data-accordion-icon]') || trigger.querySelector('svg:last-of-type');
+      
+      // Setup CSS transition
+      content.style.overflow = 'hidden';
+      content.style.transition = 'max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out';
+      
+      // Determine initial state - check aria-expanded first, then hidden class
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      const isHidden = content.classList.contains('hidden');
+      const shouldBeOpen = isExpanded && !isHidden;
+      
+      // Initialize properly
+      if (shouldBeOpen) {
+        content.classList.remove('hidden');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.style.opacity = '1';
+        if (icon) {
+          icon.style.transition = 'transform 0.3s ease-out';
+          icon.style.transform = 'rotate(0deg)';
+          icon.classList.remove('-rotate-90');
+        }
+      } else {
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+        content.style.paddingTop = '0';
+        content.style.paddingBottom = '0';
+        trigger.setAttribute('aria-expanded', 'false');
+        if (icon) {
+          icon.style.transition = 'transform 0.3s ease-out';
+          icon.style.transform = 'rotate(-90deg)';
+        }
+        // Add hidden after a tiny delay to allow transition setup
+        if (!isHidden) {
+          content.classList.add('hidden');
+        }
+      }
+      
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const currentlyOpen = trigger.getAttribute('aria-expanded') === 'true';
+        
+        if (currentlyOpen) {
+          // Close
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.offsetHeight; // Force reflow
+          content.style.maxHeight = '0px';
+          content.style.opacity = '0';
+          content.style.paddingTop = '0';
+          content.style.paddingBottom = '0';
+          trigger.setAttribute('aria-expanded', 'false');
+          if (icon) icon.style.transform = 'rotate(-90deg)';
+          
+          setTimeout(() => {
+            if (trigger.getAttribute('aria-expanded') === 'false') {
+              content.classList.add('hidden');
+            }
+          }, 300);
+        } else {
+          // Open
+          content.classList.remove('hidden');
+          content.style.paddingTop = '';
+          content.style.paddingBottom = '';
+          const height = content.scrollHeight;
+          content.style.maxHeight = '0px';
+          content.offsetHeight; // Force reflow
+          content.style.maxHeight = height + 'px';
+          content.style.opacity = '1';
+          trigger.setAttribute('aria-expanded', 'true');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+          
+          // Remove maxHeight after transition to allow content changes
+          setTimeout(() => {
+            if (trigger.getAttribute('aria-expanded') === 'true') {
+              content.style.maxHeight = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  })();
+  </script>
+</section>
+<section id="_cta_dark_background_centered_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Full-width Image Card with Overlay Content -->
+    <div class="relative rounded-3xl overflow-hidden min-h-[600px]" data-motion="image">
+      <img data-motion="image" 
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop&q=80" 
+        alt="Modern office space" 
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+      <div class="absolute inset-0 bg-linear-to-t from-neutral-900 via-neutral-900/70 to-neutral-900/40"></div>
+      
+      <!-- Content Overlay -->
+      <div class="relative z-10 h-full flex flex-col justify-end p-8 sm:p-12 lg:p-16">
+        
+        <div class="max-w-3xl" data-motion="hero">
+          <!-- Trust Avatars -->
+          <div class="flex items-center gap-4 mb-8" data-motion="card">
+            <div class="flex -space-x-3">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User" class="w-12 h-12 rounded-full border-2 border-neutral-900 object-cover">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User" class="w-12 h-12 rounded-full border-2 border-neutral-900 object-cover">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="User" class="w-12 h-12 rounded-full border-2 border-neutral-900 object-cover">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="User" class="w-12 h-12 rounded-full border-2 border-neutral-900 object-cover">
+            </div>
+            <div>
+              <p class="text-white font-semibold">10,000+ teams</p>
+              <p class="text-neutral-400 text-sm">already on board</p>
+            </div>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <span data-animate="heading">Future-proof your business with intelligent solutions</span>
+          </h2>
+          
+          <p class="text-neutral-300 text-lg mt-6 max-w-2xl" data-animate="text">
+            Stay ahead of the competition with innovative technology tailored to your needs. Transform your operations and ensure long-term success.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 mt-10">
+            <a href="#" data-motion="button" class="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-full transition-colors">
+              Get Started Free
+            </a>
+            <a href="#" data-motion="button" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xs hover:bg-white/20 text-white font-semibold rounded-full transition-colors">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Watch Demo
+            </a>
+          </div>
+        </div>
+        
+        <!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20 max-w-2xl">
+          <div data-motion="card">
+            <span class="text-3xl font-bold text-white">99.9%</span>
+            <p class="text-neutral-400 text-sm mt-1">Uptime guarantee</p>
+          </div>
+          <div data-motion="card">
+            <span class="text-3xl font-bold text-white">24/7</span>
+            <p class="text-neutral-400 text-sm mt-1">Expert support</p>
+          </div>
+          <div data-motion="card">
+            <span class="text-3xl font-bold text-white">150+</span>
+            <p class="text-neutral-400 text-sm mt-1">Integrations</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_card_horizontal_nav_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Card Container -->
+    <div class="relative overflow-hidden rounded-3xl bg-neutral-900 dark:bg-neutral-800">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img data-motion="image" 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop&q=80" 
+          alt="Modern office space" 
+          class="w-full h-full object-cover opacity-20"
+        >
+        <div class="absolute inset-0 bg-linear-to-r from-neutral-900 via-neutral-900/95 to-neutral-900/80"></div>
+      </div>
+      
+      <!-- Content -->
+      <div class="relative z-10 p-8 sm:p-12 lg:p-16">
+        <!-- Top Section -->
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 pb-12 border-b border-neutral-700">
+          <!-- Logo & Tagline -->
+          <div data-motion="logo" class="flex flex-col gap-4">
+            <a href="#" class="flex items-center gap-3">
+              <div data-motion="icon" class="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <span class="text-2xl font-bold text-white">Velocity</span>
+            </a>
+            <p class="text-neutral-400 max-w-xs">Accelerating your business growth with cutting-edge solutions.</p>
+          </div>
+          
+          <!-- Navigation -->
+          <nav data-motion="nav">
+            <ul class="flex flex-wrap items-center gap-x-10 gap-y-4">
+              <li><a href="#" class="text-base font-medium text-neutral-300 hover:text-sky-400 transition-colors">Products</a></li>
+              <li><a href="#" class="text-base font-medium text-neutral-300 hover:text-sky-400 transition-colors">Solutions</a></li>
+              <li><a href="#" class="text-base font-medium text-neutral-300 hover:text-sky-400 transition-colors">Resources</a></li>
+              <li><a href="#" class="text-base font-medium text-neutral-300 hover:text-sky-400 transition-colors">Pricing</a></li>
+              <li><a href="#" class="text-base font-medium text-neutral-300 hover:text-sky-400 transition-colors">Company</a></li>
+            </ul>
+          </nav>
+          
+          <!-- CTA Button -->
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full transition-colors">
+            Get Started
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <!-- Legal Links -->
+          <ul data-motion="legal" class="flex flex-wrap items-center gap-6">
+            <li><a href="#" class="text-sm text-neutral-500 hover:text-sky-400 transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-sm text-neutral-500 hover:text-sky-400 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm text-neutral-500 hover:text-sky-400 transition-colors">Cookie Settings</a></li>
+          </ul>
+          
+          <!-- Social Icons -->
+          <div data-motion="social" class="flex items-center gap-3">
+            <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-sky-500 flex items-center justify-center text-neutral-400 hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-sky-500 flex items-center justify-center text-neutral-400 hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="GitHub" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-sky-500 flex items-center justify-center text-neutral-400 hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div data-motion="copyright" class="mt-8 pt-8 border-t border-neutral-800 text-center">
+          <p class="text-sm text-neutral-500">© 2025 Velocity Technologies. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

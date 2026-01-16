@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>009 Ballet School</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<header id="_header_icon_nav_h10_001" class="relative bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-900">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-20">
+ <!-- Logo -->
+ <a data-motion="logo" href="#" class="flex items-center gap-2.5">
+ <div class="w-11 h-11 bg-linear-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center shadow-lg shadow-sky-500/20">
+ <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+ </svg>
+ </div>
+ <span class="text-xl font-bold text-neutral-900 dark:text-white">Studio</span>
+ </a>
+
+ <!-- Icon Navigation -->
+ <nav data-motion="nav" class="hidden lg:flex items-center gap-2">
+ <a href="#" class="flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group">
+ <div data-motion="icon" class="w-10 h-10 bg-sky-100 dark:bg-sky-900/30 rounded-xl flex items-center justify-center group-hover:bg-sky-500 transition-colors">
+ <svg class="w-5 h-5 text-sky-600 dark:text-sky-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+ </svg>
+ </div>
+ <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">Home</span>
+ </a>
+ 
+ <a href="#" class="flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group">
+ <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center group-hover:bg-sky-500 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+ </svg>
+ </div>
+ <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">Projects</span>
+ </a>
+ 
+ <a href="#" class="flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group">
+ <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center group-hover:bg-sky-500 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+ </svg>
+ </div>
+ <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">Team</span>
+ </a>
+ 
+ <a href="#" class="flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group">
+ <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center group-hover:bg-sky-500 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+ </svg>
+ </div>
+ <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">Analytics</span>
+ </a>
+ 
+ <a href="#" class="flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group">
+ <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center group-hover:bg-sky-500 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+ </svg>
+ </div>
+ <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">Messages</span>
+ </a>
+ </nav>
+
+ <!-- Right Actions -->
+ <div data-motion="actions" class="flex items-center gap-2">
+ <button data-motion="button" 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ 
+ <a href="#" class="h-10 px-5 bg-linear-to-r from-sky-500 to-sky-600 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-sky-500/25 transition-all flex items-center gap-2">
+ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+ </svg>
+ Create
+ </a>
+ </div>
+ </div>
+ </div>
+</header>
+<section id="_hero_event_registration_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Centered Hero with Form Below -->
+    <div class="flex flex-col gap-16">
+      <!-- Top - Centered Content -->
+      <div class="text-center max-w-3xl mx-auto" data-motion="hero">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase mb-4 block">March 15-16, 2026</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight mb-6">
+          <span data-animate="heading">Global Tech</span><br>
+          <span data-animate="heading" class="text-sky-600 dark:text-sky-400">Summit 2026</span>
+        </h1>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8" data-animate="text">
+          Connect with industry leaders, discover breakthrough innovations, and shape the future of technology at our flagship annual conference.
+        </p>
+      </div>
+
+      <!-- Bento Grid with Form -->
+      <div class="grid lg:grid-cols-3 gap-5">
+        <!-- Image -->
+        <div class="lg:col-span-1 rounded-3xl overflow-hidden" data-motion="image">
+          <img data-motion="image" 
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop&q=80" 
+            alt="Tech conference" 
+            class="w-full h-full min-h-[300px] object-cover"
+          >
+        </div>
+
+        <!-- Registration Form -->
+        <div class="lg:col-span-2 bg-sky-50 dark:bg-sky-950/20 rounded-3xl p-8" data-motion="card">
+          <h4 class="text-xl font-bold text-neutral-900 dark:text-white mb-6">Reserve Your Spot</h4>
+          <form class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <input data-motion="input" type="text" class="w-full px-5 py-3 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:border-sky-500 transition-colors" placeholder="Full Name">
+            </div>
+            <div>
+              <input data-motion="input" type="email" class="w-full px-5 py-3 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:border-sky-500 transition-colors" placeholder="Email Address">
+            </div>
+            <div>
+              <input data-motion="input" type="text" class="w-full px-5 py-3 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:border-sky-500 transition-colors" placeholder="Company">
+            </div>
+            <div>
+              <button type="submit" data-motion="button" class="w-full px-6 py-3 bg-sky-600 hover:bg-sky-700 transition-colors rounded-full text-white font-semibold">
+                Register Free
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+          <span class="text-4xl font-bold text-sky-600 dark:text-sky-400 block mb-1">50+</span>
+          <span class="text-neutral-600 dark:text-neutral-400">World-class Speakers</span>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+          <span class="text-4xl font-bold text-neutral-900 dark:text-white block mb-1">3K+</span>
+          <span class="text-neutral-600 dark:text-neutral-400">Expected Attendees</span>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+          <span class="text-4xl font-bold text-neutral-900 dark:text-white block mb-1">2 Days</span>
+          <span class="text-neutral-600 dark:text-neutral-400">Of Immersive Learning</span>
+        </div>
+      </div>
+
+      <!-- Trust Features -->
+      <div class="flex flex-wrap items-center justify-center gap-8" data-motion="social-proof">
+        <div class="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+          <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="text-sm font-medium">San Francisco, CA</span>
+        </div>
+        <div class="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+          <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+          <span class="text-sm font-medium">Live Streaming Available</span>
+        </div>
+        <div class="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+          <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <span class="text-sm font-medium">Certificate Included</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_about_stats_image_features_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Image with Overlay Stats -->
+    <div class="relative rounded-3xl overflow-hidden mb-12">
+      <img 
+        data-motion="image"
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&auto=format&fit=crop&q=80" 
+        alt="Team collaboration"
+        class="w-full h-72 sm:h-96 object-cover"
+      >
+      <div class="absolute inset-0 bg-linear-to-t from-neutral-900/80 via-neutral-900/20 to-transparent"></div>
+      
+      <!-- Stats Overlay -->
+      <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div data-motion="stat" class="text-center sm:text-left">
+            <span class="text-white text-2xl sm:text-3xl font-bold block">2.8M+</span>
+            <span class="text-neutral-300 text-sm">Downloads</span>
+          </div>
+          <div data-motion="stat" class="text-center sm:text-left">
+            <span class="text-white text-2xl sm:text-3xl font-bold block">1.5M+</span>
+            <span class="text-neutral-300 text-sm">Active Users</span>
+          </div>
+          <div data-motion="stat" class="text-center sm:text-left">
+            <span class="text-white text-2xl sm:text-3xl font-bold block">4.8</span>
+            <span class="text-neutral-300 text-sm">App Rating</span>
+          </div>
+          <div data-motion="stat" class="text-center sm:text-left">
+            <span class="text-white text-2xl sm:text-3xl font-bold block">45+</span>
+            <span class="text-neutral-300 text-sm">Team Members</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Content Grid -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+      <div class="lg:col-span-5">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase block mb-4">About Us</span>
+        <h2 class="text-neutral-900 dark:text-white text-3xl sm:text-4xl font-bold leading-tight">
+          <span data-animate="heading">Streamline Your Workflow with Smart Automation</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-7 flex flex-col justify-center gap-6">
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed" data-animate="text">
+          We build intelligent productivity tools that help teams work smarter, not harder. Our platform automates repetitive tasks, centralizes communication, and provides insights to boost efficiency.
+        </p>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-semibold hover:gap-3 transition-all duration-300 w-fit">
+          Learn more about us
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Bento Feature Grid -->
+    <div class="grid lg:grid-cols-3 gap-5">
+      <div data-motion="card" class="p-6 lg:p-8 bg-sky-50 dark:bg-sky-900/20 rounded-3xl">
+        <div data-motion="icon" class="w-10 h-10 rounded-xl bg-sky-600 flex items-center justify-center mb-5">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h4 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Why Choose Us?</h4>
+        <p class="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed">Our platform offers seamless integrations, real-time collaboration, and powerful automation features.</p>
+      </div>
+      
+      <div data-motion="card" class="p-6 lg:p-8 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-10 h-10 rounded-xl bg-neutral-900 dark:bg-white flex items-center justify-center mb-5">
+          <svg class="w-5 h-5 text-white dark:text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke-width="2"/>
+            <circle cx="12" cy="12" r="6" stroke-width="2"/>
+            <circle cx="12" cy="12" r="2" stroke-width="2"/>
+          </svg>
+        </div>
+        <h4 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Our Vision</h4>
+        <p class="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed">To empower every team to achieve more by eliminating busywork and focusing on what matters.</p>
+      </div>
+      
+      <div data-motion="card" class="p-6 lg:p-8 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+        <div data-motion="icon" class="w-10 h-10 rounded-xl bg-neutral-900 dark:bg-white flex items-center justify-center mb-5">
+          <svg class="w-5 h-5 text-white dark:text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h4 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Our Team</h4>
+        <p class="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed">A passionate group of engineers, designers, and product experts dedicated to your success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_icon_magazine_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Magazine Header -->
+    <div class="grid lg:grid-cols-2 gap-12 items-end mb-20" data-motion="hero">
+      <div>
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase" data-animate="heading">Enterprise Platform</span>
+        <h2 class="text-5xl sm:text-6xl font-bold text-neutral-900 dark:text-white mt-4 leading-tight">
+          <span data-animate="heading">Scale with </span>
+          <span class="text-sky-600 dark:text-sky-400" data-animate="heading">confidence</span>
+        </h2>
+      </div>
+      <div>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed" data-animate="text">
+          Enterprise-grade infrastructure that grows with you. From startup to scale-up, we provide the tools and reliability you need to succeed.
+        </p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200 dark:bg-neutral-800 mb-16" data-motion="divider"></div>
+
+    <!-- Features Grid - Asymmetric -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+      
+      <!-- Left Column - 2 stacked features -->
+      <div class="lg:col-span-4 space-y-10">
+        <div data-motion="card" class="group">
+          <div data-motion="icon" class="w-14 h-14 bg-sky-100 dark:bg-sky-900/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sky-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-sky-600 dark:text-sky-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-3">Lightning Fast</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Our globally distributed CDN ensures your content loads in milliseconds, no matter where your users are located around the world.
+          </p>
+        </div>
+
+        <div data-motion="card" class="group">
+          <div data-motion="icon" class="w-14 h-14 bg-sky-100 dark:bg-sky-900/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sky-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-sky-600 dark:text-sky-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-3">Bank-Level Security</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            256-bit encryption, SOC 2 compliance, and continuous security monitoring keep your data protected around the clock.
+          </p>
+        </div>
+      </div>
+
+      <!-- Center Image -->
+      <div class="lg:col-span-4 relative flex justify-center" data-motion="image">
+        <div class="sticky top-8 w-full max-w-sm">
+          <div class="rounded-3xl overflow-hidden">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80" alt="Server infrastructure" class="w-full h-80 lg:h-[500px] object-cover">
+          </div>
+          <div class="mt-4 p-4 bg-sky-50 dark:bg-sky-900/20 rounded-2xl">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
+              <span class="text-sm font-medium text-sky-600 dark:text-sky-400">99.99% Uptime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - 2 stacked features -->
+      <div class="lg:col-span-4 space-y-10">
+        <div data-motion="card" class="group">
+          <div data-motion="icon" class="w-14 h-14 bg-sky-100 dark:bg-sky-900/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sky-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-sky-600 dark:text-sky-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-3">Auto-Scaling</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Handle traffic spikes effortlessly with automatic scaling that adjusts resources based on real-time demand patterns.
+          </p>
+        </div>
+
+        <div data-motion="card" class="group">
+          <div data-motion="icon" class="w-14 h-14 bg-sky-100 dark:bg-sky-900/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sky-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-sky-600 dark:text-sky-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-3">Deep Analytics</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Gain actionable insights with comprehensive analytics dashboards that track every metric that matters to your business.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div data-motion="button">
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-semibold hover:gap-3 transition-all duration-300">
+            Explore all features
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="_team_circular_avatars_grid_v6_t1" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Split Header -->
+    <div class="grid lg:grid-cols-2 gap-8 items-end mb-16">
+      <div data-motion="hero">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase">Our Team</span>
+        <h2 class="mt-4 text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">
+          <span data-animate="heading">Meet Our Creative Minds</span>
+        </h2>
+      </div>
+      <div data-motion="hero">
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg lg:text-right">
+          <span data-animate="text">A diverse team of passionate individuals dedicated to crafting exceptional experiences.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="grid lg:grid-cols-12 gap-6">
+      <!-- Featured Member -->
+      <div data-motion="card" class="lg:col-span-4 lg:row-span-2 rounded-3xl bg-sky-50 dark:bg-sky-950/30 p-8 flex flex-col justify-between">
+        <div>
+          <span class="text-sky-600 dark:text-sky-400 text-sm font-medium">Leadership</span>
+          <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80" alt="Marcus Chen" class="w-32 h-32 rounded-full object-cover mt-6 ring-4 ring-sky-200 dark:ring-sky-800">
+        </div>
+        <div class="mt-8">
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-white">Marcus Chen</h3>
+          <p class="text-sky-600 dark:text-sky-400 font-medium mt-1">Creative Director</p>
+          <p class="text-neutral-600 dark:text-neutral-400 mt-4 text-sm">15+ years of experience leading creative teams and shaping brand identities for Fortune 500 companies.</p>
+          <div class="flex gap-3 mt-6">
+            <a href="#" class="w-9 h-9 rounded-full bg-sky-200 dark:bg-sky-900/50 flex items-center justify-center text-sky-600 dark:text-sky-400 hover:bg-sky-300 dark:hover:bg-sky-800 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sky-200 dark:bg-sky-900/50 flex items-center justify-center text-sky-600 dark:text-sky-400 hover:bg-sky-300 dark:hover:bg-sky-800 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Members Grid -->
+      <div data-motion="card" class="lg:col-span-4 rounded-3xl bg-neutral-50 dark:bg-neutral-900 p-6 flex items-center gap-5">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80" alt="Sofia Rodriguez" class="w-20 h-20 rounded-full object-cover shrink-0">
+        <div>
+          <h4 class="font-semibold text-neutral-900 dark:text-white">Sofia Rodriguez</h4>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm">Lead Designer</p>
+        </div>
+      </div>
+
+      <div data-motion="card" class="lg:col-span-4 rounded-3xl bg-neutral-50 dark:bg-neutral-900 p-6 flex items-center gap-5">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80" alt="James Wilson" class="w-20 h-20 rounded-full object-cover shrink-0">
+        <div>
+          <h4 class="font-semibold text-neutral-900 dark:text-white">James Wilson</h4>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm">Art Director</p>
+        </div>
+      </div>
+
+      <div data-motion="card" class="lg:col-span-4 rounded-3xl bg-neutral-50 dark:bg-neutral-900 p-6 flex items-center gap-5">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format&fit=crop&q=80" alt="Emma Thompson" class="w-20 h-20 rounded-full object-cover shrink-0">
+        <div>
+          <h4 class="font-semibold text-neutral-900 dark:text-white">Emma Thompson</h4>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm">Brand Strategist</p>
+        </div>
+      </div>
+
+      <div data-motion="card" class="lg:col-span-4 rounded-3xl bg-neutral-50 dark:bg-neutral-900 p-6 flex items-center gap-5">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80" alt="David Park" class="w-20 h-20 rounded-full object-cover shrink-0">
+        <div>
+          <h4 class="font-semibold text-neutral-900 dark:text-white">David Park</h4>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm">Motion Designer</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div data-motion="button" class="mt-12 text-center">
+      <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-sky-600 hover:bg-sky-700 transition-colors rounded-full text-white font-semibold">
+        Join Our Team
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="_gallery_mixed_carousel_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-100 dark:bg-sky-900/40 rounded-full text-sky-600 dark:text-sky-400 text-sm font-medium mb-4">
+        <span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span>
+        Portfolio
+      </span>
+      <h2 data-motion="header" class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white">
+        <span data-animate="heading">Creative Works</span>
+      </h2>
+      <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 mt-4 max-w-2xl mx-auto">A showcase of our finest projects spanning design, photography, and digital art.</p>
+    </div>
+    
+    <!-- Bento Gallery Grid -->
+    <div class="grid md:grid-cols-12 gap-5">
+      <!-- Large Featured -->
+      <div data-motion="image" class="md:col-span-8 md:row-span-2 group">
+        <div class="relative h-full min-h-[400px] md:min-h-[560px] rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=80" alt="Abstract art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8">
+            <span data-motion="badge" class="inline-block px-3 py-1 bg-sky-500 text-white text-xs font-medium rounded-full mb-3">Featured</span>
+            <h3 class="text-2xl font-bold text-white">Abstract Dimensions</h3>
+            <p class="text-neutral-300 mt-2">Digital art exploring geometric forms and color theory</p>
+          </div>
+          <button type="button" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-neutral-900">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Top Right -->
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 md:h-[270px] rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&auto=format&fit=crop&q=80" alt="Sculpture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-sky-400 text-sm font-medium">Sculpture</span>
+            <h3 class="text-lg font-semibold text-white mt-1">Form & Flow</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Right -->
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 md:h-[270px] rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=600&auto=format&fit=crop&q=80" alt="Modern art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-sky-400 text-sm font-medium">Mixed Media</span>
+            <h3 class="text-lg font-semibold text-white mt-1">Color Theory</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Row -->
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&auto=format&fit=crop&q=80" alt="Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-sky-400 text-sm font-medium">Installation</span>
+            <h3 class="text-lg font-semibold text-white mt-1">Light Play</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=80" alt="Photography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-sky-400 text-sm font-medium">Photography</span>
+            <h3 class="text-lg font-semibold text-white mt-1">Urban Lens</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&auto=format&fit=crop&q=80" alt="Painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-sky-400 text-sm font-medium">Painting</span>
+            <h3 class="text-lg font-semibold text-white mt-1">Canvas Dreams</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div data-motion="cta" class="flex justify-center mt-12">
+      <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full transition-colors">
+        Explore Full Gallery
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+    .carousel-container { overflow: hidden; }
+  .carousel-track { display: flex; transition: transform 0.5s ease-out; }
+  </style>
+<section id="_testimonial_large_avatar_carousel_t25_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <style>
+    .carousel-container { overflow: hidden; }
+  .carousel-track { display: flex; transition: transform 0.5s ease-out; }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row max-sm:gap-6 items-center justify-between mb-14">
+      <div data-motion="header">
+        <span data-motion="badge" class="text-sky-600 dark:text-sky-400 text-sm font-semibold tracking-wide uppercase mb-3 block">Student Success</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
+          <span data-animate="heading">Our Learners Achieve Their Goals</span>
+        </h2>
+      </div>
+      <div data-motion="nav" class="flex items-center gap-3">
+        <button data-carousel="prev" type="button" aria-label="Previous" class="w-11 h-11 rounded-full border border-neutral-300 dark:border-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:border-sky-500 hover:text-sky-600 dark:hover:border-sky-400 dark:hover:text-sky-400 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button data-carousel="next" type="button" aria-label="Next" class="w-11 h-11 rounded-full border border-neutral-300 dark:border-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:border-sky-500 hover:text-sky-600 dark:hover:border-sky-400 dark:hover:text-sky-400 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-container">
+      <div data-carousel="track" class="carousel-track">
+        <!-- Slide 1 -->
+        <div data-motion="slide" class="shrink-0 w-full">
+          <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="relative shrink-0">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80" alt="Jennifer Walsh" class="w-40 h-40 rounded-full object-cover">
+              <div data-motion="icon" class="absolute -bottom-2 -right-2 w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              </div>
+            </div>
+            <div class="flex-1 max-md:text-center">
+              <h6 class="text-xl font-semibold text-neutral-900 dark:text-white mb-1">Jennifer Walsh</h6>
+              <span class="text-sm text-sky-600 dark:text-sky-400 mb-4 block">Data Science Graduate</span>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                The structured curriculum and hands-on projects gave me the confidence to transition into a data science role. The mentorship program was invaluable. Within six months of completing the course, I landed my dream job.
+              </p>
+              <div class="flex items-center max-md:justify-center">
+                <div class="flex -space-x-2">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                </div>
+                <span class="ml-3 text-sm text-neutral-500 dark:text-neutral-400">+2.5k students enrolled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div data-motion="slide" class="shrink-0 w-full">
+          <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="relative shrink-0">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80" alt="Marcus Chen" class="w-40 h-40 rounded-full object-cover">
+              <div data-motion="icon" class="absolute -bottom-2 -right-2 w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              </div>
+            </div>
+            <div class="flex-1 max-md:text-center">
+              <h6 class="text-xl font-semibold text-neutral-900 dark:text-white mb-1">Marcus Chen</h6>
+              <span class="text-sm text-sky-600 dark:text-sky-400 mb-4 block">Full Stack Developer</span>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                Coming from a non-technical background, I was skeptical about learning to code. The step-by-step approach and supportive community made the journey enjoyable. The career services team helped me prepare for interviews.
+              </p>
+              <div class="flex items-center max-md:justify-center">
+                <div class="flex -space-x-2">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                </div>
+                <span class="ml-3 text-sm text-neutral-500 dark:text-neutral-400">+1.8k students enrolled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div data-motion="slide" class="shrink-0 w-full">
+          <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="relative shrink-0">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=80" alt="Sarah Thompson" class="w-40 h-40 rounded-full object-cover">
+              <div data-motion="icon" class="absolute -bottom-2 -right-2 w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              </div>
+            </div>
+            <div class="flex-1 max-md:text-center">
+              <h6 class="text-xl font-semibold text-neutral-900 dark:text-white mb-1">Sarah Thompson</h6>
+              <span class="text-sm text-sky-600 dark:text-sky-400 mb-4 block">UX Design Lead</span>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                The design thinking methodology taught here transformed how I approach problems. The portfolio projects were directly applicable to real-world scenarios, and the feedback from instructors helped me refine my work.
+              </p>
+              <div class="flex items-center max-md:justify-center">
+                <div class="flex -space-x-2">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                  <img data-motion="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Student" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+                </div>
+                <span class="ml-3 text-sm text-neutral-500 dark:text-neutral-400">+3.2k students enrolled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Script -->
+  <script>
+  (function() {
+    const section = document.getElementById('_testimonial_large_avatar_carousel_t25_001');
+    if (!section) return;
+    
+    const track = section.querySelector('[data-carousel="track"]');
+    const prevBtn = section.querySelector('[data-carousel="prev"]');
+    const nextBtn = section.querySelector('[data-carousel="next"]');
+    const slides = track.children;
+    
+    let currentIndex = 0;
+    
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    prevBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+    
+    nextBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+    
+    updateCarousel();
+  })();
+  </script>
+</section>
+<section id="_cta_gradient_stats_download_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Stacked Layout -->
+    <div class="bg-sky-600 dark:bg-sky-700 rounded-3xl overflow-hidden" data-motion="card">
+      
+      <!-- Top Section - Content -->
+      <div class="p-8 sm:p-12 lg:p-16 text-center" data-motion="hero">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/20 rounded-full text-white text-sm font-medium mb-6" data-motion="badge">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Free Download
+        </span>
+        
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl mx-auto">
+          <span data-animate="heading">Start collaborating with your team today</span>
+        </h2>
+        <p class="text-sky-100 text-lg mt-6 max-w-2xl mx-auto" data-animate="text">
+          Join thousands of teams using our platform to streamline workflows, track projects, and achieve goals faster.
+        </p>
+        
+        <!-- Download Button -->
+        <div class="mt-10">
+          <a data-motion="button" href="#" class="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-sky-50 rounded-full text-sky-600 font-semibold transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download for Free
+          </a>
+        </div>
+      </div>
+      
+      <!-- Bottom Section - Stats -->
+      <div class="bg-sky-700/50 dark:bg-sky-800/50">
+        <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-sky-500/30">
+          <div class="p-6 sm:p-8 text-center" data-motion="stat">
+            <span class="text-3xl sm:text-4xl font-bold text-white">1M+</span>
+            <p class="text-sky-200 text-sm mt-1">Downloads</p>
+          </div>
+          <div class="p-6 sm:p-8 text-center" data-motion="stat">
+            <span class="text-3xl sm:text-4xl font-bold text-white">500K</span>
+            <p class="text-sky-200 text-sm mt-1">Active Users</p>
+          </div>
+          <div class="p-6 sm:p-8 text-center" data-motion="stat">
+            <span class="text-3xl sm:text-4xl font-bold text-white">4.9</span>
+            <p class="text-sky-200 text-sm mt-1">App Rating</p>
+          </div>
+          <div class="p-6 sm:p-8 text-center" data-motion="stat">
+            <span class="text-3xl sm:text-4xl font-bold text-white">99%</span>
+            <p class="text-sky-200 text-sm mt-1">Uptime</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Platform Icons -->
+    <div class="flex items-center justify-center gap-8 mt-8" data-motion="social-proof">
+      <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <span class="text-sm">iOS</span>
+      </div>
+      <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/>
+        </svg>
+        <span class="text-sm">Android</span>
+      </div>
+      <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+        </svg>
+        <span class="text-sm">Windows</span>
+      </div>
+      <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+        </svg>
+        <span class="text-sm">Web</span>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_subscribe_contact_v6_001" class="bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="py-16 grid lg:grid-cols-2 gap-12 border-b border-neutral-200 dark:border-neutral-800">
+      
+      <!-- Left: Brand + Subscribe -->
+      <div data-motion="brand">
+        <a href="#" class="flex items-center gap-3 mb-6">
+          <div class="w-11 h-11 bg-sky-500 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-neutral-900 dark:text-white">PropertyHub</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-8 max-w-sm">Find your dream property with our expert guidance and extensive listings.</p>
+        
+        <!-- Subscribe -->
+        <form class="flex gap-2 mb-8">
+          <input data-motion="input" type="email" placeholder="Enter your email" class="flex-1 max-w-xs px-4 py-3 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:border-sky-500 transition-colors">
+          <button data-motion="button" type="submit" class="px-5 py-3 bg-sky-500 hover:bg-sky-600 transition-colors rounded-xl text-white font-semibold">Subscribe</button>
+        </form>
+        
+        <!-- Social Proof -->
+        <div data-motion="avatars" class="flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Client" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Client" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+          </div>
+          <span class="text-neutral-600 dark:text-neutral-400"><span class="text-neutral-900 dark:text-white font-semibold">2K+</span> Happy Clients</span>
+        </div>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-4">Location</h4>
+          <p class="text-neutral-600 dark:text-neutral-400">123 Market Street<br>San Francisco, CA 94102</p>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-4">Contact</h4>
+          <p class="text-neutral-600 dark:text-neutral-400 mb-2">+1 (555) 123-4567</p>
+          <p class="text-neutral-600 dark:text-neutral-400">hello@propertyhub.com</p>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-4">Hours</h4>
+          <p class="text-neutral-600 dark:text-neutral-400 mb-2">Monday - Friday</p>
+          <p class="text-neutral-600 dark:text-neutral-400">9:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div data-motion="bottom" class="py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-500 text-sm">© 2026 PropertyHub. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-neutral-500 hover:text-sky-500 text-sm transition-colors">Terms</a>
+        <a href="#" class="text-neutral-500 hover:text-sky-500 text-sm transition-colors">Privacy</a>
+        <a href="#" class="text-neutral-500 hover:text-sky-500 text-sm transition-colors">Cookies</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-sky-500 hover:border-sky-500 hover:text-white text-neutral-500 transition-all" aria-label="Twitter">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-sky-500 hover:border-sky-500 hover:text-white text-neutral-500 transition-all" aria-label="LinkedIn">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-sky-500 hover:border-sky-500 hover:text-white text-neutral-500 transition-all" aria-label="Facebook">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

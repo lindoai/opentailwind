@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>035 Personal Bio Page</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<header id="_header_breadcrumb_nav_h12_001" class="relative bg-white dark:bg-neutral-950">
+ <!-- Main Header -->
+ <div class="border-b border-neutral-100 dark:border-neutral-900">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <!-- Logo -->
+ <a data-motion="logo" href="#" class="flex items-center gap-2.5">
+ <div data-motion="icon" class="w-10 h-10 bg-cyan-500 rounded-xl flex items-center justify-center">
+ <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+ </svg>
+ </div>
+ <span class="text-xl font-bold text-neutral-900 dark:text-white">Docs</span>
+ </a>
+
+ <!-- Navigation -->
+ <nav data-motion="nav" class="hidden lg:flex items-center gap-6">
+ <a href="#" class="text-sm font-medium text-neutral-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Documentation</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">API Reference</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Guides</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Examples</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Community</a>
+ </nav>
+
+ <!-- Right Actions -->
+ <div data-motion="actions" class="flex items-center gap-2">
+ <button data-motion="button" 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ 
+ <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="currentColor" viewBox="0 0 24 24">
+ <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+ </svg>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Breadcrumb Bar -->
+ <div data-motion="breadcrumb" class="bg-neutral-50 dark:bg-neutral-900/50 border-b border-neutral-100 dark:border-neutral-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center h-10">
+ <nav class="flex items-center gap-2 text-sm">
+ <a href="#" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors flex items-center gap-1">
+ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+ </svg>
+ Home
+ </a>
+ <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ <a href="#" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">Documentation</a>
+ <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ <a href="#" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">Getting Started</a>
+ <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ <span class="text-cyan-600 dark:text-cyan-400 font-medium">Installation</span>
+ </nav>
+ </div>
+ </div>
+ </div>
+</header>
+<section id="_hero_gourmet_restaurant_v6_001" class="relative min-h-screen">
+  <div class="absolute inset-0">
+    <img data-motion="image" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&auto=format&fit=crop&q=80" alt="Fine dining" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-linear-to-r from-neutral-900/95 via-neutral-900/60 to-transparent"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+    <div class="max-w-2xl py-20">
+      <span data-motion="badge" class="inline-flex items-center gap-2 text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-6">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        Three Michelin Stars
+      </span>
+      <h1>
+        <span data-animate="heading" class="block text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-none tracking-tight">A Culinary</span>
+        <span data-animate="heading" class="block text-5xl sm:text-6xl lg:text-7xl font-bold text-cyan-400 leading-none tracking-tight mt-2">Journey</span>
+      </h1>
+      <p data-animate="text" class="mt-8 text-xl text-white/80 leading-relaxed">
+        Where every dish tells a story. Experience the artistry of Chef Laurent's innovative tasting menus, crafted from the finest seasonal ingredients.
+      </p>
+      <div data-motion="button" class="flex flex-wrap gap-4 mt-10">
+        <a href="#" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-colors">Reserve Table</a>
+        <a href="#" class="px-8 py-4 bg-white/10 backdrop-blur-xs text-white font-semibold border border-white/30 hover:bg-white/20 transition-colors">View Menu</a>
+      </div>
+      
+      <div data-motion="info" class="mt-16 p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 inline-block">
+        <div class="flex items-center gap-6">
+          <div>
+            <span class="text-white/60 text-sm">Dinner Service</span>
+            <p class="text-white font-semibold">Tue - Sat, 6pm - 11pm</p>
+          </div>
+          
+          <div>
+            <span class="text-white/60 text-sm">Tasting Menu</span>
+            <p class="text-white font-semibold">From $295 per person</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_about_simple_split_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Centered Hero Layout with Abstract Background -->
+    <div class="relative">
+      
+      <!-- Abstract Background Image -->
+      <div data-motion="image" class="absolute inset-0 rounded-3xl overflow-hidden">
+        <img data-motion="image" 
+          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&auto=format&fit=crop&q=80" 
+          alt="Modern workspace with technology"
+          class="w-full h-full object-cover opacity-20 dark:opacity-10"
+        >
+      </div>
+      
+      <!-- Content Overlay -->
+      <div class="relative z-10 py-16 sm:py-24 px-6 sm:px-12 lg:px-20">
+        <div class="max-w-3xl mx-auto text-center flex flex-col gap-8 items-center">
+          
+          <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-100 dark:bg-cyan-900/40 rounded-full text-cyan-600 dark:text-cyan-400 text-sm font-medium">
+            <span class="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span>
+            Our Story
+          </span>
+          
+          <h2 class="text-neutral-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            <span data-animate="heading">Where Vision Meets Precision Engineering</span>
+          </h2>
+          
+          <p class="text-neutral-600 dark:text-neutral-400 text-lg sm:text-xl leading-relaxed" data-animate="text">
+            We don't just build software—we architect experiences. Our team thrives at the intersection of bold creativity and meticulous craftsmanship, turning ambitious ideas into products that define industries.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-cyan-600 hover:bg-cyan-700 transition-colors duration-300 rounded-full text-white font-semibold">
+              Start a Project
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-neutral-300 dark:border-neutral-700 hover:border-cyan-400 dark:hover:border-cyan-600 transition-colors duration-300 rounded-full text-neutral-900 dark:text-white font-semibold">
+              View Our Work
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Decorative Border -->
+      <div class="absolute inset-0 rounded-3xl border border-cyan-200/50 dark:border-cyan-800/30 pointer-events-none"></div>
+      
+    </div>
+  </div>
+</section>
+<section id="_features_minimal_icons_v6_001" class="py-20 sm:py-24 bg-neutral-50 dark:bg-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Centered Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-motion="header">
+      <span data-motion="badge" class="text-cyan-600 dark:text-cyan-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Developer Tools</span>
+      <h2 class="text-neutral-900 dark:text-white text-4xl sm:text-5xl font-bold mb-6">
+        <span data-animate="heading">Everything You Need to Build Faster</span>
+      </h2>
+      <p data-animate="text" class="text-neutral-600 dark:text-neutral-400 text-lg">
+        A complete developer toolkit with powerful APIs, comprehensive documentation, and enterprise-grade infrastructure.
+      </p>
+    </div>
+
+    <!-- Bento Grid Features -->
+    <div class="grid lg:grid-cols-3 gap-5">
+      <!-- Large Feature Card -->
+      <div data-motion="card" class="lg:col-span-2 p-8 bg-white dark:bg-neutral-800 rounded-3xl">
+        <div class="grid sm:grid-cols-2 gap-8">
+          <div>
+            <div data-motion="icon" class="w-14 h-14 bg-cyan-100 dark:bg-cyan-900/40 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <h3 class="text-neutral-900 dark:text-white text-xl font-semibold mb-3">Modular Architecture</h3>
+            <p class="text-neutral-600 dark:text-neutral-400 text-base">
+              Build with composable modules that scale independently and integrate seamlessly with your existing stack.
+            </p>
+          </div>
+          <div class="rounded-2xl overflow-hidden">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&auto=format&fit=crop&q=80" alt="Code on screen" class="w-full h-48 object-cover">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Accent Card -->
+      <div data-motion="card" class="p-8 bg-cyan-600 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div data-motion="icon" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-white text-xl font-semibold mb-3">Type Safety</h3>
+          <p class="text-cyan-100 text-base">
+            Full TypeScript support with auto-generated types for bulletproof development.
+          </p>
+        </div>
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all duration-300 w-fit mt-6">
+          Learn More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Small Feature Cards -->
+      <div data-motion="card" class="p-6 bg-white dark:bg-neutral-800 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">REST & GraphQL</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Choose your preferred API style with full support for both endpoints.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-white dark:bg-neutral-800 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Rich Documentation</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Comprehensive guides and tutorials to get you started quickly.
+        </p>
+      </div>
+      
+      <div data-motion="card" class="p-6 bg-white dark:bg-neutral-800 rounded-3xl">
+        <div data-motion="icon" class="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/40 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <h3 class="text-neutral-900 dark:text-white text-lg font-semibold mb-2">Plugin System</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+          Extend functionality with community and official plugins.
+        </p>
+      </div>
+      
+      <!-- CTA Card -->
+      <div data-motion="card" class="lg:col-span-2 p-8 bg-neutral-900 dark:bg-neutral-800 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-white text-xl font-semibold mb-2">24/7 Enterprise Support</h3>
+          <p class="text-neutral-400 text-base">Dedicated engineers with guaranteed response times for your team.</p>
+        </div>
+        <a data-motion="button" href="#" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 transition-colors rounded-full text-white font-semibold whitespace-nowrap">
+          Contact Sales
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_testimonial_split_avatar_grid_t9_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <!-- Left Column - Header & Featured -->
+      <div class="lg:col-span-5">
+        <div class="sticky top-8">
+          <span class="text-cyan-600 dark:text-cyan-400 text-sm font-semibold tracking-wide uppercase" data-motion="badge">Customer Love</span>
+          <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white mt-3 mb-6">
+            <span data-animate="heading">Hear from our community</span>
+          </h2>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-10" data-motion="description">
+            <span data-animate="text">Join thousands of satisfied customers who have transformed their workflow with our platform.</span>
+          </p>
+
+          <!-- Featured Testimonial -->
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 rounded-3xl p-8" data-motion="featured">
+            <div class="flex items-center gap-4 mb-6">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="Alex Rivera" class="w-16 h-16 rounded-2xl object-cover">
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white">Alex Rivera</h4>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">Founder, TechStart</p>
+              </div>
+            </div>
+            <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              "This platform has been instrumental in scaling our operations. The ROI was visible within weeks, not months."
+            </blockquote>
+            <div class="flex items-center gap-1 mt-6">
+              <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Grid Cards -->
+      <div class="lg:col-span-7">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+            <p class="text-neutral-600 dark:text-neutral-400 mb-6">"The API documentation is incredibly thorough. Integration took half the time we expected."</p>
+            <div class="flex items-center gap-3">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Michael Torres" class="w-12 h-12 rounded-xl object-cover">
+              <div>
+                <h5 class="font-semibold text-neutral-900 dark:text-white">Michael Torres</h5>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">Software Engineer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+            <p class="text-neutral-600 dark:text-neutral-400 mb-6">"Finally found a tool that understands our workflow. The automation features save us hours."</p>
+            <div class="flex items-center gap-3">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Sarah Chen" class="w-12 h-12 rounded-xl object-cover">
+              <div>
+                <h5 class="font-semibold text-neutral-900 dark:text-white">Sarah Chen</h5>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">Product Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+            <p class="text-neutral-600 dark:text-neutral-400 mb-6">"Support team resolved our complex issue within hours. Exceptional service."</p>
+            <div class="flex items-center gap-3">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Jessica Park" class="w-12 h-12 rounded-xl object-cover">
+              <div>
+                <h5 class="font-semibold text-neutral-900 dark:text-white">Jessica Park</h5>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">Marketing Lead</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+            <p class="text-neutral-600 dark:text-neutral-400 mb-6">"Best investment we've made this year. Highly recommend to any startup."</p>
+            <div class="flex items-center gap-3">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop&q=80" alt="David Kim" class="w-12 h-12 rounded-xl object-cover">
+              <div>
+                <h5 class="font-semibold text-neutral-900 dark:text-white">David Kim</h5>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">Founder & CEO</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+            <p class="text-neutral-600 dark:text-neutral-400 mb-6">"The analytics dashboard gives us insights we never had before. Game changer."</p>
+            <div class="flex items-center gap-3">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Emily Watson" class="w-12 h-12 rounded-xl object-cover">
+              <div>
+                <h5 class="font-semibold text-neutral-900 dark:text-white">Emily Watson</h5>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">Data Analyst</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6" data-motion="card">
+            <p class="text-neutral-600 dark:text-neutral-400 mb-6">"Onboarding was seamless. Our entire team was productive within days."</p>
+            <div class="flex items-center gap-3">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&auto=format&fit=crop&q=80" alt="Robert Hayes" class="w-12 h-12 rounded-xl object-cover">
+              <div>
+                <h5 class="font-semibold text-neutral-900 dark:text-white">Robert Hayes</h5>
+                <p class="text-cyan-600 dark:text-cyan-400 text-sm">VP Operations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_cta_split_checklist_image_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Asymmetric Grid -->
+    <div class="grid lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Content Side -->
+      <div class="lg:col-span-7" data-motion="hero">
+        <span class="text-cyan-600 dark:text-cyan-400 text-sm font-semibold tracking-wide uppercase" data-motion="badge">Productivity Suite</span>
+        
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mt-4">
+          <span data-animate="heading">Supercharge your team's productivity</span>
+        </h2>
+        
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg mt-6" data-animate="text">
+          Transform how your team works with our all-in-one collaboration platform. Streamline workflows and achieve more together.
+        </p>
+        
+        <!-- Checklist Grid -->
+        <div class="grid sm:grid-cols-2 gap-4 mt-8">
+          <div class="flex items-center gap-3 p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl" data-motion="card">
+            <div data-motion="icon" class="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 font-medium">Real-time collaboration</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl" data-motion="card">
+            <div data-motion="icon" class="w-8 h-8 bg-neutral-900 dark:bg-white rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white dark:text-neutral-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 font-medium">Unlimited cloud storage</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl" data-motion="card">
+            <div data-motion="icon" class="w-8 h-8 bg-neutral-900 dark:bg-white rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white dark:text-neutral-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 font-medium">Advanced analytics</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl" data-motion="card">
+            <div data-motion="icon" class="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 font-medium">24/7 priority support</span>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-10">
+          <a data-motion="button" href="#" class="px-8 py-3.5 bg-cyan-600 hover:bg-cyan-700 rounded-full text-white font-semibold transition-colors text-center">
+            Start Free Trial
+          </a>
+          <a data-motion="button" href="#" class="px-8 py-3.5 border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full text-neutral-900 dark:text-white font-semibold transition-colors text-center flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+            </svg>
+            Watch Demo
+          </a>
+        </div>
+      </div>
+      
+      <!-- Image Side -->
+      <div class="lg:col-span-5 relative" data-motion="image">
+        <div class="rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&auto=format&fit=crop&q=80" alt="Team collaboration" class="w-full aspect-4/5 object-cover">
+        </div>
+        
+        <!-- Floating Card -->
+        <div class="absolute -bottom-6 -left-6 bg-white dark:bg-neutral-800 rounded-2xl p-5 shadow-xl" data-motion="card">
+          <div class="flex items-center gap-4">
+            <div class="flex -space-x-2">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white dark:border-neutral-800 object-cover">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white dark:border-neutral-800 object-cover">
+              <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white dark:border-neutral-800 object-cover">
+            </div>
+            <div>
+              <p class="text-neutral-900 dark:text-white font-semibold">10K+ teams</p>
+              <p class="text-neutral-500 text-sm">already onboard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_dark_subscribe_v6_001" class="bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Newsletter Banner -->
+    <div data-motion="newsletter" class="py-12 border-b border-neutral-200 dark:border-neutral-800">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="text-center lg:text-left">
+          <h3 class="text-neutral-900 dark:text-white text-2xl lg:text-3xl font-bold mb-2">Join our community</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">Get early access to new features and exclusive content.</p>
+        </div>
+        <form class="flex w-full max-w-md">
+          <input data-motion="input" type="email" placeholder="Enter your email" class="flex-1 px-5 py-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-l-xl text-neutral-900 dark:text-white placeholder-neutral-500 focus:outline-hidden focus:border-cyan-500 transition-colors">
+          <button data-motion="button" type="submit" class="px-6 py-3.5 bg-cyan-500 hover:bg-cyan-600 transition-colors rounded-r-xl text-neutral-900 dark:text-white font-semibold whitespace-nowrap">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Links Grid -->
+    <div class="py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      
+      <!-- Brand Column -->
+      <div data-motion="brand" class="lg:col-span-1">
+        <a href="#" class="flex items-center gap-3 mb-6">
+          <div data-motion="icon" class="w-10 h-10 bg-linear-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-neutral-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-neutral-900 dark:text-white">CloudSync</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">Secure cloud storage for modern teams.</p>
+      </div>
+
+      <!-- Links Columns -->
+      <div data-motion="column">
+        <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">About</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Pricing</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Features</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Enterprise</a></li>
+        </ul>
+      </div>
+
+      <div data-motion="column">
+        <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Products</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Cloud Storage</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Team Sync</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">File Sharing</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">API Access</a></li>
+        </ul>
+      </div>
+
+      <div data-motion="column">
+        <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Resources</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Documentation</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Tutorials</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Blog</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div data-motion="column">
+        <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Legal</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Privacy</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Terms</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">Cookies</a></li>
+          <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors">GDPR</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div data-motion="bottom" class="py-8 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-500 text-sm">© 2026 CloudSync. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors" aria-label="Twitter">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors" aria-label="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:text-cyan-400 transition-colors" aria-label="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

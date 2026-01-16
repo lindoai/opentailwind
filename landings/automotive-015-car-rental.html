@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>015 Car Rental</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<header id="_header_centered_large_logo_h20_001" class="relative bg-white dark:bg-neutral-950">
+ <!-- Top Bar -->
+ <div class="border-b border-neutral-100 dark:border-neutral-900">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-10">
+ <!-- Left - Contact -->
+ <div class="hidden sm:flex items-center gap-4 text-xs text-neutral-500">
+ <a href="tel:+1234567890" class="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1">
+ <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+ </svg>
+ +1 (234) 567-890
+ </a>
+ <span class="text-neutral-300 dark:text-neutral-700">|</span>
+ <a href="mailto:hello@luxury.com" class="hover:text-neutral-900 dark:hover:text-white transition-colors">hello@luxury.com</a>
+ </div>
+ 
+ <!-- Right - Social & Theme -->
+ <div class="flex items-center gap-3">
+ <a href="#" class="text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+ <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+ </a>
+ <a href="#" class="text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+ <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+ </a>
+ <a href="#" class="text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+ <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+ </a>
+ <span class="text-neutral-300 dark:text-neutral-700">|</span>
+ <button 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+ >
+ <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Main Header with Large Centered Logo -->
+ <div class="border-b border-neutral-100 dark:border-neutral-900">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex flex-col items-center py-6">
+ <!-- Large Logo -->
+ <a data-motion="logo" href="#" class="flex flex-col items-center gap-2 mb-6">
+ <div data-motion="icon" class="w-16 h-16 bg-linear-to-br from-rose-400 via-rose-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg shadow-rose-500/20">
+ <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+ </svg>
+ </div>
+ <span class="text-2xl font-black text-neutral-900 dark:text-white tracking-tight">LUXURY</span>
+ <span data-motion="badge" class="text-xs text-neutral-500 tracking-[0.3em] uppercase">Premium Collection</span>
+ </a>
+ 
+ <!-- Navigation -->
+ <nav data-motion="nav" class="flex items-center gap-8">
+ <a href="#" class="text-sm font-medium text-neutral-900 dark:text-white hover:text-rose-500 dark:hover:text-rose-400 transition-colors">Home</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400 transition-colors">Collections</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400 transition-colors">New Arrivals</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400 transition-colors">About</a>
+ <a href="#" class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400 transition-colors">Contact</a>
+ </nav>
+ </div>
+ </div>
+ </div>
+</header>
+<section id="_hero_alpine_retreat_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span data-motion="badge" class="inline-block text-rose-600 dark:text-rose-400 text-sm font-semibold tracking-widest uppercase mb-6">Swiss Alps Collection</span>
+      <h1>
+        <span data-animate="heading" class="block text-5xl sm:text-6xl lg:text-7xl font-bold text-neutral-900 dark:text-white leading-tight">Where Mountains</span>
+        <span data-animate="heading" class="block text-5xl sm:text-6xl lg:text-7xl font-bold text-rose-600 dark:text-rose-400 leading-tight">Meet Luxury</span>
+      </h1>
+      <p data-animate="text" class="mt-8 text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        Discover our exclusive alpine retreats nestled in the heart of the Swiss Alps. Unparalleled views, world-class amenities, and timeless elegance.
+      </p>
+    </div>
+    
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div data-motion="image" class="lg:col-span-2 rounded-3xl overflow-hidden h-96 lg:h-[500px] relative group">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1502786129293-79981df4e689?w=1400&auto=format&fit=crop&q=80" alt="Alpine mountain view" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8 right-8">
+          <span data-motion="badge" class="text-rose-400 text-sm font-semibold tracking-wide uppercase">Featured Property</span>
+          <h3 class="text-3xl font-bold text-white mt-2">Chalet Étoile</h3>
+          <p class="text-white/80 mt-2">Zermatt, Switzerland</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-col gap-6">
+        <div data-motion="card" class="rounded-3xl overflow-hidden h-60 relative group">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=80" alt="Luxury chalet interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <span class="text-white font-semibold">Interior Design</span>
+          </div>
+        </div>
+        <div data-motion="card" class="rounded-3xl overflow-hidden h-60 relative group">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=80" alt="Mountain spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/70 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <span class="text-white font-semibold">Wellness & Spa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-8">
+      <div data-motion="button" class="flex flex-wrap gap-4">
+        <a data-motion="button" href="#" class="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full transition-colors">Explore Properties</a>
+        <a data-motion="button" href="#" class="px-8 py-4 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-semibold rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-rose-500 transition-colors">Virtual Tour</a>
+      </div>
+      
+      <div data-motion="stat" class="flex gap-12">
+        <div class="text-center">
+          <span class="text-3xl font-bold text-neutral-900 dark:text-white">24</span>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm mt-1">Exclusive Chalets</p>
+        </div>
+        <div class="text-center">
+          <span class="text-3xl font-bold text-neutral-900 dark:text-white">5★</span>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm mt-1">Guest Rating</p>
+        </div>
+        <div class="text-center">
+          <span class="text-3xl font-bold text-neutral-900 dark:text-white">15+</span>
+          <p class="text-neutral-500 dark:text-neutral-400 text-sm mt-1">Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_gallery_masonry_grid_v6_001" class="py-20 sm:py-24 bg-neutral-50 dark:bg-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-16">
+      <div data-motion="header" class="max-w-xl">
+        <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-rose-100 dark:bg-rose-900/40 rounded-full text-rose-600 dark:text-rose-400 text-sm font-medium mb-4">
+          <span class="w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
+          Gallery
+        </span>
+        <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white">
+          <span data-animate="heading">Moments Captured</span>
+        </h2>
+        <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 mt-4">A collection of extraordinary moments frozen in time, each telling its own unique story.</p>
+      </div>
+      <a data-motion="link" href="#" class="inline-flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold hover:gap-3 transition-all w-fit">
+        View Full Gallery
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+    
+    <!-- Masonry Grid -->
+    <div class="grid md:grid-cols-12 gap-5">
+      <!-- Large Featured Image -->
+      <div data-motion="image" class="md:col-span-7 md:row-span-2 group">
+        <div class="relative h-full min-h-[400px] md:min-h-[600px] rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=1200&auto=format&fit=crop&q=80" alt="Mountain landscape" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8">
+            <span data-motion="badge" class="inline-block px-3 py-1 bg-rose-500 text-white text-xs font-medium rounded-full mb-3">Featured</span>
+            <h3 class="text-2xl font-bold text-white">Alpine Wilderness</h3>
+            <p class="text-neutral-300 mt-1">Dolomites, Italy</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Top Right Image -->
+      <div data-motion="image" class="md:col-span-5 group">
+        <div class="relative h-64 md:h-[290px] rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=80" alt="Lake reflection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-lg font-semibold text-white">Mirror Lake</h3>
+            <p class="text-neutral-300 text-sm">New Zealand</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Right Image -->
+      <div data-motion="image" class="md:col-span-5 group">
+        <div class="relative h-64 md:h-[290px] rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80" alt="Foggy forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-lg font-semibold text-white">Misty Forest</h3>
+            <p class="text-neutral-300 text-sm">Pacific Northwest</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Row - 3 Images -->
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&auto=format&fit=crop&q=80" alt="Waterfall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-base font-semibold text-white">Hidden Falls</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=600&auto=format&fit=crop&q=80" alt="Autumn forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-base font-semibold text-white">Autumn Colors</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div data-motion="image" class="md:col-span-4 group">
+        <div class="relative h-64 rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop&q=80" alt="Mountain peak" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-linear-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-base font-semibold text-white">Summit View</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_split_icon_list_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-16">
+      <!-- Header - Full Width -->
+      <div data-motion="hero" class="grid lg:grid-cols-2 gap-8 items-end">
+        <div>
+          <span data-motion="badge" class="text-rose-600 dark:text-rose-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Automation</span>
+          <h2>
+            <span data-animate="heading" class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">Marketing That Runs Itself</span>
+          </h2>
+        </div>
+        <div>
+          <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400">
+            Set up once and let intelligent automation handle the rest while you focus on strategy and growth.
+          </p>
+        </div>
+      </div>
+
+      <!-- Content - Asymmetric Split -->
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <!-- Image with Floating Card -->
+        <div data-motion="image" class="lg:col-span-5 relative rounded-3xl overflow-hidden">
+          <img data-motion="image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" alt="Marketing automation" class="w-full h-80 lg:h-[500px] object-cover">
+          <div class="absolute bottom-6 left-6 right-6 p-5 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xs rounded-2xl">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-3xl font-bold text-rose-600 dark:text-rose-400">85%</span>
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm">Time saved on campaigns</p>
+              </div>
+              <div data-motion="icon" class="w-12 h-12 bg-rose-100 dark:bg-rose-900/40 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features List -->
+        <div class="lg:col-span-7 flex flex-col gap-8">
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-4">One Platform to Automate Your Entire Funnel</h3>
+            <p class="text-neutral-600 dark:text-neutral-400">From lead capture to conversion, automate every touchpoint with personalized messaging that converts.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <!-- Feature 1 -->
+            <div data-motion="card" class="p-5 bg-rose-50 dark:bg-rose-900/20 rounded-2xl">
+              <div class="w-11 h-11 bg-rose-100 dark:bg-rose-900/40 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                </svg>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-white mb-2">Email Sequences</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Drip campaigns that nurture leads with perfectly timed messages.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div data-motion="card" class="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+              <div class="w-11 h-11 bg-rose-100 dark:bg-rose-900/40 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+                </svg>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-white mb-2">Lead Scoring</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Automatically rank prospects based on engagement and fit.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div data-motion="card" class="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+              <div class="w-11 h-11 bg-rose-100 dark:bg-rose-900/40 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"/>
+                </svg>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-white mb-2">AI Personalization</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Dynamic content that adapts to each visitor's interests.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div data-motion="card" class="p-5 bg-rose-50 dark:bg-rose-900/20 rounded-2xl">
+              <div class="w-11 h-11 bg-rose-100 dark:bg-rose-900/40 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/>
+                </svg>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-white mb-2">Revenue Attribution</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Track every touchpoint to understand what drives revenue.</p>
+            </div>
+          </div>
+
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold hover:gap-3 transition-all w-fit">
+            Start Automating
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_pricing_tabbed_magazine_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-12">
+      <!-- Header Row -->
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div data-motion="header" class="max-w-xl">
+          <span data-motion="badge" class="text-rose-600 dark:text-rose-400 text-sm font-semibold tracking-wide uppercase mb-3 block">Pricing</span>
+          <h2 class="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">
+            <span data-animate="heading">Plans that scale with you</span>
+          </h2>
+        </div>
+        
+        <!-- Tabs -->
+        <div data-motion="tabs" class="flex gap-1 p-1 bg-neutral-100 dark:bg-neutral-900 rounded-full w-fit">
+          <button data-motion="button" type="button" data-tab="creators" class="tab-btn px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 bg-rose-600 text-white">
+            Creators
+          </button>
+          <button type="button" data-tab="agencies" class="tab-btn px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+            Agencies
+          </button>
+        </div>
+      </div>
+
+      <!-- Creators Tab Content -->
+      <div id="tab-creators" class="tab-content">
+        <div class="grid lg:grid-cols-3 gap-5">
+          <!-- Featured Plan - Large -->
+          <div data-motion="card" class="lg:row-span-2 p-8 bg-rose-600 dark:bg-rose-500 rounded-3xl flex flex-col justify-between">
+            <div>
+              <span data-motion="badge" class="inline-block px-3 py-1 bg-white/20 backdrop-blur-xs rounded-full text-white text-xs font-medium mb-6">Most Popular</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Growth</h3>
+              <p class="text-rose-100 mb-8">Perfect for creators ready to scale their audience and monetize content.</p>
+            </div>
+            <div>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">$29</span>
+                <span class="text-rose-200">/month</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-2 text-rose-100 text-sm">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Unlimited projects
+                </li>
+                <li class="flex items-center gap-2 text-rose-100 text-sm">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Advanced analytics
+                </li>
+                <li class="flex items-center gap-2 text-rose-100 text-sm">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Priority support
+                </li>
+              </ul>
+              <a href="#" data-motion="button" class="block text-center px-6 py-3 bg-white text-rose-600 rounded-full font-semibold hover:bg-rose-50 transition-colors">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Hobby Plan -->
+          <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Hobby</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">For side projects</p>
+            <div class="mb-4">
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white">$12</span>
+              <span class="text-neutral-500 dark:text-neutral-400">/mo</span>
+            </div>
+            <a href="#" data-motion="button" class="block text-center px-5 py-2.5 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+              Start Free
+            </a>
+          </div>
+
+          <!-- Scale Plan -->
+          <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Scale</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">Full suite access</p>
+            <div class="mb-4">
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white">$59</span>
+              <span class="text-neutral-500 dark:text-neutral-400">/mo</span>
+            </div>
+            <a href="#" data-motion="button" class="block text-center px-5 py-2.5 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+              Get Started
+            </a>
+          </div>
+
+          <!-- Image Card -->
+          <div data-motion="image" class="lg:col-span-2 h-48 rounded-2xl overflow-hidden">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=80" alt="Creative team" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Agencies Tab Content -->
+      <div id="tab-agencies" class="tab-content hidden">
+        <div class="grid lg:grid-cols-3 gap-5">
+          <!-- Featured Plan - Large -->
+          <div data-motion="card" class="lg:row-span-2 p-8 bg-rose-600 dark:bg-rose-500 rounded-3xl flex flex-col justify-between">
+            <div>
+              <span data-motion="badge" class="inline-block px-3 py-1 bg-white/20 backdrop-blur-xs rounded-full text-white text-xs font-medium mb-6">Best Value</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+              <p class="text-rose-100 mb-8">Unlimited clients with white-label reports and advanced team features.</p>
+            </div>
+            <div>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">$199</span>
+                <span class="text-rose-200">/month</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-2 text-rose-100 text-sm">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Unlimited clients
+                </li>
+                <li class="flex items-center gap-2 text-rose-100 text-sm">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  White-label reports
+                </li>
+                <li class="flex items-center gap-2 text-rose-100 text-sm">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Team collaboration
+                </li>
+              </ul>
+              <a href="#" data-motion="button" class="block text-center px-6 py-3 bg-white text-rose-600 rounded-full font-semibold hover:bg-rose-50 transition-colors">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Starter Plan -->
+          <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Starter</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">Up to 10 clients</p>
+            <div class="mb-4">
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white">$99</span>
+              <span class="text-neutral-500 dark:text-neutral-400">/mo</span>
+            </div>
+            <a href="#" data-motion="button" class="block text-center px-5 py-2.5 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+              Get Started
+            </a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-1">Enterprise</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">Custom solutions</p>
+            <div class="mb-4">
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white">$399</span>
+              <span class="text-neutral-500 dark:text-neutral-400">/mo</span>
+            </div>
+            <a href="#" data-motion="button" class="block text-center px-5 py-2.5 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+              Contact Sales
+            </a>
+          </div>
+
+          <!-- Image Card -->
+          <div data-motion="image" class="lg:col-span-2 h-48 rounded-2xl overflow-hidden">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80" alt="Agency team meeting" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Script -->
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    const sectionId = '#_pricing_tabbed_magazine_v6_001';
+    const tabBtns = document.querySelectorAll(sectionId + ' .tab-btn');
+    const tabContents = document.querySelectorAll(sectionId + ' .tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const target = this.dataset.tab;
+        
+        tabBtns.forEach(b => {
+          b.classList.remove('bg-rose-600', 'text-white');
+          b.classList.add('text-neutral-600', 'dark:text-neutral-400');
+        });
+        
+        this.classList.add('bg-rose-600', 'text-white');
+        this.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+        
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        document.querySelector(sectionId + ' #tab-' + target).classList.remove('hidden');
+      });
+    });
+  });
+  </script>
+</section>
+<style>
+    @keyframes marquee-up {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  @keyframes marquee-down {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+  .marquee-up { animation: marquee-up 30s linear infinite; }
+  .marquee-down { animation: marquee-down 30s linear infinite; }
+  </style>
+<section id="_testimonial_split_dual_marquee_v6_t26_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950 overflow-hidden">
+  <style>
+    @keyframes marquee-up {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  @keyframes marquee-down {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+  .marquee-up { animation: marquee-up 30s linear infinite; }
+  .marquee-down { animation: marquee-down 30s linear infinite; }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Marquee Columns -->
+      <div class="lg:col-span-7 h-[550px] overflow-hidden relative flex gap-5 order-2 lg:order-1">
+        <!-- Column 1 - Up -->
+        <div class="flex-1 overflow-hidden">
+          <div data-motion="marquee" class="marquee-up space-y-5">
+            <!-- Card 1 -->
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Michael Torres" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Michael Torres</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Product Designer</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"The design system saved us months of work. Everything just clicks together beautifully."</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Sarah Chen" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Sarah Chen</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Engineering Lead</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Integration was seamless. Our team was productive from day one."</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="David Kim" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">David Kim</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Startup Founder</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"We shipped our MVP in half the time. The components are production-ready."</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Emma Wilson" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Emma Wilson</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Creative Director</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Finally a tool that matches our design standards. Absolutely love it."</p>
+            </div>
+            <!-- Duplicates for seamless loop -->
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Michael Torres" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Michael Torres</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Product Designer</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"The design system saved us months of work. Everything just clicks together beautifully."</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Sarah Chen" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Sarah Chen</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Engineering Lead</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Integration was seamless. Our team was productive from day one."</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="David Kim" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">David Kim</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Startup Founder</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"We shipped our MVP in half the time. The components are production-ready."</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Emma Wilson" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Emma Wilson</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Creative Director</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Finally a tool that matches our design standards. Absolutely love it."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 - Down -->
+        <div class="flex-1 overflow-hidden hidden sm:block">
+          <div data-motion="marquee" class="marquee-down space-y-5">
+            <!-- Card 5 -->
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="James Park" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">James Park</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Tech Lead</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Performance is incredible. Our app feels snappier than ever before."</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Lisa Martinez" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Lisa Martinez</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">UX Researcher</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"User testing scores improved dramatically after implementing these patterns."</p>
+            </div>
+            <!-- Card 7 -->
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=80" alt="Robert Chen" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Robert Chen</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">CTO</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"The documentation is exceptional. Onboarding new devs takes hours, not weeks."</p>
+            </div>
+            <!-- Card 8 -->
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Nina Patel" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Nina Patel</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Frontend Dev</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Accessibility built-in from the start. No more retrofitting ARIA labels."</p>
+            </div>
+            <!-- Duplicates for seamless loop -->
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="James Park" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">James Park</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Tech Lead</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Performance is incredible. Our app feels snappier than ever before."</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Lisa Martinez" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Lisa Martinez</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">UX Researcher</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"User testing scores improved dramatically after implementing these patterns."</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=80" alt="Robert Chen" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Robert Chen</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">CTO</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"The documentation is exceptional. Onboarding new devs takes hours, not weeks."</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900">
+              <div class="flex items-center gap-3 mb-3">
+                <img data-motion="image" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Nina Patel" class="w-11 h-11 rounded-full object-cover">
+                <div>
+                  <h6 class="text-sm font-semibold text-neutral-900 dark:text-white">Nina Patel</h6>
+                  <span class="text-xs text-rose-600 dark:text-rose-400">Frontend Dev</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">"Accessibility built-in from the start. No more retrofitting ARIA labels."</p>
+            </div>
+          </div>
+        </div>
+        <!-- Gradient overlays -->
+        <div class="absolute top-0 left-0 right-0 h-24 bg-linear-to-b from-white dark:from-neutral-950 to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white dark:from-neutral-950 to-transparent pointer-events-none"></div>
+      </div>
+
+      <!-- Right Content -->
+      <div data-motion="content" class="lg:col-span-5 order-1 lg:order-2">
+        <span data-motion="badge" class="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-100 dark:bg-rose-900/40 rounded-full text-rose-600 dark:text-rose-400 text-sm font-medium mb-6">
+          <span class="w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
+          Customer Stories
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-5">
+          <span data-animate="heading">Loved by teams everywhere</span>
+        </h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+          <span data-animate="text">Join thousands of teams who have transformed their workflow with our platform. See what they have to say.</span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full transition-colors">
+            View All Stories
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white font-semibold rounded-full hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+            Start Free Trial
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_faq_split_image_accordion_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Bento Grid Layout -->
+    <div class="grid lg:grid-cols-12 gap-6">
+      
+      <!-- Header Card -->
+      <div class="lg:col-span-5 bg-rose-50 dark:bg-rose-950/30 rounded-3xl p-8 sm:p-10" data-motion="card">
+        <div data-motion="hero">
+          <span class="text-rose-600 dark:text-rose-400 text-sm font-semibold tracking-wide uppercase" data-motion="badge">Support</span>
+          
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mt-4 leading-tight">
+            <span data-animate="heading">Got questions? We have answers</span>
+          </h2>
+          
+          <p class="text-neutral-600 dark:text-neutral-400 mt-4" data-animate="text">
+            Find quick answers to common questions about our platform and services.
+          </p>
+          
+          <a href="#" data-motion="button" class="inline-flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold mt-6 hover:gap-3 transition-all">
+            Contact Support
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Image Card -->
+      <div class="lg:col-span-7 rounded-3xl overflow-hidden" data-motion="image">
+        <img data-motion="image" 
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80" 
+          alt="Customer support team" 
+          class="w-full h-full min-h-[300px] object-cover"
+        >
+      </div>
+      
+      <!-- Accordion Cards -->
+      <div class="lg:col-span-12 grid md:grid-cols-2 gap-4">
+        
+        <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6">
+          <button type="button" data-accordion-toggle class="accordion-btn flex items-center justify-between w-full text-left">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white pr-4">How do I get started with the platform?</span>
+            <span class="w-8 h-8 bg-rose-100 dark:bg-rose-900/40 rounded-full flex items-center justify-center shrink-0">
+              <svg class="accordion-icon w-4 h-4 text-rose-600 dark:text-rose-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+            <p class="pt-4 text-neutral-600 dark:text-neutral-400">
+              Getting started is simple! Create your account using the sign-up button, complete your profile setup, and you'll have immediate access to all features.
+            </p>
+          </div>
+        </div>
+        
+        <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6">
+          <button type="button" data-accordion-toggle class="accordion-btn flex items-center justify-between w-full text-left">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white pr-4">Is my data secure on your platform?</span>
+            <span class="w-8 h-8 bg-rose-100 dark:bg-rose-900/40 rounded-full flex items-center justify-center shrink-0">
+              <svg class="accordion-icon w-4 h-4 text-rose-600 dark:text-rose-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+            <p class="pt-4 text-neutral-600 dark:text-neutral-400">
+              Absolutely! We use enterprise-grade encryption and follow industry best practices. Your information is protected with SSL encryption.
+            </p>
+          </div>
+        </div>
+        
+        <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6">
+          <button type="button" data-accordion-toggle class="accordion-btn flex items-center justify-between w-full text-left">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white pr-4">How can I reset my password?</span>
+            <span class="w-8 h-8 bg-rose-100 dark:bg-rose-900/40 rounded-full flex items-center justify-center shrink-0">
+              <svg class="accordion-icon w-4 h-4 text-rose-600 dark:text-rose-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+            <p class="pt-4 text-neutral-600 dark:text-neutral-400">
+              Click the "Forgot Password" link on the login page, enter your email address, and we'll send you a secure reset link within minutes.
+            </p>
+          </div>
+        </div>
+        
+        <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6">
+          <button type="button" data-accordion-toggle class="accordion-btn flex items-center justify-between w-full text-left">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white pr-4">What payment methods do you accept?</span>
+            <span class="w-8 h-8 bg-rose-100 dark:bg-rose-900/40 rounded-full flex items-center justify-center shrink-0">
+              <svg class="accordion-icon w-4 h-4 text-rose-600 dark:text-rose-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+            <p class="pt-4 text-neutral-600 dark:text-neutral-400">
+              We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+
+  <script>
+  (function() {
+    const section = document.getElementById('_faq_split_image_accordion_v6_001');
+    if (!section) return;
+    
+    const toggles = section.querySelectorAll('[data-accordion-toggle]');
+    
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const card = this.closest('[data-motion="card"]');
+        if (!card) return;
+        
+        const content = card.querySelector('.accordion-content');
+        const icon = card.querySelector('.accordion-icon');
+        if (!content) return;
+        
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        if (isOpen) {
+          content.style.maxHeight = '0px';
+          content.style.opacity = '0';
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  })();
+  </script>
+</section>
+<section id="_cta_split_form_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Asymmetric Grid -->
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left: Content -->
+      <div class="lg:col-span-7" data-motion="hero">
+        <span data-motion="badge" class="text-rose-600 dark:text-rose-400 text-sm font-semibold tracking-wide uppercase">Expert Guidance</span>
+        <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">
+          <span data-animate="heading">Scale your business with strategic consulting</span>
+        </h2>
+        <p class="mt-6 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-lg">
+          <span data-animate="text">Get personalized strategies and actionable insights from industry experts.</span>
+        </p>
+        
+        <!-- Trust Indicators -->
+        <div data-motion="social-proof" class="mt-8 flex items-center gap-6">
+          <div class="flex -space-x-3">
+            <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-900/40 border-2 border-white dark:border-neutral-950"></div>
+            <div class="w-10 h-10 rounded-full bg-rose-200 dark:bg-rose-800/40 border-2 border-white dark:border-neutral-950"></div>
+            <div class="w-10 h-10 rounded-full bg-rose-300 dark:bg-rose-700/40 border-2 border-white dark:border-neutral-950"></div>
+          </div>
+          <span class="text-sm text-neutral-600 dark:text-neutral-400">Trusted by 500+ businesses</span>
+        </div>
+      </div>
+      
+      <!-- Right: Form Card -->
+      <div class="lg:col-span-5">
+        <div data-motion="card" class="p-8 bg-rose-50 dark:bg-rose-900/20 rounded-3xl">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">Request a free consultation</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-6">We'll get back to you within 24 hours.</p>
+          
+          <div class="space-y-4">
+            <input data-motion="input" type="text" placeholder="Your name" class="w-full px-5 py-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:ring-2 focus:ring-rose-500 focus:border-transparent">
+            <input data-motion="input" type="email" placeholder="Email address" class="w-full px-5 py-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-hidden focus:ring-2 focus:ring-rose-500 focus:border-transparent">
+            <button data-motion="button" type="button" class="w-full px-6 py-4 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-xl transition-colors">
+              Get Started
+            </button>
+          </div>
+          
+          <p class="mt-4 text-xs text-neutral-500 dark:text-neutral-400 text-center">
+            No spam. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_logo_members_v6_001" class="bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="py-16 grid lg:grid-cols-12 gap-12 border-b border-neutral-200 dark:border-neutral-800">
+      
+      <!-- Brand + Social Proof -->
+      <div data-motion="brand" class="lg:col-span-4">
+        <a href="#" class="flex items-center gap-3 mb-6">
+          <div class="w-11 h-11 bg-rose-500 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-neutral-900 dark:text-white">ShopFlow</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-8">Trusted by over 50,000 sellers worldwide. Join our growing community of successful entrepreneurs.</p>
+        
+        <!-- Social Proof -->
+        <div data-motion="avatars" class="flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-900/30 border-2 border-white dark:border-neutral-900 flex items-center justify-center">
+              <span data-motion="badge" class="text-xs font-semibold text-rose-600 dark:text-rose-400">+5K</span>
+            </div>
+          </div>
+          <div>
+            <span class="text-neutral-900 dark:text-white font-semibold">50K+</span>
+            <span class="text-neutral-500 dark:text-neutral-400 text-sm ml-1">Active Sellers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Columns -->
+      <div class="lg:col-span-8 grid sm:grid-cols-3 gap-8">
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Marketplace</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Browse Products</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Categories</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Deals & Offers</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Sellers</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Start Selling</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Dashboard</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Analytics</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Academy</a></li>
+          </ul>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Help Center</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Returns</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-rose-500 transition-colors">Shipping</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div data-motion="bottom" class="py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-500 text-sm">© 2026 ShopFlow. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-neutral-500 hover:text-rose-500 text-sm transition-colors">Terms</a>
+        <a href="#" class="text-neutral-500 hover:text-rose-500 text-sm transition-colors">Privacy</a>
+        <a href="#" class="text-neutral-500 hover:text-rose-500 text-sm transition-colors">Cookies</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-rose-500 hover:border-rose-500 hover:text-white text-neutral-500 transition-all" aria-label="Twitter">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-rose-500 hover:border-rose-500 hover:text-white text-neutral-500 transition-all" aria-label="Instagram">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-rose-500 hover:border-rose-500 hover:text-white text-neutral-500 transition-all" aria-label="Facebook">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>

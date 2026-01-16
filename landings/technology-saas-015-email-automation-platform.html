@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>015 Email Automation Platform</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion.js for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [data-motion] { opacity: 0; }
+    [data-animate] { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-neutral-950">
+  
+<style>
+ /* Drawer styles */
+ #drawer {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 320px;
+ height: 100vh;
+ background: white;
+ z-index: 100;
+ transform: translateX(-100%);
+ transition: transform 0.3s ease-out;
+ }
+ .dark #drawer {
+ background: #0a0a0a;
+ }
+ #drawer.active {
+ transform: translateX(0);
+ }
+ #overlay {
+ position: fixed;
+ inset: 0;
+ background: rgba(0, 0, 0, 0.5);
+ z-index: 99;
+ opacity: 0;
+ visibility: hidden;
+ transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+ }
+ #overlay.active {
+ opacity: 1;
+ visibility: visible;
+ }
+ </style>
+<header id="_header_sidebar_drawer_h7_001" class="relative bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-900">
+ <style>
+ /* Drawer styles */
+ #drawer {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 320px;
+ height: 100vh;
+ background: white;
+ z-index: 100;
+ transform: translateX(-100%);
+ transition: transform 0.3s ease-out;
+ }
+ .dark #drawer {
+ background: #0a0a0a;
+ }
+ #drawer.active {
+ transform: translateX(0);
+ }
+ #overlay {
+ position: fixed;
+ inset: 0;
+ background: rgba(0, 0, 0, 0.5);
+ z-index: 99;
+ opacity: 0;
+ visibility: hidden;
+ transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+ }
+ #overlay.active {
+ opacity: 1;
+ visibility: visible;
+ }
+ </style>
+
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-3 items-center h-16">
+ <!-- Menu Button -->
+ <div class="flex justify-start">
+ <button 
+ type="button"
+ aria-label="Open menu"
+ data-motion="menu"
+ onclick="document.getElementById('drawer').classList.add('active'); document.getElementById('overlay').classList.add('active');"
+ class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-6 h-6 text-neutral-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+ </svg>
+ </button>
+ </div>
+
+ <!-- Logo -->
+ <a data-motion="logo" href="#" class="flex items-center gap-2.5 justify-center">
+ <div data-motion="icon" class="w-10 h-10 bg-linear-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center">
+ <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+ </svg>
+ </div>
+ <span class="text-lg font-bold text-neutral-900 dark:text-white hidden sm:block">Flame</span>
+ </a>
+
+ <!-- Right Actions -->
+ <div data-motion="actions" class="flex items-center gap-2 justify-end">
+ <button 
+ type="button"
+ aria-label="Toggle dark mode"
+ data-motion="button" 
+ onclick="document.documentElement.classList.toggle('dark')"
+ class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+ </svg>
+ <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+ </svg>
+ </button>
+ 
+ <a href="#" class="h-10 px-5 bg-linear-to-r from-blue-500 to-blue-500 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center">
+ Contact
+ </a>
+ </div>
+ </div>
+ </div>
+
+ <!-- Overlay -->
+ <div id="overlay" onclick="document.getElementById('drawer').classList.remove('active'); this.classList.remove('active');"></div>
+
+ <!-- Drawer -->
+ <nav id="drawer" class="p-6">
+ <div class="flex items-center justify-between mb-8">
+ <a href="#" class="flex items-center gap-2.5">
+ <div class="w-10 h-10 bg-linear-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center">
+ <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+ </svg>
+ </div>
+ <span class="text-lg font-bold text-neutral-900 dark:text-white">Flame</span>
+ </a>
+ <button 
+ type="button"
+ aria-label="Close menu"
+ onclick="document.getElementById('drawer').classList.remove('active'); document.getElementById('overlay').classList.remove('active');"
+ class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+ >
+ <svg class="w-6 h-6 text-neutral-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+ </svg>
+ </button>
+ </div>
+ 
+ <div class="space-y-1">
+ <a href="#" class="block px-4 py-3 text-neutral-900 dark:text-white font-medium rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
+ <a href="#" class="block px-4 py-3 text-neutral-600 dark:text-neutral-400 font-medium rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-colors">About</a>
+ <a href="#" class="block px-4 py-3 text-neutral-600 dark:text-neutral-400 font-medium rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-colors">Services</a>
+ <a href="#" class="block px-4 py-3 text-neutral-600 dark:text-neutral-400 font-medium rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-colors">Portfolio</a>
+ <a href="#" class="block px-4 py-3 text-neutral-600 dark:text-neutral-400 font-medium rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-colors">Blog</a>
+ <a href="#" class="block px-4 py-3 text-neutral-600 dark:text-neutral-400 font-medium rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-colors">Contact</a>
+ </div>
+ 
+ <div class="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+ <a href="#" class="block w-full py-3 bg-linear-to-r from-blue-500 to-blue-500 text-white text-center font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all">
+ Get Started
+ </a>
+ </div>
+ </nav>
+</header>
+<section id="_hero_digital_wallet_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Asymmetric 8/4 Split -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+      <!-- Left - Large Content Area - 8 columns -->
+      <div class="lg:col-span-8">
+        <div class="bg-blue-50 dark:bg-blue-950/20 rounded-3xl p-8 lg:p-12 h-full" data-motion="hero">
+          <span data-motion="badge" class="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase mb-6 block">Digital Wallet</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight mb-6">
+            <span data-animate="heading">Money Without</span><br>
+            <span data-animate="heading" class="text-blue-600 dark:text-blue-400">Boundaries</span>
+          </h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-xl" data-animate="text">
+            Send, receive, and manage your finances with military-grade security. Instant transfers to anyone, anywhere in the world.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="#" data-motion="button" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-full text-white font-semibold">
+              Download App
+            </a>
+            <a href="#" data-motion="button" class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-neutral-900 rounded-full text-neutral-900 dark:text-white font-semibold border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Watch Demo
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="grid grid-cols-3 gap-6" data-motion="stats">
+            <div>
+              <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 block">2M+</span>
+              <span class="text-neutral-500 dark:text-neutral-400 text-sm">Active Users</span>
+            </div>
+            <div>
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white block">$5B+</span>
+              <span class="text-neutral-500 dark:text-neutral-400 text-sm">Transferred</span>
+            </div>
+            <div>
+              <span class="text-3xl font-bold text-neutral-900 dark:text-white block">180+</span>
+              <span class="text-neutral-500 dark:text-neutral-400 text-sm">Countries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right - Image + Cards - 4 columns -->
+      <div class="lg:col-span-4 flex flex-col gap-5">
+        <!-- App Preview Image -->
+        <div class="rounded-3xl overflow-hidden flex-1" data-motion="image">
+          <img data-motion="image" 
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&auto=format&fit=crop&q=80" 
+            alt="Mobile payment app" 
+            class="w-full h-full min-h-[250px] object-cover"
+          >
+        </div>
+
+        <!-- Transaction Card -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-5" data-motion="card">
+          <div class="flex items-center gap-3">
+            <div data-motion="icon" class="w-10 h-10 bg-blue-100 dark:bg-blue-900/40 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-neutral-900 dark:text-white font-semibold text-sm">Payment Sent</p>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs">Just now</p>
+            </div>
+            <span class="text-blue-600 dark:text-blue-400 font-semibold">+$2,450</span>
+          </div>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-5" data-motion="card">
+          <div class="flex items-center gap-3">
+            <div data-motion="icon" class="w-10 h-10 bg-blue-100 dark:bg-blue-900/40 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-neutral-900 dark:text-white font-semibold text-sm">Bank-Level Security</p>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs">256-bit encryption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_clients_accent_cards_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Centered Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-neutral-900 dark:text-white text-3xl sm:text-4xl font-bold">
+        <span data-animate="heading">Trusted by leading companies worldwide</span>
+      </h2>
+    </div>
+    
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center justify-center h-20">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/google-icon.svg" alt="Google" class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-300" />
+      </div>
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border-neutral-200 dark:border-neutral-800 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center justify-center h-20">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/microsoft-icon.svg" alt="Microsoft" class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-300" />
+      </div>
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border-neutral-200 dark:border-neutral-800 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center justify-center h-20">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/aws.svg" alt="Amazon" class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-300" />
+      </div>
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border-neutral-200 dark:border-neutral-800 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center justify-center h-20">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/meta-icon.svg" alt="Meta" class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-300" />
+      </div>
+      <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border-neutral-200 dark:border-neutral-800 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center justify-center h-20">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/apple.svg" alt="Apple" class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-300" />
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_features_horizontal_rows_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="max-w-3xl mb-16">
+      <span data-motion="badge" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase mb-4">
+        
+        Our Services
+      </span>
+      <h2 data-motion="header" class="text-neutral-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+        <span data-animate="heading">Strategic consulting for ambitious businesses</span>
+      </h2>
+      <p data-motion="text" class="text-neutral-600 dark:text-neutral-400 text-lg">
+        <span data-animate="text">Expert guidance to help you navigate challenges, optimize operations, and accelerate growth.</span>
+      </p>
+    </div>
+
+    <!-- Service Rows -->
+    <div class="flex flex-col">
+      
+      <!-- Row 1 -->
+      <div data-motion="row" class="group py-8 lg:py-10 border-b border-neutral-200 dark:border-neutral-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors -mx-4 px-4 lg:-mx-8 lg:px-8 rounded-2xl">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="lg:col-span-2">
+            <span class="text-blue-600 dark:text-blue-400 text-5xl lg:text-6xl font-bold">01</span>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="rounded-2xl overflow-hidden h-48 lg:h-40">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=80" alt="Business strategy session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <h3 class="text-neutral-900 dark:text-white text-xl lg:text-2xl font-bold mb-2">Business Strategy</h3>
+            <p class="text-neutral-500 dark:text-neutral-400">Define your vision, set clear goals, and create actionable roadmaps for sustainable growth and market leadership.</p>
+          </div>
+          <div class="lg:col-span-2 flex lg:justify-end">
+            <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all duration-300">
+              Explore
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div data-motion="row" class="group py-8 lg:py-10 border-b border-neutral-200 dark:border-neutral-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors -mx-4 px-4 lg:-mx-8 lg:px-8 rounded-2xl">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="lg:col-span-2">
+            <span class="text-blue-600 dark:text-blue-400 text-5xl lg:text-6xl font-bold">02</span>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="rounded-2xl overflow-hidden h-48 lg:h-40">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" alt="Digital transformation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <h3 class="text-neutral-900 dark:text-white text-xl lg:text-2xl font-bold mb-2">Digital Transformation</h3>
+            <p class="text-neutral-500 dark:text-neutral-400">Modernize your operations with technology solutions that drive efficiency, innovation, and competitive advantage.</p>
+          </div>
+          <div class="lg:col-span-2 flex lg:justify-end">
+            <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all duration-300">
+              Explore
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div data-motion="row" class="group py-8 lg:py-10 border-b border-neutral-200 dark:border-neutral-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors -mx-4 px-4 lg:-mx-8 lg:px-8 rounded-2xl">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="lg:col-span-2">
+            <span class="text-blue-600 dark:text-blue-400 text-5xl lg:text-6xl font-bold">03</span>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="rounded-2xl overflow-hidden h-48 lg:h-40">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80" alt="Team workshop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <h3 class="text-neutral-900 dark:text-white text-xl lg:text-2xl font-bold mb-2">Leadership Development</h3>
+            <p class="text-neutral-500 dark:text-neutral-400">Build high-performing teams with executive coaching, workshops, and leadership training programs.</p>
+          </div>
+          <div class="lg:col-span-2 flex lg:justify-end">
+            <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all duration-300">
+              Explore
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div data-motion="row" class="group py-8 lg:py-10 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors -mx-4 px-4 lg:-mx-8 lg:px-8 rounded-2xl">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="lg:col-span-2">
+            <span class="text-blue-600 dark:text-blue-400 text-5xl lg:text-6xl font-bold">04</span>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="rounded-2xl overflow-hidden h-48 lg:h-40">
+              <img data-motion="image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" alt="Data analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <h3 class="text-neutral-900 dark:text-white text-xl lg:text-2xl font-bold mb-2">Data & Analytics</h3>
+            <p class="text-neutral-500 dark:text-neutral-400">Transform raw data into actionable insights that inform decisions and drive measurable business outcomes.</p>
+          </div>
+          <div class="lg:col-span-2 flex lg:justify-end">
+            <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all duration-300">
+              Explore
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div data-motion="cta" class="mt-12 pt-12 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-600 dark:text-neutral-400 text-lg">Ready to transform your business?</p>
+      <a data-motion="button" href="#" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-full text-white font-semibold">
+        Schedule a Consultation
+      </a>
+    </div>
+
+  </div>
+</section>
+<section id="_features_icon_box_cards_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-16">
+      <!-- Header - Magazine Style -->
+      <div data-motion="hero" class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-7">
+          <span data-motion="badge" class="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Customer Success</span>
+          <h2>
+            <span data-animate="heading" class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">Tools That Drive Customer Growth</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-5">
+          <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+            Empower your team with tools designed to improve customer satisfaction, reduce churn, and maximize lifetime value.
+          </p>
+          <a data-motion="button" href="#" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all">
+            Explore Features
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+        <!-- Large Card -->
+        <div data-motion="card" class="lg:col-span-2 p-8 bg-blue-50 dark:bg-blue-900/20 rounded-3xl">
+          <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <div data-motion="icon" class="w-16 h-16 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center shrink-0">
+              <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-3">Live Chat Support</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-6">Connect with customers instantly through integrated live chat with smart routing and canned responses for faster resolution times.</p>
+              <div class="flex flex-wrap gap-3">
+                <span data-motion="badge" class="px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm rounded-full">Real-time</span>
+                <span data-motion="badge" class="px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm rounded-full">Smart Routing</span>
+                <span data-motion="badge" class="px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm rounded-full">Templates</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Card -->
+        <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/>
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Health Scoring</h4>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Identify at-risk customers early with AI-powered health scores.</p>
+        </div>
+
+        <!-- Small Card -->
+        <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"/>
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">CRM Integration</h4>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Seamlessly sync customer data with your existing CRM.</p>
+        </div>
+
+        <!-- Small Card -->
+        <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z"/>
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Task Automation</h4>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Automate repetitive tasks and follow-ups efficiently.</p>
+        </div>
+
+        <!-- Small Card -->
+        <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-3xl">
+          <div data-motion="icon" class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/>
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">NPS Surveys</h4>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Collect and analyze customer feedback automatically.</p>
+        </div>
+
+      </div>
+
+      <!-- Bottom CTA -->
+      <div data-motion="cta" class="text-center">
+        <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-colors">
+          Start Free Trial
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+    @keyframes marquee-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    #_integration_marquee_cards_v6_001 .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee-left 30s linear infinite;
+    }
+    #_integration_marquee_cards_v6_001 .animate-marquee-reverse {
+      display: flex;
+      width: max-content;
+      animation: marquee-right 30s linear infinite;
+    }
+    #_integration_marquee_cards_v6_001 .animate-marquee:hover,
+    #_integration_marquee_cards_v6_001 .animate-marquee-reverse:hover {
+      animation-play-state: paused;
+    }
+  </style>
+<section id="_integration_marquee_cards_v6_001" class="py-20 sm:py-24 bg-blue-50 dark:bg-blue-950/20 overflow-hidden">
+  <style>
+    @keyframes marquee-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    #_integration_marquee_cards_v6_001 .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee-left 30s linear infinite;
+    }
+    #_integration_marquee_cards_v6_001 .animate-marquee-reverse {
+      display: flex;
+      width: max-content;
+      animation: marquee-right 30s linear infinite;
+    }
+    #_integration_marquee_cards_v6_001 .animate-marquee:hover,
+    #_integration_marquee_cards_v6_001 .animate-marquee-reverse:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="grid lg:grid-cols-2 gap-8 items-end">
+      <div data-motion="hero" class="space-y-4">
+        <span data-motion="badge" class="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase">Ecosystem</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">
+          <span data-animate="heading">Seamless</span>
+          <span data-animate="heading" class="text-blue-600 dark:text-blue-400"> Connections</span>
+        </h2>
+      </div>
+      <div>
+        <p data-animate="text" class="text-lg text-neutral-600 dark:text-neutral-400 lg:text-right">
+          Connect your store with powerful tools and platforms to streamline operations and boost sales.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee Row 1 -->
+  <div class="relative mb-5" data-motion="marquee-row">
+    <div class="flex animate-marquee">
+      <div class="flex gap-4 pr-4">
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/slack-icon.svg" alt="Slack" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Slack</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/notion-icon.svg" alt="Notion" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Notion</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/figma.svg" alt="Figma" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Figma</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/github-icon.svg" alt="GitHub" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">GitHub</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/trello.svg" alt="Trello" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Trello</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/jira.svg" alt="Jira" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Jira</span>
+        </div>
+      </div>
+      <div class="flex gap-4 pr-4">
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/slack-icon.svg" alt="Slack" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Slack</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/notion-icon.svg" alt="Notion" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Notion</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/figma.svg" alt="Figma" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Figma</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/github-icon.svg" alt="GitHub" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">GitHub</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/trello.svg" alt="Trello" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Trello</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/jira.svg" alt="Jira" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Jira</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee Row 2 (Reverse) -->
+  <div class="relative" data-motion="marquee-row-2">
+    <div class="flex animate-marquee-reverse">
+      <div class="flex gap-4 pr-4">
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/asana.svg" alt="Asana" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Asana</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/zoom-icon.svg" alt="Zoom" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Zoom</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/microsoft-teams.svg" alt="Teams" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Teams</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/salesforce.svg" alt="Salesforce" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Salesforce</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/stripe.svg" alt="Stripe" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Stripe</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/hubspot.svg" alt="HubSpot" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">HubSpot</span>
+        </div>
+      </div>
+      <div class="flex gap-4 pr-4">
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/asana.svg" alt="Asana" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Asana</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/zoom-icon.svg" alt="Zoom" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Zoom</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/microsoft-teams.svg" alt="Teams" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Teams</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/salesforce.svg" alt="Salesforce" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Salesforce</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/stripe.svg" alt="Stripe" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">Stripe</span>
+        </div>
+        <div class="px-5 py-4 bg-white dark:bg-neutral-900 rounded-xl flex items-center gap-3 shrink-0">
+          <div data-motion="icon" class="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/hubspot.svg" alt="HubSpot" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-neutral-900 dark:text-white font-semibold whitespace-nowrap">HubSpot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center">
+    <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-colors">
+      View All Integrations
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</section>
+<section id="_stats_centered_header_dividers_v6_017" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Split Header with Image -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <span data-motion="badge" class="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase">Analytics</span>
+        <h2 data-motion="hero" class="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mt-4">
+          <span data-animate="heading">Platform Analytics</span>
+        </h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mt-4" data-animate="text">Real-time insights into our growing ecosystem and global reach</p>
+      </div>
+      <div data-motion="image" class="relative rounded-2xl overflow-hidden h-48 lg:h-64">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Analytics dashboard" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-linear-to-t from-blue-900/40 to-transparent"></div>
+      </div>
+    </div>
+
+    <!-- Stats Grid with Cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      <!-- Stat 1 -->
+      <div data-motion="card" class="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-6 lg:p-8">
+        <span class="text-neutral-600 dark:text-neutral-400 text-sm block mb-3">Monthly Active Users</span>
+        <span class="text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400">2.8M</span>
+      </div>
+
+      <!-- Stat 2 -->
+      <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6 lg:p-8">
+        <span class="text-neutral-600 dark:text-neutral-400 text-sm block mb-3">Enterprise Accounts</span>
+        <span class="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">450+</span>
+      </div>
+
+      <!-- Stat 3 -->
+      <div data-motion="card" class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-6 lg:p-8">
+        <span class="text-neutral-600 dark:text-neutral-400 text-sm block mb-3">API Calls Daily</span>
+        <span class="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">1.2B</span>
+      </div>
+
+      <!-- Stat 4 -->
+      <div data-motion="card" class="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-6 lg:p-8">
+        <span class="text-neutral-600 dark:text-neutral-400 text-sm block mb-3">Countries Served</span>
+        <span class="text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400">95+</span>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200 dark:bg-neutral-800 my-12"></div>
+
+    <!-- Bottom CTA -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-600 dark:text-neutral-400 text-center sm:text-left">Join thousands of teams already using our platform</p>
+      <a data-motion="button" href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-full text-white font-semibold transition-colors">
+        Get started free
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+    @keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .marquee-left { animation: marquee-left 40s linear infinite; }
+  .marquee-right { animation: marquee-right 40s linear infinite; }
+  .marquee-container:hover .marquee-left,
+  .marquee-container:hover .marquee-right { animation-play-state: paused; }
+  </style>
+<section id="_testimonial_dual_marquee_social_t19_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950 overflow-hidden">
+  <style>
+    @keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .marquee-left { animation: marquee-left 40s linear infinite; }
+  .marquee-right { animation: marquee-right 40s linear infinite; }
+  .marquee-container:hover .marquee-left,
+  .marquee-container:hover .marquee-right { animation-play-state: paused; }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
+    <div class="text-center">
+      <span data-motion="badge" class="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase mb-4 block">Social Proof</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">
+        <span data-animate="heading">Don't take our word for it.</span>
+        <span class="text-blue-500"> Trust our customers</span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Marquee Row 1 - Left -->
+  <div data-motion="marquee" class="marquee-container mb-5">
+    <div class="marquee-left flex gap-5" style="width: max-content;">
+      <!-- Card 1 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 1.2k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 342</span>
+          </div>
+          <span class="text-sm text-neutral-500">Jan 5, 2026</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"I love how <span class="text-blue-600 dark:text-blue-400">@flowstack</span> makes it easy to track my projects and collaborate with my team." 😍</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Sarah M" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Sarah Mitchell</h5>
+              <span class="text-xs text-neutral-500">@sarahmitchell</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 856</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 128</span>
+          </div>
+          <span class="text-sm text-neutral-500">Jan 3, 2026</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"<span class="text-blue-600 dark:text-blue-400">@flowstack</span> has helped me save time, reduce errors, and focus on what matters most." 🚀</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="James W" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">James Wilson</h5>
+              <span class="text-xs text-neutral-500">@jameswilson_pm</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 2.1k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 567</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 28, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"I've been using <span class="text-blue-600 dark:text-blue-400">@flowstack</span> for a year now and it's made managing my team so much easier." 🙌</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80" alt="Emily C" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Emily Chen</h5>
+              <span class="text-xs text-neutral-500">@emilychen_dev</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 1.5k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 234</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 25, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Finally a tool that understands design workflows. <span class="text-blue-600 dark:text-blue-400">@flowstack</span> is a game changer!" ✨</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80" alt="Michael T" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Michael Torres</h5>
+              <span class="text-xs text-neutral-500">@michaeltorres</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+
+      <!-- Duplicate cards for seamless loop -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 1.2k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 342</span>
+          </div>
+          <span class="text-sm text-neutral-500">Jan 5, 2026</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"I love how <span class="text-blue-600 dark:text-blue-400">@flowstack</span> makes it easy to track my projects and collaborate with my team." 😍</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Sarah M" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Sarah Mitchell</h5>
+              <span class="text-xs text-neutral-500">@sarahmitchell</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 856</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 128</span>
+          </div>
+          <span class="text-sm text-neutral-500">Jan 3, 2026</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"<span class="text-blue-600 dark:text-blue-400">@flowstack</span> has helped me save time, reduce errors, and focus on what matters most." 🚀</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="James W" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">James Wilson</h5>
+              <span class="text-xs text-neutral-500">@jameswilson_pm</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+      </div>
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 2.1k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 567</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 28, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"I've been using <span class="text-blue-600 dark:text-blue-400">@flowstack</span> for a year now and it's made managing my team so much easier." 🙌</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80" alt="Emily C" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Emily Chen</h5>
+              <span class="text-xs text-neutral-500">@emilychen_dev</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 1.5k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 234</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 25, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Finally a tool that understands design workflows. <span class="text-blue-600 dark:text-blue-400">@flowstack</span> is a game changer!" ✨</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80" alt="Michael T" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Michael Torres</h5>
+              <span class="text-xs text-neutral-500">@michaeltorres</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Marquee Row 2 - Right -->
+  <div data-motion="marquee" class="marquee-container">
+    <div class="marquee-right flex gap-5" style="width: max-content;">
+      <!-- Card 5 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 3.2k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 478</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 22, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"The API integrations are solid, the UI is clean, and the support team is incredibly responsive." 💯</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="David K" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">David Kim</h5>
+              <span class="text-xs text-neutral-500">@davidkim_eng</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 945</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 189</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 20, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Seamless integration with our existing tools. The onboarding was smooth and results were immediate." 🎯</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Lisa W" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Lisa Wang</h5>
+              <span class="text-xs text-neutral-500">@lisawang_ux</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 1.8k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 312</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 18, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Outstanding customer support and a product that actually delivers on its promises." 👏</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80" alt="Alex R" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Alex Rodriguez</h5>
+              <span class="text-xs text-neutral-500">@alexrodriguez</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 2.4k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 421</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 15, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Finally a platform that understands what modern teams need. The collaboration features are game-changing." 🔥</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80" alt="Rachel P" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Rachel Park</h5>
+              <span class="text-xs text-neutral-500">@rachelpark_ceo</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+
+      <!-- Duplicate cards for seamless loop -->
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 3.2k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 478</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 22, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"The API integrations are solid, the UI is clean, and the support team is incredibly responsive." 💯</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="David K" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">David Kim</h5>
+              <span class="text-xs text-neutral-500">@davidkim_eng</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 945</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 189</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 20, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Seamless integration with our existing tools. The onboarding was smooth and results were immediate." 🎯</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Lisa W" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Lisa Wang</h5>
+              <span class="text-xs text-neutral-500">@lisawang_ux</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 1.8k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 312</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 18, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Outstanding customer support and a product that actually delivers on its promises." 👏</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80" alt="Alex R" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Alex Rodriguez</h5>
+              <span class="text-xs text-neutral-500">@alexrodriguez</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+      </div>
+      <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl w-[380px] shrink-0">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg> 2.4k</span>
+            <span class="flex items-center gap-1 text-sm text-neutral-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg> 421</span>
+          </div>
+          <span class="text-sm text-neutral-500">Dec 15, 2025</span>
+        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">"Finally a platform that understands what modern teams need. The collaboration features are game-changing." 🔥</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img data-motion="image" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80" alt="Rachel P" class="w-11 h-11 rounded-full object-cover">
+            <div>
+              <h5 class="font-semibold text-neutral-900 dark:text-white text-sm">Rachel Park</h5>
+              <span class="text-xs text-neutral-500">@rachelpark_ceo</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="_pricing_dark_tabbed_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-12">
+      <!-- Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div data-motion="header" class="max-w-xl">
+          <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 dark:bg-blue-900/40 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
+            <span class="w-1.5 h-1.5 bg-blue-500 dark:bg-blue-400 rounded-full"></span>
+            Pricing
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white leading-tight">
+            <span data-animate="heading">Streamlined solutions with clear pricing</span>
+          </h2>
+        </div>
+        
+        <!-- Tabs -->
+        <div data-motion="tabs" class="flex gap-1 p-1 bg-neutral-100 dark:bg-neutral-900 rounded-full w-fit">
+          <button data-motion="button" type="button" data-tab="yearly" class="tab-btn px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 bg-blue-600 text-white">
+            Yearly
+          </button>
+          <button type="button" data-tab="monthly" class="tab-btn px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+            Monthly
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Starter Card -->
+        <div data-motion="card" class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 rounded-xl bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            </span>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Starter</h3>
+          </div>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-6">Perfect for individuals and small teams getting started.</p>
+          
+          <div class="mb-6">
+            <span class="price-yearly text-4xl font-bold text-neutral-900 dark:text-white">Free</span>
+            <span class="price-monthly text-4xl font-bold text-neutral-900 dark:text-white hidden">Free</span>
+          </div>
+          
+          <ul class="space-y-3 mb-8 grow">
+            <li class="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Smart task management
+            </li>
+            <li class="flex items-center gap-2 text-sm text-neutral-500">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              Advanced analytics
+            </li>
+            <li class="flex items-center gap-2 text-sm text-neutral-500">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              Priority support
+            </li>
+          </ul>
+          
+          <a href="#" data-motion="button" class="block text-center px-5 py-3 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+            Get Started Free
+          </a>
+        </div>
+
+        <!-- Growth Card - Featured -->
+        <div data-motion="card" class="p-6 bg-blue-600 rounded-2xl flex flex-col relative">
+          <span class="absolute top-4 right-4 px-2 py-0.5 bg-white/20 backdrop-blur-xs rounded text-white text-xs font-medium">Popular</span>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </span>
+            <h3 class="text-xl font-semibold text-white">Growth</h3>
+          </div>
+          <p class="text-blue-100 text-sm mb-6">For growing teams that need advanced features.</p>
+          
+          <div class="mb-6">
+            <span class="price-yearly text-4xl font-bold text-white">$49</span>
+            <span class="price-monthly text-4xl font-bold text-white hidden">$59</span>
+            <span class="period-yearly text-blue-200">/mo</span>
+            <span class="period-monthly text-blue-200 hidden">/mo</span>
+            <span class="price-yearly text-sm text-blue-200 block mt-1">Billed annually · Save 17%</span>
+            <span class="price-monthly text-sm text-blue-200 hidden mt-1">Billed monthly</span>
+          </div>
+          
+          <ul class="space-y-3 mb-8 grow">
+            <li class="flex items-center gap-2 text-sm text-blue-100">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Smart task management
+            </li>
+            <li class="flex items-center gap-2 text-sm text-blue-100">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Advanced analytics
+            </li>
+            <li class="flex items-center gap-2 text-sm text-blue-100">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Priority support
+            </li>
+          </ul>
+          
+          <a href="#" data-motion="button" class="block text-center px-5 py-3 bg-white text-blue-600 rounded-full font-medium hover:bg-blue-50 transition-colors">
+            Start Growth Plan
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Image -->
+      <div data-motion="image" class="rounded-2xl overflow-hidden h-48">
+        <img data-motion="image" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop&q=80" alt="Team working" class="w-full h-full object-cover opacity-60">
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Script -->
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    const sectionId = '#_pricing_dark_tabbed_v6_001';
+    const tabBtns = document.querySelectorAll(sectionId + ' .tab-btn');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const target = this.dataset.tab;
+        const isYearly = target === 'yearly';
+        
+        tabBtns.forEach(b => {
+          b.classList.remove('bg-blue-600', 'text-white');
+          b.classList.add('text-neutral-400');
+        });
+        
+        this.classList.add('bg-blue-600', 'text-white');
+        this.classList.remove('text-neutral-400');
+        
+        document.querySelectorAll(sectionId + ' .price-yearly').forEach(el => el.classList.toggle('hidden', !isYearly));
+        document.querySelectorAll(sectionId + ' .price-monthly').forEach(el => el.classList.toggle('hidden', isYearly));
+        document.querySelectorAll(sectionId + ' .period-yearly').forEach(el => el.classList.toggle('hidden', !isYearly));
+        document.querySelectorAll(sectionId + ' .period-monthly').forEach(el => el.classList.toggle('hidden', isYearly));
+      });
+    });
+  });
+  </script>
+</section>
+<section id="_faq_contact_card_accordion_v6_018" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Bento Grid Layout -->
+    <div class="grid lg:grid-cols-12 gap-6">
+      <!-- Header Card -->
+      <div data-motion="header" class="lg:col-span-8 p-8 lg:p-12 bg-blue-50 dark:bg-blue-900/20 rounded-3xl">
+        <span data-motion="badge" class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 dark:bg-blue-900/40 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+          Help Center
+        </span>
+        <h2>
+          <span data-animate="heading" class="block text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">Frequently asked questions</span>
+        </h2>
+      </div>
+
+      <!-- Contact Card -->
+      <div data-motion="card" class="lg:col-span-4 p-8 bg-neutral-900 dark:bg-neutral-800 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div data-motion="icon" class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Still have questions?</h3>
+          <p class="text-neutral-400 text-sm mb-6">Our team is here to help you 24/7.</p>
+        </div>
+        <a data-motion="button" href="#" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-colors">
+          Contact Support
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- FAQ Accordion - Full Width -->
+      <div class="lg:col-span-12 grid lg:grid-cols-2 gap-6">
+        <!-- FAQ Item 1 -->
+        <div data-motion="accordion" data-accordion-item class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+          <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">How do I get started?</span>
+            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-blue-600 dark:text-blue-400 transform transition-transform duration-300 -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div data-accordion-content class="hidden pt-4">
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Sign up for a free account using your email or social login. Complete the quick onboarding process and you'll be ready to explore all features within minutes.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div data-motion="accordion" data-accordion-item class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+          <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">What payment methods do you accept?</span>
+            <span class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shrink-0 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors">
+              <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div data-accordion-content class="hidden pt-4">
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">We accept all major credit cards, PayPal, Apple Pay, and Google Pay. Enterprise customers can also pay via invoice.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div data-motion="accordion" data-accordion-item class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+          <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">Can I cancel my subscription anytime?</span>
+            <span class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shrink-0 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors">
+              <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div data-accordion-content class="hidden pt-4">
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Yes, you can cancel anytime from your account settings. Your access continues until the end of your billing period.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div data-motion="accordion" data-accordion-item class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+          <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">Is there a free trial available?</span>
+            <span class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shrink-0 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors">
+              <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div data-accordion-content class="hidden pt-4">
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Absolutely! Start with a 14-day free trial with full access to all features. No credit card required.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div data-motion="accordion" data-accordion-item class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+          <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">How do I contact support?</span>
+            <span class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shrink-0 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors">
+              <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div data-accordion-content class="hidden pt-4">
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Reach our team via live chat, email, or schedule a call. Premium users get priority support.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div data-motion="accordion" data-accordion-item class="p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl">
+          <button type="button" data-accordion-trigger class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+            <span class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">Is my data secure?</span>
+            <span class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shrink-0 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors">
+              <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div data-accordion-content class="hidden pt-4">
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Absolutely. We use AES-256 encryption, SOC 2 compliance, and regular security audits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script>
+  (function() {
+    const section = document.getElementById('_faq_contact_card_accordion_v6_018');
+    if (!section) return;
+    
+    const triggers = section.querySelectorAll('[data-accordion="trigger"], [data-accordion-trigger], .accordion-trigger');
+    
+    triggers.forEach(trigger => {
+      if (trigger.dataset.accordionInit) return;
+      trigger.dataset.accordionInit = 'true';
+      
+      const item = trigger.closest('[data-accordion="item"], [data-accordion-item], .accordion-item') || trigger.parentElement;
+      if (!item) return;
+      
+      const content = item.querySelector('[data-accordion="content"], [data-accordion-content], .accordion-content');
+      if (!content) return;
+      
+      const icon = item.querySelector('.accordion-icon, [data-accordion-icon]') || trigger.querySelector('svg:last-of-type');
+      
+      // Setup CSS transition
+      content.style.overflow = 'hidden';
+      content.style.transition = 'max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out';
+      
+      // Determine initial state - check aria-expanded first, then hidden class
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      const isHidden = content.classList.contains('hidden');
+      const shouldBeOpen = isExpanded && !isHidden;
+      
+      // Initialize properly
+      if (shouldBeOpen) {
+        content.classList.remove('hidden');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.style.opacity = '1';
+        if (icon) {
+          icon.style.transition = 'transform 0.3s ease-out';
+          icon.style.transform = 'rotate(0deg)';
+          icon.classList.remove('-rotate-90');
+        }
+      } else {
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+        content.style.paddingTop = '0';
+        content.style.paddingBottom = '0';
+        trigger.setAttribute('aria-expanded', 'false');
+        if (icon) {
+          icon.style.transition = 'transform 0.3s ease-out';
+          icon.style.transform = 'rotate(-90deg)';
+        }
+        // Add hidden after a tiny delay to allow transition setup
+        if (!isHidden) {
+          content.classList.add('hidden');
+        }
+      }
+      
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const currentlyOpen = trigger.getAttribute('aria-expanded') === 'true';
+        
+        if (currentlyOpen) {
+          // Close
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.offsetHeight; // Force reflow
+          content.style.maxHeight = '0px';
+          content.style.opacity = '0';
+          content.style.paddingTop = '0';
+          content.style.paddingBottom = '0';
+          trigger.setAttribute('aria-expanded', 'false');
+          if (icon) icon.style.transform = 'rotate(-90deg)';
+          
+          setTimeout(() => {
+            if (trigger.getAttribute('aria-expanded') === 'false') {
+              content.classList.add('hidden');
+            }
+          }, 300);
+        } else {
+          // Open
+          content.classList.remove('hidden');
+          content.style.paddingTop = '';
+          content.style.paddingBottom = '';
+          const height = content.scrollHeight;
+          content.style.maxHeight = '0px';
+          content.offsetHeight; // Force reflow
+          content.style.maxHeight = height + 'px';
+          content.style.opacity = '1';
+          trigger.setAttribute('aria-expanded', 'true');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+          
+          // Remove maxHeight after transition to allow content changes
+          setTimeout(() => {
+            if (trigger.getAttribute('aria-expanded') === 'true') {
+              content.style.maxHeight = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  })();
+  </script>
+</section>
+<section id="_cta_dark_trial_banner_v6_001" class="py-20 sm:py-24 bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Dark Card with Centered Content -->
+    <div class="bg-neutral-900 dark:bg-neutral-800 rounded-3xl p-8 sm:p-12 lg:p-20" data-motion="card">
+      
+      <div class="max-w-3xl mx-auto text-center" data-motion="hero">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6" data-motion="badge">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Launch Ready
+        </span>
+        
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+          <span data-animate="heading">Launch your project today</span>
+        </h2>
+        
+        <p class="text-neutral-400 text-lg mt-6 max-w-2xl mx-auto" data-animate="text">
+          Get started with our powerful platform and see results in days, not months. Join thousands of teams already building amazing products.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+          <a data-motion="button" href="#" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold transition-colors flex items-center gap-2">
+            Start Free Trial
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a data-motion="button" href="#" class="px-8 py-4 border border-neutral-700 hover:bg-neutral-800 rounded-full text-white font-semibold transition-colors">
+            View Pricing
+          </a>
+        </div>
+        
+        <!-- Trust Row -->
+        <div class="flex flex-wrap items-center justify-center gap-8 mt-12 pt-8 border-t border-neutral-800" data-motion="social-proof">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-neutral-400 text-sm">No credit card required</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-neutral-400 text-sm">14-day free trial</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-neutral-400 text-sm">Cancel anytime</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+<footer id="_footer_logo_members_v6_001" class="bg-white dark:bg-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="py-16 grid lg:grid-cols-12 gap-12 border-b border-neutral-200 dark:border-neutral-800">
+      
+      <!-- Brand + Social Proof -->
+      <div data-motion="brand" class="lg:col-span-4">
+        <a href="#" class="flex items-center gap-3 mb-6">
+          <div class="w-11 h-11 bg-blue-500 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-neutral-900 dark:text-white">ShopFlow</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-8">Trusted by over 50,000 sellers worldwide. Join our growing community of successful entrepreneurs.</p>
+        
+        <!-- Social Proof -->
+        <div data-motion="avatars" class="flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <img data-motion="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Member" class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-neutral-900">
+            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 border-2 border-white dark:border-neutral-900 flex items-center justify-center">
+              <span data-motion="badge" class="text-xs font-semibold text-blue-600 dark:text-blue-400">+5K</span>
+            </div>
+          </div>
+          <div>
+            <span class="text-neutral-900 dark:text-white font-semibold">50K+</span>
+            <span class="text-neutral-500 dark:text-neutral-400 text-sm ml-1">Active Sellers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Columns -->
+      <div class="lg:col-span-8 grid sm:grid-cols-3 gap-8">
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Marketplace</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Browse Products</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Categories</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Deals & Offers</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Sellers</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Start Selling</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Dashboard</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Analytics</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Academy</a></li>
+          </ul>
+        </div>
+        <div data-motion="column">
+          <h4 class="text-neutral-900 dark:text-white font-semibold mb-5">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Help Center</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Returns</a></li>
+            <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 transition-colors">Shipping</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div data-motion="bottom" class="py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-neutral-500 text-sm">© 2026 ShopFlow. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-neutral-500 hover:text-blue-500 text-sm transition-colors">Terms</a>
+        <a href="#" class="text-neutral-500 hover:text-blue-500 text-sm transition-colors">Privacy</a>
+        <a href="#" class="text-neutral-500 hover:text-blue-500 text-sm transition-colors">Cookies</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-blue-500 hover:border-blue-500 hover:text-white text-neutral-500 transition-all" aria-label="Twitter">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-blue-500 hover:border-blue-500 hover:text-white text-neutral-500 transition-all" aria-label="Instagram">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-blue-500 hover:border-blue-500 hover:text-white text-neutral-500 transition-all" aria-label="Facebook">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+
+  <!-- Motion Animate Script -->
+  <script>
+/**
+ * Motion Animate - Universal scroll animation library
+ * Drop-in replacement for per-block animation scripts
+ * 
+ * Usage:
+ * 1. Include this script in your page
+ * 2. Add data-motion="type" to elements you want to animate
+ * 3. Add data-animate="heading|text" to text elements for word splitting
+ * 
+ * Supported data-motion types:
+ * - fade, fade-up, fade-down, fade-left, fade-right
+ * - scale, scale-up
+ * - blur, blur-up
+ * - card, card-left, card-right
+ * - button, badge, icon, image, input
+ * - container (for grouping)
+ * 
+ * Options via data attributes:
+ * - data-delay="0.2" (seconds)
+ * - data-duration="0.6" (seconds)
+ * - data-stagger="0.1" (for parent containers)
+ * 
+ * IMPORTANT: This file handles ONLY scroll animations and accordions.
+ * Interactive functionality (carousels, tabs, pricing toggles) are included
+ * as inline <script> tags within each block's <section> tag. This ensures
+ * interactive features work even if animations are disabled.
+ */
+
+(function() {
+  'use strict';
+
+  // Default animation configs by type - tuned for smooth, creamy feel
+  const animations = {
+    // Basic fades
+    'fade': { opacity: [0, 1] },
+    'fade-up': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-down': { opacity: [0, 1], transform: ['translateY(-40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-left': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'fade-right': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Scale animations
+    'scale': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'scale-up': { opacity: [0, 1], transform: ['scale(0.85) translateY(30px)', 'scale(1) translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    
+    // Blur animations
+    'blur-sm': { opacity: [0, 1], filter: ['blur(15px)', 'blur(0px)'] },
+    'blur-up': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(15px)', 'blur(0px)'] },
+    
+    // Component-specific - matched to original block animations
+    'card': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-left': { opacity: [0, 1], transform: ['translateX(-40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'card-right': { opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'button': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'badge': { opacity: [0, 1], transform: ['translateY(-15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'icon': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'image': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(15px)', 'blur(0px)'] },
+    'input': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Additional types found in blocks
+    'stat': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'feature': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'accordion': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'logo': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'item': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatar': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'avatars': { opacity: [0, 1], transform: ['scale(0.8)', 'scale(1)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social-proof': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'social': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'col': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'row': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'column': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'tabs': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    'cta': { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'toggle': { opacity: [0, 1], transform: ['scale(0.9)', 'scale(1)'], filter: ['blur(5px)', 'blur(0px)'] },
+    'carousel': { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'step': { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'marquee': { opacity: [0, 1], filter: ['blur(10px)', 'blur(0px)'] },
+    'timeline-item': { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'heading': { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] },
+    'text': { opacity: [0, 1], transform: ['translateY(15px)', 'translateY(0)'], filter: ['blur(8px)', 'blur(0px)'] },
+    
+    // Container types (no animation, just for grouping)
+    'container': null,
+    'hero': null,
+    'content': null,
+    'header': null
+  };
+
+  // Default animation for any unknown type - smooth fade up with blur
+  const defaultAnimation = { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'], filter: ['blur(10px)', 'blur(0px)'] };
+
+  // Default timing - tuned for smooth, creamy animations
+  const defaults = {
+    duration: 0.7,
+    delay: 0,
+    stagger: 0.12,
+    threshold: 0.2,
+    wordDelay: 0.03
+  };
+
+  // Check if element is in viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right > 0
+    );
+  }
+
+  // Check if we're in an iframe
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // Split text into words
+  function splitWords(element) {
+    const text = element.textContent;
+    const words = text.split(/(\s+)/);
+    element.innerHTML = '';
+    
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'motion-word';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.textContent = word;
+        element.appendChild(span);
+      } else {
+        element.appendChild(document.createTextNode(word));
+      }
+    });
+    
+    element.style.opacity = '1';
+    return element.querySelectorAll('.motion-word');
+  }
+
+  // Get initial styles for hiding element
+  function getInitialStyles(type) {
+    const anim = animations[type];
+    
+    // Use default animation for unknown types (but not for container types which are explicitly null)
+    const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+    
+    if (!effectiveAnim) return { opacity: '0' };
+    
+    const styles = { opacity: '0' };
+    
+    if (effectiveAnim.transform) {
+      styles.transform = effectiveAnim.transform[0];
+    }
+    if (effectiveAnim.filter) {
+      styles.filter = effectiveAnim.filter[0];
+    }
+    
+    return styles;
+  }
+
+  // Apply initial hidden styles
+  function hideElement(el, type) {
+    const styles = getInitialStyles(type);
+    Object.assign(el.style, styles);
+  }
+
+  // Initialize animations
+  function init() {
+    // Wait for Motion.js
+    if (!window.Motion) {
+      console.warn('Motion.js not loaded. Showing all elements.');
+      document.querySelectorAll('[data-motion], [data-animate]').forEach(el => {
+        el.style.opacity = '1';
+      });
+      return;
+    }
+
+    const { animate, inView } = window.Motion;
+    const inIframe = isInIframe();
+
+    // Process text animations
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      const type = el.dataset.animate;
+      const words = splitWords(el);
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const wordDelay = parseFloat(el.dataset.wordDelay) || defaults.wordDelay;
+      const duration = parseFloat(el.dataset.duration) || 0.6;
+
+      const animateWords = () => {
+        words.forEach((word, i) => {
+          animate(word, 
+            { 
+              opacity: [0, 1], 
+              transform: ['translateY(20px)', 'translateY(0)'],
+              filter: ['blur(10px)', 'blur(0px)']
+            },
+            { 
+              duration: duration, 
+              delay: delay + (i * wordDelay), 
+              easing: [0.25, 0.1, 0.25, 1]
+            }
+          );
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateWords, 100);
+      } else {
+        inView(el, animateWords, { amount: defaults.threshold });
+      }
+    });
+
+    // Process motion animations
+    document.querySelectorAll('[data-motion]').forEach(el => {
+      const type = el.dataset.motion;
+      const anim = animations[type];
+      
+      // Skip container types (explicitly set to null)
+      if (anim === null) {
+        el.style.opacity = '1';
+        return;
+      }
+      
+      // Use default animation for unknown types
+      const effectiveAnim = anim === undefined ? defaultAnimation : anim;
+
+      const delay = parseFloat(el.dataset.delay) || 0;
+      const duration = parseFloat(el.dataset.duration) || defaults.duration;
+      const threshold = parseFloat(el.dataset.threshold) || defaults.threshold;
+
+      // Hide initially
+      hideElement(el, type);
+
+      const animateEl = () => {
+        animate(el, effectiveAnim, { 
+          duration: duration, 
+          delay: delay, 
+          easing: [0.25, 0.1, 0.25, 1]
+        });
+      };
+
+      // In iframe or already visible: animate immediately
+      if (inIframe || isInViewport(el)) {
+        setTimeout(animateEl, 100);
+      } else {
+        inView(el, animateEl, { amount: threshold });
+      }
+    });
+
+    // Handle staggered children
+    document.querySelectorAll('[data-stagger]').forEach(parent => {
+      const stagger = parseFloat(parent.dataset.stagger) || defaults.stagger;
+      const children = parent.querySelectorAll('[data-motion]');
+      
+      children.forEach((child, i) => {
+        const currentDelay = parseFloat(child.dataset.delay) || 0;
+        child.dataset.delay = (currentDelay + (i * stagger)).toString();
+      });
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>
