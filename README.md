@@ -1,60 +1,57 @@
-# OpenTailwind
+# OpenTailwind — Free Collection
 
-The largest free Tailwind CSS UI library on the web. Free forever, open source, funded by [lindo.ai](https://lindo.ai).
+A selection of free Tailwind CSS blocks and landing page templates from [OpenTailwind](https://opentailwind.dev), maintained by [lindo.ai](https://lindo.ai).
 
-🌐 [opentailwind.dev](https://opentailwind.dev) · 📦 [GitHub](https://github.com/lindoai/opentailwind)
+OpenTailwind now offers **Free and Pro access**. This repository contains only the free designs available in this export. The full library is available with [OpenTailwind Pro](https://opentailwind.dev/pricing/).
 
-## What is OpenTailwind?
+## What's included
 
-OpenTailwind is a free, open-source collection of **1,761+ production-ready Tailwind CSS UI blocks** and **1,920+ complete landing page templates**. Every block is responsive, supports light and dark mode, includes scroll animations, and is ready to copy into your project.
+- **71 free UI blocks** across 18 categories, including heroes, features, pricing, testimonials, FAQs, headers, and footers.
+- **95 free landing page templates** — five templates for each of 19 industries.
+- Standalone HTML files using Tailwind CSS, with sample content ready to adapt.
+- A local [catalogue](index.html) linking to every included file.
 
-## Three Design Collections
+The website's Free plan includes 100 selected blocks and these same 95 templates. This repository includes 71 of those blocks; the other 29 were not part of the original repository export. Paid designs are not included.
 
-Every category comes in three distinct design styles so you always find something that fits your project:
+Studio, Fresh, and Classic are **design collection names**, separate from Free and Pro access. Every design included here belongs to the free selection, regardless of its collection.
 
-- **Pro** — Premium, polished blocks with refined layouts and elegant details
-- **Fresh** — Modern redesigns with bold typography and creative compositions
-- **Classic** — Clean, foundational blocks that work for any project
+## Industries
 
-## 15+ Block Categories
+Agency & Consulting, Automotive, Childcare & Kids, Construction & Trades, E-commerce & Retail, Education & Training, Events & Entertainment, Fitness & Sports, Food & Hospitality, Healthcare & Wellness, Home Services, Nonprofit & Community, Pet Services, Portfolio & Creative, Professional Services, Real Estate & Property, Senior Services, Technology & SaaS, and Travel & Tourism.
 
-Hero sections, features, pricing tables, testimonials, FAQs, stats, team grids, CTAs, headers, footers, galleries, integrations, portfolios, and more. Each category has 50–70 unique variations across the three collections.
+## Use the files locally
 
-## 19 Industry Templates
+1. Clone or download this repository.
+2. Open `index.html` in your browser to browse the free selection.
+3. Open a file from `blocks/` or `landings/`, then copy or adapt its HTML for your project.
+4. Replace sample text, links, images, and form behavior before publishing.
 
-Complete landing pages for Technology & SaaS, Agency & Consulting, Healthcare, Real Estate, Food & Hospitality, Fitness, E-commerce, Education, Travel, and 10 more industries. Each template is assembled from the block library with curated images and content.
+No OpenTailwind account is needed to use the files in this repository. The previews load Tailwind CSS, fonts, and other external assets over the internet.
 
-## Built-in Customizer
+## Preview and customize online
 
-Preview any block or template with different accent colors, heading and body fonts, design styles (Modern, Sharp, Soft, Minimal, Luxury), monochrome mode, and grayscale images — all in real-time before you copy the code.
+Browse [blocks](https://opentailwind.dev/components/) or [templates](https://opentailwind.dev/landings/) on the website to preview designs and customize colors, fonts, and styles. Create a free account to copy or download the selected free designs online. [Pro access](https://opentailwind.dev/pricing/) unlocks the remaining library.
 
-## How to Use
+## Free selection manifest
 
-1. Browse blocks at [/components](https://opentailwind.dev/components/) or templates at [/landings](https://opentailwind.dev/landings/)
-2. Pick a collection: Pro, Fresh, or Classic
-3. Preview and customize colors, fonts, and styles
-4. Copy the HTML code or download the file
-5. Paste into your project — done
+[free-catalog.json](free-catalog.json) records the exact source IDs included here. It was checked against LNUI's `src/data/free-blocks.json` and `src/data/free-templates.json` on September 16, 2026. Filenames flatten each source ID's `/` to `-` and add `.html`.
 
-## Funded by lindo.ai
+Validate that the files and local catalogue match the selection:
 
-This open-source project is funded and maintained by [lindo.ai](https://lindo.ai) — an AI-powered website builder. You can open any OpenTailwind template directly in lindo.ai to remix it visually, add your own content, and publish a live website.
+```sh
+python3 scripts/check-catalog.py
+```
+
+When the LNUI project is available, also verify every included ID against its current free manifests:
+
+```sh
+python3 scripts/check-catalog.py --source ../lnui/LNUI
+```
+
+## Maintained by lindo.ai
+
+[lindo.ai](https://lindo.ai) is an AI-powered website builder and maintains OpenTailwind.
 
 ## License
 
-This project is dual-licensed.
-
-- Free under the MIT License for personal and internal use
-- Commercial license required for website builders or resale
-
-See [LICENSE.md](LICENSE.md) for full details.
-
-### Am I allowed to use this?
-
-✅ Freelancer building a client website → YES
-✅ Agency using it for commercial projects → YES
-✅ Startup using it in their SaaS product → YES
-✅ Open-source or internal company tools → YES
-
-❌ SaaS website builder (users create sites from templates) → NO (commercial license required)
-❌ Selling or redistributing the templates as templates → NO
+The included files are covered by the existing [repository license](LICENSE.md). Free use includes building finished websites and products for yourself or clients, subject to its terms. Website builders and template redistribution require a commercial license; see [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for contact details.

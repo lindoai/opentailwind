@@ -1,6 +1,6 @@
 # License
 
-This project is dual-licensed.
+This project's free collection is dual-licensed under the terms below. This file covers the blocks and templates included in this repository; the full OpenTailwind library is available separately at https://opentailwind.dev/pricing/.
 
 ## 1. Free License (MIT-based)
 You may use this project for free if:

@@ -1,6 +1,6 @@
 # Commercial License
 
-This license is required if you want to use this project in a SaaS website builder.
+This license concerns the free collection included in this repository. It is required if you want to use this project in a SaaS website builder. For access to the full OpenTailwind design library, see https://opentailwind.dev/pricing/.
 
 ## Permitted Use (With This License)
 - Use in SaaS website builders or no-code/low-code platforms
